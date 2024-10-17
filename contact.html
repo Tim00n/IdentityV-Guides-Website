@@ -3,209 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="contact.css">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../home.css">
+    <link rel="stylesheet" href="../../contact.css">
     <link rel="icon" href="./assets/WebsiteIcon.png" type="image/x-icon">
     <link rel="shortcut icon" href="/assets/WebsiteIcon.png" type="image/x-icon">
     <title>Contact</title>
 </head>
 <body>
 
-<!-- Header with Title and Navigation -->
 <header>
-    <h1><img src="'assets/Logo.png'" alt="LOGO WILL BE HERE" class="logo"> </h1>
+    <h1>
+        <a href="../../index.html">
+            <img src="assets/Logo.png" alt="LOGO WILL BE HERE" class="logo">
+        </a>
+    </h1>
     <nav>
-        <button class="button" onclick="window.open('./about.html', '_blank')">About</button>
-        <button class="button" onclick="window.open('./contact.html', '_blank')">Contact</button>
+        <button class="button" onclick="window.open('../../about.html', '_blank')">About</button>
+        <button class="button" onclick="window.open('../../contact.html', '_blank')">Contact</button>
     </nav>
 </header>
 
-<h1>Help others with your experience!</h1>
-
+<!-- Contact Form -->
 <div class="contact-form">
-    <h2>Contact Form</h2>
-    <p class="explanation">
-        This form gives you the opportunity to reach out to us and help us with the website. Please note that not all applicants will be accepted, so do not spam requests. If you are considered, you will be friended in IDV so make sure to input your ID correctly.
-    </p>
-
-    <form id="contactForm" action="submit.php" method="POST" onsubmit="return validateForm()">
-        <div class="form-group">
-            <label for="hunter">What hunter would you like to contribute to?</label>
-        <div class="custom-select" id="hunterSelect">
-            <div class="select-selected">Select Hunter</div>
-            <div class="select-items">
-                <div data-value="Axe_Boy">Axe Boy</div>
-                <div data-value="Bloody_Queen">Bloody Queen</div>
-                <div data-value="Clerk">Clerk</div>
-                <div data-value="Disciple">Disciple</div>
-                <div data-value="Dream_Witch">Dream Witch</div>
-                <div data-value="Evil_Reptilian">Evil Reptilian</div>
-                <div data-value="Feaster">Feaster</div>
-                <div data-value="Fool's_Gold">Fool's Gold</div>
-                <div data-value="Geisha">Geisha</div>
-                <div data-value="Gamekeeper">Gamekeeper</div>
-                <div data-value="Goatman">Goatman</div>
-                <div data-value="Guard_26">Guard 26</div>
-                <div data-value="Hell_Ember">Hell Ember</div>
-                <div data-value="Hermit">Hermit</div>
-                <div data-value="Mad_Eyes">Mad Eyes</div>
-                <div data-value="Naiad">Naiad</div>
-                <div data-value="Nightmare">Nightmare</div>
-                <div data-value="Night_Watch">Night Watch</div>
-                <div data-value="Opera_Singer">Opera Singer</div>
-                <div data-value="Photographer">Photographer</div>
-                <div data-value="Ripper">Ripper</div>
-                <div data-value="Shadow">Shadow</div>
-                <div data-value="Sculptor">Sculptor</div>
-                <div data-value="Smiley_Face">Smiley Face</div>
-                <div data-value="Soul_Weaver">Soul Weaver</div>
-                <div data-value="The_Breaking_Wheel">The Breaking Wheel</div>
-                <div data-value="Undead">Undead</div>
-                <div data-value="Violinist">Violinist</div>
-                <div data-value="Wax_Artist">Wax Artist</div>
-                <div data-value="Wu_Chang">Wu Chang</div>
-            </div>
-        </div>
-        <input type="hidden" name="hunter" id="hunter" required>
-    </div>
-    <div class="form-group">
-            <label for="badge">What was the highest badge you've had on this hunter?</label>
-            <div class="custom-select" id="badgeSelect">
-                <div class="select-selected">Select Badge</div>
-                <div class="select-items">
-                    <div data-value="C">
-                        <img src="assets/C_Badge.png" alt="C Badge"> C Badge
-                    </div>
-                    <div data-value="B">
-                        <img src="assets/B_Badge.png" alt="B Badge"> B Badge
-                    </div>
-                    <div data-value="A">
-                        <img src="assets/A_Badge.png" alt="A Badge"> A Badge
-                    </div>
-                    <div data-value="S">
-                        <img src="assets/S_Badge.png" alt="S Badge"> S Badge
-                    </div>
-                </div>
-            </div>
-            <input type="hidden" name="badge" id="badge" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="rank">What is the highest tier you've achieved in rank?</label>
-            <div class="custom-select" id="rankSelect">
-                <div class="select-selected">Select Rank</div>
-                <div class="select-items">
-                    <div data-value="1">
-                        <img src="assets/Tarantula.png" alt="Tier 1"> Tier 1
-                    </div>
-                    <div data-value="2">
-                        <img src="assets/Cobra.png" alt="Tier 2"> Tier 2
-                    </div>
-                    <div data-value="3">
-                        <img src="assets/Crocodile.png" alt="Tier 3"> Tier 3
-                    </div>
-                    <div data-value="4">
-                        <img src="assets/SaberToothedTiger.png" alt="Tier 4"> Tier 4
-                    </div>
-                    <div data-value="5">
-                        <img src="assets/Manticore.png" alt="Tier 5"> Tier 5
-                    </div>
-                    <div data-value="6">
-                        <img src="assets/OneEyedGiant.png" alt="Tier 6"> Tier 6
-                    </div>
-                    <div data-value="7">
-                        <img src="assets/EvilDragon.png" alt="Tier 7"> Tier 7
-                    </div>
-                    <div data-value="8">
-                        <img src="assets/Hydra.png" alt="Tier 8"> Tier 8
-                    </div>
-                </div>
-            </div>
-            <input type="hidden" name="rank" id="rank" required>
+    <h2>What faction would you like to submit something for?</h2>
+    <form id="factionForm" action="#" method="POST">
+        <div class="form-group checkbox-group">
+            <label>
+                <input type="checkbox" id="survivor" name="faction" value="survivor">
+                Survivor
+            </label>
+            <label>
+                <input type="checkbox" id="hunter" name="faction" value="hunter">
+                Hunter
+            </label>
         </div>
 
-        <div class="form-group">
-            <label for="wins">How many number of wins do you have on the hunter you selected?</label>
-            <input type="number" id="wins" name="wins" required placeholder="Enter wins" min="100">
+        <div id="survivorDropdown" class="hidden">
+            <label for="survivorDetails">Select Survivor Details:</label>
+            <select id="survivorDetails" name="survivorDetails">
+                <option value="option1">Survivor Option 1</option>
+                <option value="option2">Survivor Option 2</option>
+            </select>
         </div>
-        
-        <div class="form-group">
-            <label for="userId">What is your IdentityV ID?</label>
-            <input type="number" id="userId" name="userId" required placeholder="Enter ID" minlength="8" maxlength="9">
+
+        <div id="hunterDropdown" class="hidden">
+            <label for="hunterDetails">Select Hunter Details:</label>
+            <select id="hunterDetails" name="hunterDetails">
+                <option value="option1">Hunter Option 1</option>
+                <option value="option2">Hunter Option 2</option>
+            </select>
         </div>
-        
-        <button class="button" type="submit">Submit</button>
+
+        <div id="bothDropdowns" class="hidden">
+            <div>
+                <label for="survivorDetailsBoth">Select Survivor Details:</label>
+                <select id="survivorDetailsBoth" name="survivorDetailsBoth">
+                    <option value="option1">Survivor Option 1</option>
+                    <option value="option2">Survivor Option 2</option>
+                </select>
+            </div>
+            <div>
+                <label for="hunterDetailsBoth">Select Hunter Details:</label>
+                <select id="hunterDetailsBoth" name="hunterDetailsBoth">
+                    <option value="option1">Hunter Option 1</option>
+                    <option value="option2">Hunter Option 2</option>
+                </select>
+            </div>
+        </div>
+<script src="contact.js"></script>
+
+        <button class="button">Submit</button>
     </form>
-    
-    <div id="successMessage" style="display:none; color: green; margin-top: 20px;"></div>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Custom dropdown for badges and ranks
-        document.querySelectorAll('.custom-select').forEach(select => {
-            const selected = select.querySelector('.select-selected');
-            const items = select.querySelector('.select-items');
-
-            selected.addEventListener('click', () => {
-                items.style.display = items.style.display === 'block' ? 'none' : 'block';
-            });
-
-            items.querySelectorAll('div').forEach(item => {
-                item.addEventListener('click', function() {
-                    selected.textContent = this.textContent; // Set selected text
-                    const hiddenInput = select.parentNode.querySelector('input[type="hidden"]'); // Adjusted selection
-                    hiddenInput.value = this.getAttribute('data-value'); // Set hidden input value
-                    items.style.display = 'none';
-                });
-            });
-
-            document.addEventListener('click', (e) => {
-                if (!select.contains(e.target)) {
-                    items.style.display = 'none';
-                }
-            });
-        });
-    });
-
-    // Validation function
-    window.validateForm = function() {
-        const badge = document.getElementById('badge').value;
-        const rank = document.getElementById('rank').value;
-        const wins = document.getElementById('wins').value;
-        const userId = document.getElementById('userId').value;
-
-        // Log the values for debugging
-        console.log('Selected Badge:', badge); 
-        console.log('Selected Rank:', rank); 
-
-        // Check if badge is A or S AND rank is between 6 and 8
-        if ((badge === 'A' || badge === 'S') && (rank >= '6' && rank <= '8')) {
-            document.getElementById('successMessage').textContent = `Thank you for applying! "${selectedBadgeText()}", "${selectedRankText()}", "${wins} Wins", "${userId} Game ID"`;
-            document.getElementById('successMessage').style.display = 'block'; 
-            return true; // Allow form submission
-        }
-
-        alert("Sorry. How about you come back a different time once you've gained more experience?"); // Show alert when conditions are not met
-        return false; // Prevent form submission
-    };
-
-    function selectedBadgeText() {
-        const badgeText = document.querySelector('#badgeSelect .select-selected').textContent;
-        return badgeText.trim();
-    }
-
-    function selectedRankText() {
-        const rankText = document.querySelector('#rankSelect .select-selected').textContent;
-        return rankText.trim();
-    }
-</script>
-
+<!-- Footer -->
 <footer>
-    <h1>   IdentityV Guides. All rights reserved.
-    </h1>
+    <h1>IdentityV Guides. All rights reserved.</h1>
 </footer>
+
+<!-- Link to the JavaScript file -->
+
 </body>
 </html>
