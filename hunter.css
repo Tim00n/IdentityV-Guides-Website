@@ -1,0 +1,141 @@
+.main-content {
+  display: flex;
+  flex-direction: row;
+  padding: 3em;
+  justify-content: center;
+}
+
+/* Universal Table of Contents design */
+.toc {
+  width: auto; /* Fit content */
+  text-align: left;
+  margin-right: 20px;
+  padding: 15px; /* Reduced padding for a more compact look */
+  background-color: #3a3f47; /* Dark background */
+  border-radius: 20px; /* Increased border-radius for smoother corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  position: sticky; /* Make it sticky */
+  top: 200px; /* Distance from top */
+  max-height: 300px; /* Adjusted maximum height */
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.toc h2 {
+  font-size: 20px; /* Increased font size for headings */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+.toc li {
+  margin: 8px 0; /* Reduced margin for list items */
+}
+
+.toc a {
+  color: #ffffff; /* Change TOC links to white */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition for link color */
+  padding: 5px; /* Added padding for clickable area */
+  border-radius: 5px; /* Rounded corners for links */
+}
+
+.toc a:hover {
+  background-color: rgba(255, 165, 0, 0.2); /* Light orange background on hover */
+}
+
+.toc ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+}
+
+.image-container {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  margin: 20px 0; /* Add vertical margin */
+}
+
+.image-container img {
+  width: 100%; /* Make images responsive to their container */
+  max-width: 600px; /* Set a maximum width to prevent them from getting too large */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 12px; /* Optional: for rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: shadow for depth */
+  margin: 10px 0; /* Optional: spacing above and below images */
+}
+
+
+.image-container img:hover {
+  animation: pop 0.3s ease forwards; /* Pop animation on hover */
+}
+
+@keyframes pop {
+  0% {
+      transform: scale(1); /* Start at original size */
+  }
+  50% {
+      transform: scale(1.05); /* Scale up slightly */
+  }
+  100% {
+      transform: scale(1); /* Return to original size */
+  }
+}
+
+.content-area {
+  flex: 1; /* Take remaining space for content */
+  text-align: left; /* Align text to the left for better readability */
+  padding-right: 40px; /* Add padding to the right */
+  padding-left: 20px; /* Optional: Add padding to the left for balance */
+}
+
+.content-container {
+  max-width: 800px; /* Set a max width for the content area */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Add some padding for spacing */
+  background-color: #2c2f36; /* Optional: a slightly different background for contrast */
+  border-radius: 12px; /* Rounded corners for a softer look */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  text-align: left; /* Align text to the left */
+}
+
+li {
+  font-size: 16pt;
+  text-align: left;
+  margin-left: 2em;
+  margin-right: 2em;
+  list-style: none; /* Ensure no default list bullets */
+  padding-left: 24px; /* Space for the logo */
+  background-image: url('/assets/WebsiteIcon.png'); /* Add your logo as a background */
+  background-size: 20px 20px; /* Size of the logo */
+  background-repeat: no-repeat; /* Prevent repeating */
+  background-position: 0 50%; /* Center the logo vertically */
+}
+/* Video container styling */
+.video-container {
+  display: flex; /* Center the video */
+  justify-content: center; /* Center horizontally */
+  margin: 20px 0; /* Add vertical margin */
+}
+
+/* Video player styling */
+video {
+  width: 80%; /* Set width to 80% of the parent container */
+  max-width: 800px; /* Set a maximum width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+}
+
+/* Optional: Style for controls */
+video::-webkit-media-controls {
+  border-radius: 12px; /* Rounded corners for controls */
+}
+
+.video-group {
+  display: flex; /* Aligns videos in a row */
+  flex-direction: column; /* Change to 'row' for side-by-side */
+  gap: 1em; /* Space between videos */
+  margin: 20px 0; /* Margin for spacing above and below */
+}
+
+.video-container {
+  max-width: 100%; /* Ensures videos don't exceed container width */
+}

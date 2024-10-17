@@ -1,0 +1,29 @@
+/* Survivor grid design for front page */
+.survivor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin: 0 10px; 
+    width: 400px; 
+  }
+  
+  .survivor {
+    padding: 2px;
+    background-color: transparent;
+  }
+  
+  .survivor img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .survivor-container {
+    display: flex; 
+    justify-content: center;
+  }
+  
+  .survivor:hover img {
+    transform: translateY(-10px); /* Moves the image up */
+  }
+  

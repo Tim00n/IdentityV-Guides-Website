@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IdentityV Guides</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="huntergrid.css">
+    <link rel="stylesheet" href="survivorgrid.css">
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="icon" href="./assets/WebsiteIcon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/WebsiteIcon.png" type="image/x-icon">
+
+   
+</head>
+
+<body>
+
+ <!-- Header with Logo and Navigation -->
+<header>
+    <h1>
+        <a href="./index.html">
+            <img src="assets/Logo.png" alt="LOGO WILL BE HERE" class="logo">
+        </a>
+    </h1>
+    <nav>
+        <button class="button" onclick="window.open('./about.html', '_blank')">About</button>
+        <button class="button" onclick="window.open('./contact.html', '_blank')">Contact</button>
+    </nav>
+</header>
+
+  <h1>Browse Hunter Database</h1>
+
+
+    <div class="hunter-container" id="hunterContainer">
+        <div class="hunter-grid" id="hunterGrid1"></div>
+        <div class="hunter-grid" id="hunterGrid2"></div>
+    </div>
+
+    <div>
+        <button class="button" id="prevBtn" onclick="changePage(-1)" disabled>Previous</button>
+        <button class="button" id="nextBtn" onclick="changePage(1)">Next</button>
+    </div>
+
+
+    <script src="huntergrid.js"></script> 
+
+    <h1>Browse Survivor Database</h1>
+
+    <div class="survivor-container" id="survivorContainer">
+        <!-- Box 1 and Box 2 for Survivors -->
+        <div class="survivor-grid" id="survivorGrid1"></div>
+        <div class="survivor-grid" id="survivorGrid2"></div>
+    </div>
+
+    <div>
+        <button class="button" id="prevSurvivorBtn" onclick="changeSurvivorPage(-1)" disabled>Previous</button>
+        <button class="button" id="nextSurvivorBtn" onclick="changeSurvivorPage(1)">Next</button>
+    </div>
+    <script src="survivorgrid.js"></script> 
+
+
+
+
+<!-- Footer -->
+<footer>
+    <h1>   IdentityV Guides. All rights reserved.
+    </h1>
+</footer>
+</body>
+
+</html>

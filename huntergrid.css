@@ -1,0 +1,29 @@
+
+/* Hunter grid design for front page */
+.hunter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin: 0 10px; 
+  width: 400px; 
+}
+
+.hunter {
+  padding: 2px;
+  background-color: transparent;
+}
+
+.hunter img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+.hunter-container {
+    display: flex; 
+    justify-content: center;
+  }
+
+  .hunter:hover img {
+    transform: translateY(-10px); /* Moves the image up */
+  }

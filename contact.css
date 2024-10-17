@@ -1,0 +1,112 @@
+
+/* Contact form design*/
+.contact-form {
+    padding: 30px; 
+    border-radius: 15px;
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.3), 
+        0 4px 30px rgba(0, 0, 0, 0.2), 
+        0 0 15px rgba(0, 123, 255, 0.7); 
+    background: #3a3f47;
+    max-width: 500px; /* Increase max-width */
+    width: 100%;
+    border: 3px solid #000; /* Optional: Black border */
+    margin: 20px auto; /
+  }  
+
+.custom-select {
+    position: relative;
+    width: calc(100% - 24px);
+  
+  }
+  
+  .custom-select input {
+    border: 3px solid #ccc; /* Light border */
+    padding: 10px; /* Padding for input */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #2c2f36; /* Matching background */
+    color: white; /* Text color */
+    font-size: 16pt; /* Consistent font size */
+    width: 100%; /* Full width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    transition: border 0.3s ease; 
+  }
+  
+  .custom-select input:focus {
+    border: 1px solid #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  input[type="number"],
+  input[type="text"] {
+    width: calc(100% - 24px); /* Adjust width to account for padding */
+    padding: 12px; /* Uniform padding for input fields */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Slightly more rounded corners */
+    font-size: 16px; /* Set a larger font size */
+    box-sizing: border-box; /* Include padding and border in total width */
+    margin-left: 12px; /* Add margin for left alignment */
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .select-selected {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%
+    
+  }
+  .select-items {
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 10px;
+    z-index: 99;
+    display: none;
+    width: 100%;
+    background-color: #2c2f36;
+    max-height: 200px; /* Set a maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+  .select-items div {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .select-items div img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  .select-items div:hover {
+    background-color: #3a3f47;
+  }
+  
+  .explanation {
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    text-align: left;
+  }
+  
+  label {
+    font-size: 18px; /* Increase font size for labels */
+    margin-bottom: 5px; /* Space between label and input */
+    color: #ffffff; /* Make label text white for better contrast */
+  }
+
+  /* Hide arrows on number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Remove default appearance */
+    margin: 0; /* Remove margin */
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* For Firefox */
+}
