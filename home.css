@@ -14,10 +14,6 @@ header {
   transition: background 0.3s ease; /* Smooth transition for background */
 }
 
-header:hover {
-  background: rgba(58, 63, 71, 1); /* Full opacity on hover */
-}
-
 footer {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
@@ -99,3 +95,5 @@ h2 {
   justify-content: center; /* Center the buttons */
   margin-top: 20px; /* Space above the buttons */
 }
+
+

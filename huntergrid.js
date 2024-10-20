@@ -29,6 +29,8 @@ const hunters = [
     { name: "", url: "./hunters/Fool's Gold/Fool's_Gold.html", img: "assets/FG_Transparent.png" },
     { name: "", url: "./hunters/Shadow/Shadow.html", img: "assets/Shadow_Transparent.png" },
     { name: "", url: "./hunters/Goatman/Goatman.html", img: "assets/Goatman_Transparent.png" },
+    { name: "", url: "./hunters/Hullabaloo/Hullabaloo.html", img: "assets/Placeholder.png" },
+
 
 ];
 

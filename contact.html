@@ -2,86 +2,146 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../home.css">
-    <link rel="stylesheet" href="../../contact.css">
+    <title>Contact</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="icon" href="./assets/WebsiteIcon.png" type="image/x-icon">
     <link rel="shortcut icon" href="/assets/WebsiteIcon.png" type="image/x-icon">
-    <title>Contact</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
 <header>
     <h1>
-        <a href="../../index.html">
+        <a href="./index.html">
             <img src="assets/Logo.png" alt="LOGO WILL BE HERE" class="logo">
         </a>
     </h1>
     <nav>
-        <button class="button" onclick="window.open('../../about.html', '_blank')">About</button>
-        <button class="button" onclick="window.open('../../contact.html', '_blank')">Contact</button>
+        <button class="button" onclick="window.open('./about.html', '_blank')">About</button>
+        <button class="button" onclick="window.open('./contact.html', '_blank')">Contact</button>
     </nav>
 </header>
 
-<!-- Contact Form -->
-<div class="contact-form">
-    <h2>What faction would you like to submit something for?</h2>
-    <form id="factionForm" action="#" method="POST">
-        <div class="form-group checkbox-group">
+<div class="form-container">
+    <main>
+        <h1>Contact Form</h1>
+        <h2>Which faction(s) are you applying for?</h2>
+        <div class="faction-options">
             <label>
-                <input type="checkbox" id="survivor" name="faction" value="survivor">
+                <input type="checkbox" id="role-survivor" name="faction" value="Survivor">
                 Survivor
             </label>
             <label>
-                <input type="checkbox" id="hunter" name="faction" value="hunter">
+                <input type="checkbox" id="role-hunter" name="faction" value="Hunter">
                 Hunter
             </label>
         </div>
 
-        <div id="survivorDropdown" class="hidden">
-            <label for="survivorDetails">Select Survivor Details:</label>
-            <select id="survivorDetails" name="survivorDetails">
-                <option value="option1">Survivor Option 1</option>
-                <option value="option2">Survivor Option 2</option>
+        <div id="survivor-section" class="hidden">
+            <h2>What Survivor are you applying for?</h2>
+            <select id="survivor-select" name="survivor" required>
+                <option value="" disabled selected>Select Survivor</option>
+                <option value="acrobat">Acrobat</option>
+                <option value="aeroplanist">Aeroplanist</option>
+                <option value="antiquarian">Antiquarian</option>
             </select>
+            <h2>What is the highest badge you've obtained on the selected Survivor?</h2>
+            <div class="custom-select" id="highest-survivor-badge">
+                <div class="select-selected">Select Badge</div>
+                <div class="select-items">
+                    <div data-value="C">
+                        <img src="assets/C_Badge.png" alt=""> C Badge
+                    </div>
+                    <div data-value="B">
+                        <img src="assets/B_Badge.png" alt=""> B Badge
+                    </div>
+                    <div data-value="A">
+                        <img src="assets/A_Badge.png" alt=""> A Badge
+                    </div>
+                    <div data-value="S">
+                        <img src="assets/S_Badge.png" alt=""> S Badge
+                    </div>
+                </div>
+                <input type="hidden" name="highest-survivor-badge" id="highest-survivor-badge-hidden" required>
+            </div>
+            <h2>What is your highest Survivor rank?</h2>
+            <div class="custom-select" id="survivor-rankSelect">
+                <div class="select-selected">Select Rank</div>
+                <div class="select-items">
+                    <div data-value="1">
+                        <img src="assets/Tarantula.png" alt=""> Tier 1
+                    </div>
+                    <div data-value="2">
+                        <img src="assets/Cobra.png" alt=""> Tier 2
+                    </div>
+                </div>
+                <input type="hidden" name="survivor-rank" id="survivor-rank" required>
+            </div>
+            <h2>How many times have you won with (Selected Survivor)?</h2>
+            <input type="number" id="wins-survivor" name="wins-survivor" required pattern="\d*" inputmode="numeric">
         </div>
 
-        <div id="hunterDropdown" class="hidden">
-            <label for="hunterDetails">Select Hunter Details:</label>
-            <select id="hunterDetails" name="hunterDetails">
-                <option value="option1">Hunter Option 1</option>
-                <option value="option2">Hunter Option 2</option>
+        <div id="hunter-section" class="hidden">
+            <h2>What Hunter are you applying for?</h2>
+            <select id="hunter-select" name="hunter" required>
+                <option value="" disabled selected>Select Hunter</option>
+                <option value="axe-boy">Axe Boy</option>
+                <option value="bloody-queen">Bloody Queen</option>
             </select>
+            <h2>What is the highest badge you've obtained on the selected Hunter?</h2>
+            <div class="custom-select" id="highest-hunter-badge">
+                <div class="select-selected">Select Badge</div>
+                <div class="select-items">
+                    <div data-value="C">
+                        <img src="assets/C_Badge.png" alt=""> C Badge
+                    </div>
+                    <div data-value="B">
+                        <img src="assets/B_Badge.png" alt=""> B Badge
+                    </div>
+                    <div data-value="A">
+                        <img src="assets/A_Badge.png" alt=""> A Badge
+                    </div>
+                    <div data-value="S">
+                        <img src="assets/S_Badge.png" alt=""> S Badge
+                    </div>
+                </div>
+                <input type="hidden" name="highest-hunter-badge" id="highest-hunter-badge-hidden" required>
+            </div>
+            <h2>What is your highest Hunter rank?</h2>
+            <div class="custom-select" id="hunter-rankSelect">
+                <div class="select-selected">Select Rank</div>
+                <div class="select-items">
+                    <div data-value="1">
+                        <img src="assets/Tarantula.png" alt=""> Tier 1
+                    </div>
+                    <div data-value="2">
+                        <img src="assets/Cobra.png" alt=""> Tier 2
+                    </div>
+                </div>
+                <input type="hidden" name="hunter-rank" id="hunter-rank" required>
+            </div>
+            <h2>How many times have you won with (Selected Hunter)?</h2>
+            <input type="number" id="wins-hunter" name="wins-hunter" required pattern="\d*" inputmode="numeric">
         </div>
 
-        <div id="bothDropdowns" class="hidden">
-            <div>
-                <label for="survivorDetailsBoth">Select Survivor Details:</label>
-                <select id="survivorDetailsBoth" name="survivorDetailsBoth">
-                    <option value="option1">Survivor Option 1</option>
-                    <option value="option2">Survivor Option 2</option>
-                </select>
-            </div>
-            <div>
-                <label for="hunterDetailsBoth">Select Hunter Details:</label>
-                <select id="hunterDetailsBoth" name="hunterDetailsBoth">
-                    <option value="option1">Hunter Option 1</option>
-                    <option value="option2">Hunter Option 2</option>
-                </select>
-            </div>
-        </div>
-<script src="contact.js"></script>
+        
 
-        <button class="button">Submit</button>
-    </form>
+        <div class="button-container hidden">
+            <button type="submit" class="button">Submit</button>
+        </div>
+    </main>
 </div>
 
-<!-- Footer -->
+<script src="contact.js"></script>
 <footer>
-    <h1>IdentityV Guides. All rights reserved.</h1>
+    <h1>   IdentityV Guides. All rights reserved.
+    </h1>
 </footer>
-
-<!-- Link to the JavaScript file -->
-
 </body>
 </html>

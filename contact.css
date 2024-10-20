@@ -1,58 +1,188 @@
-
-/* Contact form design*/
-.contact-form {
-    padding: 30px; 
-    border-radius: 15px;
-    box-shadow: 
-        0 10px 20px rgba(0, 0, 0, 0.3), 
-        0 4px 30px rgba(0, 0, 0, 0.2), 
-        0 0 15px rgba(0, 123, 255, 0.7); 
-    background: #3a3f47;
-    max-width: 500px; /* Increase max-width */
-    width: 100%;
-    border: 3px solid #000; /* Optional: Black border */
-    margin: 20px auto; /
-  }  
-
-
-  .form-group {
-    margin-bottom: 20px;
-  }
-
-  .hidden {
-    display: none;
+.form-container {
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Light border color */
+  border-radius: 12px; /* Match the theme's rounded corners */
+  padding: 20px; /* Add padding inside the border */
+  background: rgba(58, 63, 71, 0.8); /* Background similar to previous styles */
+  display: inline-block; /* Allow the container to size itself to the content */
+  margin: 20px auto; /* Center the container with auto margins */
 }
 
+/* Contact form styles */
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: rgba(58, 63, 71, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 10px;
+  color: white; /* Label text color */
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white; /* Text color */
+}
+
+.contact-form textarea {
+  height: 150px; /* Fixed height for textarea */
+}
+
+select {
+  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
+  color: white; /* White text color for contrast */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Light border color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px; /* Padding for better touch targets */
+  width: 100%; /* Full width for a better layout */
+  appearance: none; /* Remove default styling */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+/* Adding a custom dropdown arrow */
+select::after {
+  content: '▼'; /* Arrow symbol */
+  position: absolute;
+  right: 10px; /* Position from the right */
+  pointer-events: none; /* Prevent the arrow from interfering with clicks */
+}
+
+/* Optional: Adding a hover effect */
+select:hover {
+  border-color: #007bff; /* Change border color on hover */
+}
+
+/* Optional: Adding a focus effect */
+select:focus {
+  outline: none; /* Remove default outline */
+  border-color: #0056b3; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a glow effect */
+}
+
+/* Custom styles for options */
+option {
+  background-color: #20232b; /* Background color for options */
+  color: white; /* Text color for options */
+}
+
+/* Additional styles for custom select */
 .custom-select {
   position: relative;
   display: inline-block;
+  width: 100%; /* Full width for better layout */
+  margin-top: 5px; /* Space above the custom select */
 }
 
 .select-selected {
-  background-color: #f1f1f1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white; /* Text color */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Light border color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px; /* Padding for touch targets */
+  cursor: pointer; /* Change cursor on hover */
+  position: relative; /* For positioning arrow */
 }
 
 .select-items {
-  display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  border: 1px solid #ccc;
-  z-index: 99;
-  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
+  /* Dropdown background color */
+  border-radius: 8px; /* Rounded corners */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width */
+  z-index: 99; /* Ensure dropdown is above other elements */
 }
 
 .select-items div {
-  padding: 10px;
-  cursor: pointer;
+  padding: 10px; /* Padding for each item */
+  color: white; /* Text color for options */
+  cursor: pointer; /* Change cursor on hover */
+  background-color: #20232b; /* Background for each item */
 }
 
+/* Change background color on hover for items */
 .select-items div:hover {
-  background-color: #ddd;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-.select-hide {
+/* Adjust for responsive design */
+@media (max-width: 600px) {
+  .custom-select {
+      width: 100%; /* Ensure full width on small screens */
+  }
+}
+
+/* Hide the number input spinner */
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Chrome, Safari, Edge */
+  margin: 0; /* Remove margin */
+}
+
+
+/* Number input styling */
+input[type="number"] {
+  width: 100%; /* Full width for consistency */
+  padding: 10px; /* Padding for better touch targets */
+  margin-top: 5px; /* Space above the input */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Light border color */
+  border-radius: 8px; /* Rounded corners */
+  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
+  color: white; /* Text color */
+  font-size: 16px; /* Font size for readability */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+/* Optional: Adding a focus effect */
+input[type="number"]:focus {
+  outline: none; /* Remove default outline */
+  border-color: #0056b3; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a glow effect */
+}
+
+/* Optional: Adding a hover effect */
+input[type="number"]:hover {
+  border-color: #007bff; /* Change border color on hover */
+}
+
+/* Custom Select Styles for Badges */
+.custom-select .select-items div {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center vertically */
+}
+
+.custom-select .select-items div img {
+  max-width: 16px; /* Adjust size for badges */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 8px; /* Space between image and text */
+}
+
+/* Custom Select Styles for Ranks */
+.rank-select .select-items div {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center vertically */
+}
+
+.rank-select .select-items div img {
+  max-width: 16px; /* Adjust size for ranks */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 8px; /* Space between image and text */
+}
+
+.hidden {
   display: none;
 }
