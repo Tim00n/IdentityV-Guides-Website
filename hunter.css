@@ -139,3 +139,7 @@ video::-webkit-media-controls {
 .video-container {
   max-width: 100%; /* Ensures videos don't exceed container width */
 }
+
+html {
+  cursor: url('assets/Cursor.png') 10 10, auto; /* Adjust hotspot position */
+}

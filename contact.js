@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const survivorSection = document.getElementById('survivor-section');
     const hunterSection = document.getElementById('hunter-section');
     const buttonContainer = document.querySelector('.button-container');
+    const idvIDContainer = document.getElementById('idv-id-container');
 
     const roleSurvivor = document.getElementById('role-survivor');
     const roleHunter = document.getElementById('role-hunter');
@@ -10,15 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Show the faction selection prompt initially
     mainSection.classList.remove('hidden');
 
-    // Show the relevant section when a radio button is selected
-    document.querySelectorAll('input[name="faction"]').forEach(radio => {
-        radio.addEventListener('change', function() {
+    // Show the relevant section when a faction checkbox is selected
+    document.querySelectorAll('input[name="faction"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
             // Reset and hide all sections first
             survivorSection.classList.add('hidden');
             hunterSection.classList.add('hidden');
             buttonContainer.classList.add('hidden'); // Hide button initially
+            idvIDContainer.classList.add('hidden'); // Hide IDV ID initially
 
-            // Show relevant sections based on selected radio button
+            // Show relevant sections based on selected checkbox
             if (roleSurvivor.checked) {
                 survivorSection.classList.remove('hidden');
             }
@@ -29,6 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Show the button container if either section is visible
             if (roleSurvivor.checked || roleHunter.checked) {
                 buttonContainer.classList.remove('hidden');
+            }
+
+            // Show the IDV ID input if either role is selected
+            if (roleSurvivor.checked || roleHunter.checked) {
+                idvIDContainer.classList.remove('hidden');
             }
         });
     });
@@ -50,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 selected.textContent = this.textContent; // Update selected text
                 selected.dataset.value = this.dataset.value; // Store selected value
                 items.style.display = 'none'; // Hide the options
-                
+
                 // Update hidden input field if necessary
                 const hiddenInput = select.querySelector('input[type="hidden"]');
                 hiddenInput.value = this.dataset.value; // Set the value of the hidden input

@@ -20,7 +20,7 @@
 .contact-form label {
   display: block;
   margin-top: 10px;
-  color: white; /* Label text color */
+  color: black; /* Text color set to black */
 }
 
 .contact-form input,
@@ -31,7 +31,7 @@
   border: 1px solid #ccc;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.1);
-  color: white; /* Text color */
+  color: white; /* Text color set to white */
 }
 
 .contact-form textarea {
@@ -85,7 +85,7 @@ option {
 
 .select-selected {
   background-color: rgba(0, 0, 0, 0.2);
-  color: white; /* Text color */
+  color: white; /* Text color set to white */
   border: 2px solid rgba(255, 255, 255, 0.5); /* Light border color */
   border-radius: 8px; /* Rounded corners */
   padding: 10px; /* Padding for touch targets */
@@ -96,7 +96,6 @@ option {
 .select-items {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
-  /* Dropdown background color */
   border-radius: 8px; /* Rounded corners */
   display: none; /* Hidden by default */
   width: 100%; /* Full width */
@@ -105,14 +104,13 @@ option {
 
 .select-items div {
   padding: 10px; /* Padding for each item */
-  color: white; /* Text color for options */
-  cursor: pointer; /* Change cursor on hover */
-  background-color: #20232b; /* Background for each item */
+  background-color: #20232b; /* Background color for items */
+  color: white; /* Text color for items */
 }
 
 /* Change background color on hover for items */
 .select-items div:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #333; /* Slightly lighter color on hover for visibility */
 }
 
 /* Adjust for responsive design */
@@ -133,7 +131,6 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0; /* Remove margin */
 }
 
-
 /* Number input styling */
 input[type="number"] {
   width: 100%; /* Full width for consistency */
@@ -142,7 +139,7 @@ input[type="number"] {
   border: 2px solid rgba(255, 255, 255, 0.5); /* Light border color */
   border-radius: 8px; /* Rounded corners */
   background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
-  color: white; /* Text color */
+  color: black; /* Text color set to black */
   font-size: 16px; /* Font size for readability */
   box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
@@ -166,8 +163,8 @@ input[type="number"]:hover {
 }
 
 .custom-select .select-items div img {
-  max-width: 16px; /* Adjust size for badges */
-  height: auto; /* Maintain aspect ratio */
+  width: 24px; /* Adjust size for badges */
+  height: 24px; /* Set height to maintain aspect ratio */
   margin-right: 8px; /* Space between image and text */
 }
 
@@ -178,8 +175,8 @@ input[type="number"]:hover {
 }
 
 .rank-select .select-items div img {
-  max-width: 16px; /* Adjust size for ranks */
-  height: auto; /* Maintain aspect ratio */
+  width: 24px; /* Adjust size for ranks */
+  height: 24px; /* Set height to maintain aspect ratio */
   margin-right: 8px; /* Space between image and text */
 }
 
