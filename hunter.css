@@ -1,145 +1,171 @@
+/* Body and General Text Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+  font-size: 16pt; /* Default text size */
+}
+
+p {
+  margin-bottom: 20px;
+  color: #dcdcdc;
+  line-height: 1.7;
+}
+
+a {
+  color: #ff5252; /* Red links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff1744; /* Darker red on hover */
+}
+
+/* Main Content Layout */
 .main-content {
   display: flex;
-  flex-direction: row;
-  padding: 3em;
   justify-content: center;
+  padding: 3em;
+  max-width: 1600px;
+  margin: auto;
 }
 
-/* Universal Table of Contents design */
-.toc {
-  width: auto; /* Fit content */
-  text-align: left;
-  margin-right: 20px;
-  padding: 15px; /* Reduced padding for a more compact look */
-  background-color: #3a3f47; /* Dark background */
-  border-radius: 20px; /* Increased border-radius for smoother corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Softer shadow */
-  position: sticky; /* Make it sticky */
-  top: 200px; /* Distance from top */
-  max-height: 300px; /* Adjusted maximum height */
-  overflow-y: auto; /* Allow vertical scrolling if content overflows */
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
-}
-
-.toc h2 {
-  font-size: 20px; /* Increased font size for headings */
-  margin-bottom: 10px; /* Space below heading */
-}
-
-.toc li {
-  margin: 8px 0; /* Reduced margin for list items */
-}
-
-.toc a {
-  color: #ffffff; /* Change TOC links to white */
-  text-decoration: none; /* Remove underline */
-  transition: color 0.3s ease; /* Smooth transition for link color */
-  padding: 5px; /* Added padding for clickable area */
-  border-radius: 5px; /* Rounded corners for links */
-}
-
-.toc a:hover {
-  background-color: rgba(255, 165, 0, 0.2); /* Light orange background on hover */
-}
-
-.toc ul {
-  list-style-type: none; /* Remove bullet points */
-  padding: 0; /* Remove default padding */
-}
-
-.image-container {
-  display: flex; /* Use flexbox for centering */
-  justify-content: center; /* Center horizontally */
-  margin: 20px 0; /* Add vertical margin */
-}
-
-.image-container img {
-  width: 100%; /* Make images responsive to their container */
-  max-width: 600px; /* Set a maximum width to prevent them from getting too large */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 12px; /* Optional: for rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: shadow for depth */
-  margin: 10px 0; /* Optional: spacing above and below images */
-}
-
-
-.image-container img:hover {
-  animation: pop 0.3s ease forwards; /* Pop animation on hover */
-}
-
-@keyframes pop {
-  0% {
-      transform: scale(1); /* Start at original size */
-  }
-  50% {
-      transform: scale(1.05); /* Scale up slightly */
-  }
-  100% {
-      transform: scale(1); /* Return to original size */
-  }
-}
-
+/* Content Area Styling */
 .content-area {
-  flex: 1; /* Take remaining space for content */
-  text-align: left; /* Align text to the left for better readability */
-  padding-right: 40px; /* Add padding to the right */
-  padding-left: 20px; /* Optional: Add padding to the left for balance */
+  flex: 1;
+  padding: 0 40px;
+  max-width: 800px;
+  margin: auto;
 }
 
 .content-container {
-  max-width: 800px; /* Set a max width for the content area */
-  margin: 0 auto; /* Center the container */
-  padding: 20px; /* Add some padding for spacing */
-  background-color: #2c2f36; /* Optional: a slightly different background for contrast */
-  border-radius: 12px; /* Rounded corners for a softer look */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  text-align: left; /* Align text to the left */
+  background-color: #2e3238;
+  padding: 30px;
+  border-radius: 12px;
+  color: #f5f5f5;
+  margin: auto;
 }
 
+/* Table of Contents Styling */
+.toc {
+  width: 300px;
+  padding: 20px;
+  background-color: #292b2f;
+  border-radius: 15px;
+  position: fixed;
+  top: 150px; /* Increased space below the header */
+  left: 0;
+  margin-left: 20px; /* Add a little space between the TOC and the edge */
+  max-height: calc(100vh - 150px); /* Ensure TOC height is constrained within the viewport */
+  overflow-y: auto; /* Allow scrolling within the TOC */
+  z-index: 1000;
+}
+
+.toc h2 {
+  color: #e53935;
+  font-size: 22px;
+}
+
+.toc ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin: 12px 0;
+}
+
+.toc a {
+  color: #ffffff;
+  padding: 10px;
+  display: block;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.toc a:hover {
+  background-color: rgba(229, 57, 53, 0.3);
+}
+
+/* Image Container */
+.image-container {
+  display: block;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* List Styling */
 li {
   font-size: 16pt;
+  margin: 12px 0;
+  padding-left: 40px;
+  background-image: url('/assets/WebsiteIcon.png');
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
   text-align: left;
-  margin-left: 2em;
-  margin-right: 2em;
-  list-style: none; /* Ensure no default list bullets */
-  padding-left: 24px; /* Space for the logo */
-  background-image: url('/assets/WebsiteIcon.png'); /* Add your logo as a background */
-  background-size: 20px 20px; /* Size of the logo */
-  background-repeat: no-repeat; /* Prevent repeating */
-  background-position: 0 50%; /* Center the logo vertically */
-}
-/* Video container styling */
-.video-container {
-  display: flex; /* Center the video */
-  justify-content: center; /* Center horizontally */
-  margin: 20px 0; /* Add vertical margin */
 }
 
-/* Video player styling */
+ul {
+  padding-left: 0;
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+
+/* Video Container Styling */
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
 video {
-  width: 80%; /* Set width to 80% of the parent container */
-  max-width: 800px; /* Set a maximum width */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+  width: 90%;
+  border-radius: 12px;
 }
 
-/* Optional: Style for controls */
-video::-webkit-media-controls {
-  border-radius: 12px; /* Rounded corners for controls */
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+  .main-content {
+    max-width: 100%;
+    padding: 2em;
+  }
+
+  .toc {
+    width: 250px; /* Smaller TOC on medium screens */
+    top: 120px; /* Adjust position relative to the header */
+    margin-left: 10px;
+  }
 }
 
-.video-group {
-  display: flex; /* Aligns videos in a row */
-  flex-direction: column; /* Change to 'row' for side-by-side */
-  gap: 1em; /* Space between videos */
-  margin: 20px 0; /* Margin for spacing above and below */
-}
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    padding: 1em;
+  }
 
-.video-container {
-  max-width: 100%; /* Ensures videos don't exceed container width */
-}
+  .toc {
+    width: 100%; /* Full width on mobile */
+    position: relative; /* Move TOC above content on mobile */
+    max-height: none; /* Allow full height */
+    margin-bottom: 20px;
+  }
 
-html {
-  cursor: url('assets/Cursor.png') 10 10, auto; /* Adjust hotspot position */
+  .content-area {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  body {
+    font-size: 14pt; /* Smaller text for better mobile scaling */
+  }
 }
