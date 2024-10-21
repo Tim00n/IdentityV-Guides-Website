@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="icon" href="./assets/WebsiteIcon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="/assets/WebsiteIcon.png" type="image/x-icon">
     <style>
         .hidden {
             display: none;
@@ -37,18 +36,17 @@
         <h2>Which faction(s) are you applying for?</h2>
         <div class="faction-options">
             <label>
-                <input type="checkbox" id="role-survivor" name="faction" value="Survivor">
-                Survivor
+                <input type="checkbox" id="role-survivor" name="faction" value="Survivor"> Survivor
             </label>
             <label>
-                <input type="checkbox" id="role-hunter" name="faction" value="Hunter">
-                Hunter
+                <input type="checkbox" id="role-hunter" name="faction" value="Hunter"> Hunter
             </label>
         </div>
 
+        <!-- Survivor section (Initially hidden) -->
         <div id="survivor-section" class="hidden">
             <h2>What Survivor are you applying for?</h2>
-            <select id="survivor-select" name="survivor" required>
+            <select id="survivor-select" name="survivor">
                 <option value="" disabled selected>Select Survivor</option>
                 <option value="acrobat">Acrobat</option>
                 <option value="aeroplanist">Aeroplanist</option>
@@ -97,25 +95,27 @@
                 <option value="weeping-clown">Weeping Clown</option>
                 <option value="wildling">Wildling</option>
             </select>
+
             <h2>What is the highest badge you've obtained on the selected Survivor?</h2>
             <div class="custom-select" id="highest-survivor-badge">
                 <div class="select-selected">Select Badge</div>
                 <div class="select-items">
                     <div data-value="C">
-                        <img src="assets/Csurv.png" alt=""> C Badge
+                        <img src="assets/Csurv.png" alt="C Badge"> C Badge
                     </div>
                     <div data-value="B">
-                        <img src="assets/Bsurv.png" alt=""> B Badge
+                        <img src="assets/Bsurv.png" alt="B Badge"> B Badge
                     </div>
                     <div data-value="A">
-                        <img src="assets/Asurv.png" alt=""> A Badge
+                        <img src="assets/Asurv.png" alt="A Badge"> A Badge
                     </div>
                     <div data-value="S">
-                        <img src="assets/S_badge_surv.png" alt=""> S Badge
+                        <img src="assets/S_badge_surv.png" alt="S Badge"> S Badge
                     </div>
+                    <input type="hidden" name="highest-survivor-badge" id="highest-survivor-badge-hidden">
                 </div>
-                <input type="hidden" name="highest-survivor-badge" id="highest-survivor-badge-hidden" required>
             </div>
+
             <h2>What is your highest Survivor rank?</h2>
             <div class="custom-select" id="survivor-rankSelect">
                 <div class="select-selected">Select Rank</div>
@@ -145,16 +145,17 @@
                         <img src="assets/titan.png" alt="Tier 8"> Titan
                     </div>
                 </div>
-                <input type="hidden" name="survivor-rank" id="survivor-rank" required>
+                <input type="hidden" name="survivor-rank" id="survivor-rank">
             </div>
             
-            <h2>How many times have you won with (Selected Survivor)?</h2>
-            <input type="number" id="wins-survivor" name="wins-survivor" required placeholder="Enter number of wins" required pattern="\d*" inputmode="numeric">
+            <h2>How many times have you won with this Survivor?</h2>
+            <input type="number" id="wins-survivor" name="wins-survivor" placeholder="Enter number of wins">
         </div>
 
+        <!-- Hunter section (Initially hidden) -->
         <div id="hunter-section" class="hidden">
             <h2>What Hunter are you applying for?</h2>
-            <select id="hunter-select" name="hunter" required>
+            <select id="hunter-select" name="hunter">
                 <option value="" disabled selected>Select Hunter</option>
                 <option value="axe-boy">Axe Boy</option>
                 <option value="bloody-queen">Bloody Queen</option>
@@ -188,25 +189,27 @@
                 <option value="wax-artist">Wax Artist</option>
                 <option value="wu-chang">Wu Chang</option>
             </select>
+
             <h2>What is the highest badge you've obtained on the selected Hunter?</h2>
             <div class="custom-select" id="highest-hunter-badge">
                 <div class="select-selected">Select Badge</div>
                 <div class="select-items">
                     <div data-value="C">
-                        <img src="assets/C_Badge.png" alt=""> C Badge
+                        <img src="assets/C_Badge.png" alt="C Badge"> C Badge
                     </div>
                     <div data-value="B">
-                        <img src="assets/B_Badge.png" alt=""> B Badge
+                        <img src="assets/B_Badge.png" alt="B Badge"> B Badge
                     </div>
                     <div data-value="A">
-                        <img src="assets/A_Badge.png" alt=""> A Badge
+                        <img src="assets/A_Badge.png" alt="A Badge"> A Badge
                     </div>
                     <div data-value="S">
-                        <img src="assets/S_Badge.png" alt=""> S Badge
+                        <img src="assets/S_Badge.png" alt="S Badge"> S Badge
                     </div>
+                    <input type="hidden" name="highest-hunter-badge" id="highest-hunter-badge-hidden">
                 </div>
-                <input type="hidden" name="highest-hunter-badge" id="highest-hunter-badge-hidden" required>
             </div>
+
             <h2>What is your highest Hunter rank?</h2>
             <div class="custom-select" id="hunter-rankSelect">
                 <div class="select-selected">Select Rank</div>
@@ -236,19 +239,20 @@
                         <img src="assets/Hydra.png" alt="Tier 8"> Hydra
                     </div>
                 </div>
-                <input type="hidden" name="hunter-rank" id="hunter-rank" required>
+                <input type="hidden" name="hunter-rank" id="hunter-rank">
             </div>
             
-            <h2>How many times have you won with (Selected Hunter)?</h2>
-            <input type="number" id="wins-hunter" name="wins-hunter" required placeholder="Enter number of wins" required pattern="\d*" inputmode="numeric">
+            <h2>How many times have you won with this Hunter?</h2>
+            <input type="number" id="wins-hunter" name="wins-hunter" placeholder="Enter number of wins">
         </div>
 
-        <!-- Single IDV ID Section at the end -->
+        <!-- Single IDV ID Section (Initially hidden) -->
         <div id="idv-id-container" class="hidden">
             <h2>What is your IDV ID?</h2>
             <input type="number" id="gameID-hunter" name="gameID" required placeholder="Enter ID" minlength="8" maxlength="8" pattern="\d{8}">
         </div>
 
+        <!-- Submit button (Initially hidden) -->
         <div class="button-container hidden">
             <button type="submit" class="button">Submit</button>
         </div>
