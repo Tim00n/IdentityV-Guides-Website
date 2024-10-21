@@ -6,12 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const roleSurvivor = document.getElementById('role-survivor');
     const roleHunter = document.getElementById('role-hunter');
     
-    // Get all input elements in Survivor and Hunter sections
-    const survivorInputs = survivorSection.querySelectorAll('input, select');
-    const hunterInputs = hunterSection.querySelectorAll('input, select');
-    const gameIDInput = document.getElementById('gameID-hunter');  // For game ID specifically
+    // Inputs and selects for Survivor and Hunter sections
+    const survivorBadge = document.getElementById('highest-survivor-badge-hidden');
+    const hunterBadge = document.getElementById('highest-hunter-badge-hidden');
+    const survivorRank = document.getElementById('survivor-rank');
+    const hunterRank = document.getElementById('hunter-rank');
+    const survivorWins = document.getElementById('wins-survivor');
+    const hunterWins = document.getElementById('wins-hunter');
+    const gameID = document.getElementById('gameID-hunter');
 
-    // Track the last checked faction to clear inputs when switching
+    // Track the last checked faction
     let lastCheckedFaction = null;
 
     // Function to clear inputs
@@ -27,43 +31,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to update form visibility and clear inputs based on checkboxes
     function updateForm() {
-        // Hide everything initially
         survivorSection.classList.add('hidden');
         hunterSection.classList.add('hidden');
         idvIDContainer.classList.add('hidden');
         buttonContainer.classList.add('hidden');
 
-        // Clear inputs for previously checked faction when switching
+        // Show Survivor section if checked, clear inputs if unchecked
         if (roleSurvivor.checked && lastCheckedFaction === 'Hunter') {
-            clearInputs(hunterInputs);  // Clear Hunter inputs when switching to Survivor
-            gameIDInput.value = '';  // Clear Game ID when switching factions
+            clearInputs(hunterSection.querySelectorAll('input, select'));
         }
 
         if (roleHunter.checked && lastCheckedFaction === 'Survivor') {
-            clearInputs(survivorInputs);  // Clear Survivor inputs when switching to Hunter
-            gameIDInput.value = '';  // Clear Game ID when switching factions
+            clearInputs(survivorSection.querySelectorAll('input, select'));
         }
 
-        // Show Survivor section if checked
         if (roleSurvivor.checked) {
             survivorSection.classList.remove('hidden');
-            lastCheckedFaction = 'Survivor';  // Set the last checked faction to Survivor
+            lastCheckedFaction = 'Survivor';
         }
 
-        // Show Hunter section if checked
         if (roleHunter.checked) {
             hunterSection.classList.remove('hidden');
-            lastCheckedFaction = 'Hunter';  // Set the last checked faction to Hunter
+            lastCheckedFaction = 'Hunter';
         }
 
-        // Show Game ID and Submit button if either checkbox is checked
         if (roleSurvivor.checked || roleHunter.checked) {
             idvIDContainer.classList.remove('hidden');
             buttonContainer.classList.remove('hidden');
         }
     }
 
-    // Attach event listeners to the checkboxes
+    // Attach event listeners to checkboxes
     roleSurvivor.addEventListener('change', updateForm);
     roleHunter.addEventListener('change', updateForm);
 
@@ -91,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Update hidden input field
                 const hiddenInput = select.querySelector('input[type="hidden"]');
                 hiddenInput.value = this.dataset.value;
-                items.style.display = 'none';  // Hide options after selection
+                items.style.display = 'none';
             });
         });
     });
@@ -101,8 +99,56 @@ document.addEventListener('DOMContentLoaded', function() {
         customSelects.forEach(select => {
             const items = select.querySelector('.select-items');
             if (!select.contains(e.target)) {
-                items.style.display = 'none';  // Hide if clicked outside
+                items.style.display = 'none';
             }
         });
     });
+
+    // Validation function for form submission
+    function validateForm(e) {
+        let errors = [];
+
+        // Validate Survivor or Hunter inputs if checked
+        if (roleSurvivor.checked) {
+            if (survivorBadge.value !== 'A' && survivorBadge.value !== 'S') {
+                errors.push('Survivor Badge must be A or S.');
+            }
+
+            if (survivorRank.value < 6 || survivorRank.value > 8) {
+                errors.push('Survivor Rank must be 6, 7, or 8.');
+            }
+
+            if (parseInt(survivorWins.value) < 100 || isNaN(survivorWins.value)) {
+                errors.push('Survivor wins must be at least 100.');
+            }
+        }
+
+        if (roleHunter.checked) {
+            if (hunterBadge.value !== 'A' && hunterBadge.value !== 'S') {
+                errors.push('Hunter Badge must be A or S.');
+            }
+
+            if (hunterRank.value < 6 || hunterRank.value > 8) {
+                errors.push('Hunter Rank must be 6, 7, or 8.');
+            }
+
+            if (parseInt(hunterWins.value) < 100 || isNaN(hunterWins.value)) {
+                errors.push('Hunter wins must be at least 100.');
+            }
+        }
+
+        // Validate IDV ID
+        if (!/^\d{8}$/.test(gameID.value)) {
+            errors.push('Game ID must be exactly 8 digits long.');
+        }
+
+        // Prevent form submission if there are errors
+        if (errors.length > 0) {
+            e.preventDefault(); // Prevent submission
+            alert(errors.join('\n')); // Show errors in an alert
+        }
+    }
+
+    // Attach the validation function to the form's submit event
+    document.querySelector('form').addEventListener('submit', validateForm);
 });
