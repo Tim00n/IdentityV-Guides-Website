@@ -108,32 +108,34 @@ document.addEventListener('DOMContentLoaded', function() {
     function validateForm(e) {
         let errors = [];
 
-        // Validate Survivor or Hunter inputs if checked
+        // Check if Survivor or Hunter badge and rank are selected (not default)
         if (roleSurvivor.checked) {
-            if (survivorBadge.value !== 'A' && survivorBadge.value !== 'S') {
-                errors.push('Survivor Badge must be A or S.');
-            }
-
-            if (survivorRank.value < 6 || survivorRank.value > 8) {
-                errors.push('Survivor Rank must be 6, 7, or 8.');
-            }
-
-            if (parseInt(survivorWins.value) < 100 || isNaN(survivorWins.value)) {
-                errors.push('Survivor wins must be at least 100.');
+            if (survivorBadge.value === "" || survivorRank.value === "") {
+                errors.push("Please fill out all fields.");
+            } else if (
+                survivorBadge.value !== 'A' &&
+                survivorBadge.value !== 'S' ||
+                survivorRank.value < 6 ||
+                survivorRank.value > 8 ||
+                parseInt(survivorWins.value) < 100 ||
+                isNaN(survivorWins.value)
+            ) {
+                errors.push('Insufficient experience. Please come back later.');
             }
         }
 
         if (roleHunter.checked) {
-            if (hunterBadge.value !== 'A' && hunterBadge.value !== 'S') {
-                errors.push('Hunter Badge must be A or S.');
-            }
-
-            if (hunterRank.value < 6 || hunterRank.value > 8) {
-                errors.push('Hunter Rank must be 6, 7, or 8.');
-            }
-
-            if (parseInt(hunterWins.value) < 100 || isNaN(hunterWins.value)) {
-                errors.push('Hunter wins must be at least 100.');
+            if (hunterBadge.value === "" || hunterRank.value === "") {
+                errors.push("Please fill out all fields.");
+            } else if (
+                hunterBadge.value !== 'A' &&
+                hunterBadge.value !== 'S' ||
+                hunterRank.value < 6 ||
+                hunterRank.value > 8 ||
+                parseInt(hunterWins.value) < 100 ||
+                isNaN(hunterWins.value)
+            ) {
+                errors.push('Insufficient experience. Please come back later.');
             }
         }
 
