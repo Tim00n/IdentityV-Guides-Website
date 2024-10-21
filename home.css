@@ -3,25 +3,31 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background: rgba(58, 63, 71, 0.9); /* Semi-transparent background for scrolling */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
+  height: 100px; /* Fixed height */
+  padding: 0 40px; /* Adjusted padding to match fixed height */
+  background: linear-gradient(135deg, #2e3238, #1a1a1a); /* Dark gradient with contrast */
+  border-radius: 10px; /* Subtle rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Deep shadow for modern depth */
   position: sticky; 
   top: 0; 
   z-index: 1000; 
-  color: white;
+  color: #f1f1f1;
+  transition: all 0.3s ease; /* Smooth transition */
 }
 
+
+
+
 footer {
+  padding: 30px 0;
+  background: linear-gradient(135deg, #292b2f, #1a1a1a); /* Sleek dark gradient */
+  color: #e0e0e0;
   font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  padding: 20px 0;
-  margin-top: auto;
+  font-size: 14px;
   text-align: center;
-  background: linear-gradient(135deg, #4a4e56, #3a3f47); /* Gradient background */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  border-top: 1px solid #444; /* Thin top border for separation */
+  box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.3); /* Light shadow for depth */
+  transition: all 0.3s ease;
 }
 
 /* Universal text formatting */
@@ -34,8 +40,8 @@ p {
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: white;
-  background-color: #1a1a1a;
+  color: #f1f1f1;
+    background-color: #1a1a1a;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -50,14 +56,19 @@ html {
 
 /* Universal heading design */
 h1 {
-  font-size: 28px;
+  font-size: 30px;
   text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Adds a shadow effect behind the text */
+
 }
 
 h2 {
   font-size: 20px;
   margin-top: 30px;
   color: white; 
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Adds a shadow effect behind the text */
+
 }
 
 /* Universal button design */

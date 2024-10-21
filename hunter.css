@@ -9,12 +9,40 @@ body {
   font-size: 16pt; /* Default text size */
 }
 
+/* Paragraph Styling */
 p {
   margin-bottom: 20px;
   color: #dcdcdc;
   line-height: 1.7;
 }
 
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: #ff5252; /* Accent color for headings */
+  margin-bottom: 20px;
+  text-transform: uppercase; /* Minimalist all-caps */
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Subtle text shadow for depth */
+}
+
+/* Specific font size for each heading */
+h1 {
+  font-size: 32px;
+  margin-top: 40px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-top: 35px;
+}
+
+h3 {
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+/* Link Styling */
 a {
   color: #ff5252; /* Red links */
   text-decoration: none;
@@ -29,7 +57,7 @@ a:hover {
   display: flex;
   justify-content: center;
   padding: 3em;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -41,6 +69,7 @@ a:hover {
   margin: auto;
 }
 
+/* Content Container */
 .content-container {
   background-color: #2e3238;
   padding: 30px;
@@ -54,18 +83,20 @@ a:hover {
   width: 300px;
   padding: 20px;
   background-color: #292b2f;
+  border: 1px solid #444;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   border-radius: 15px;
   position: fixed;
-  top: 150px; /* Increased space below the header */
+  top: 150px;
   left: 0;
-  margin-left: 20px; /* Add a little space between the TOC and the edge */
-  max-height: calc(100vh - 150px); /* Ensure TOC height is constrained within the viewport */
-  overflow-y: auto; /* Allow scrolling within the TOC */
+  margin-left: 20px;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
   z-index: 1000;
 }
 
 .toc h2 {
-  color: #e53935;
+  color: #ff5252;
   font-size: 22px;
 }
 
@@ -141,8 +172,8 @@ video {
   }
 
   .toc {
-    width: 250px; /* Smaller TOC on medium screens */
-    top: 120px; /* Adjust position relative to the header */
+    width: 250px;
+    top: 120px;
     margin-left: 10px;
   }
 }
@@ -154,9 +185,9 @@ video {
   }
 
   .toc {
-    width: 100%; /* Full width on mobile */
-    position: relative; /* Move TOC above content on mobile */
-    max-height: none; /* Allow full height */
+    width: 100%;
+    position: relative;
+    max-height: none;
     margin-bottom: 20px;
   }
 
@@ -166,6 +197,6 @@ video {
   }
 
   body {
-    font-size: 14pt; /* Smaller text for better mobile scaling */
+    font-size: 14pt;
   }
 }
