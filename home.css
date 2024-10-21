@@ -19,7 +19,7 @@ header {
 
 
 footer {
-  padding: 30px 0;
+  padding: 10px 0;
   background: linear-gradient(135deg, #292b2f, #1a1a1a); /* Sleek dark gradient */
   color: #e0e0e0;
   font-family: 'Roboto', sans-serif;
@@ -28,6 +28,8 @@ footer {
   border-top: 1px solid #444; /* Thin top border for separation */
   box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.3); /* Light shadow for depth */
   transition: all 0.3s ease;
+  margin-top: auto; /* Push the footer to the bottom */
+
 }
 
 /* Universal text formatting */

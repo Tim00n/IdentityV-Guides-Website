@@ -1,15 +1,43 @@
+/* Ensure the body and html stretch to full height */
+html, body {
+  height: 100%; /* Set full height for both html and body */
+  margin: 0; /* Remove default margin */
+  display: flex;
+  flex-direction: column; /* Flexbox layout to control the footer positioning */
+}
+
+/* The main content wrapper */
 .form-container {
   border: 2px solid rgba(255, 255, 255, 0.2); /* Light border color */
   border-radius: 12px; /* Match the theme's rounded corners */
   padding: 20px; /* Add padding inside the border */
   background: rgba(58, 63, 71, 0.8); /* Background similar to previous styles */
-  display: inline-block; /* Allow the container to size itself to the content */
   margin: 20px auto; /* Center the container with auto margins */
+  width: 100%;
+  max-width: 600px; /* Set a max width for the form */
+  flex-grow: 1; /* Ensure it grows to take available space */
+  transition: height 0.3s ease; /* Smooth transition for dynamic height */
+}
+
+/* Ensure dynamic height based on content */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Footer styles */
+footer {
+  background-color: rgba(58, 63, 71, 0.8); /* Similar background to maintain the theme */
+  color: white; /* Text color */
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto; /* Push the footer to the bottom */
 }
 
 /* Contact form styles */
 .contact-form {
-  max-width: 600px;
+  width: 100%;
   margin: auto;
   padding: 20px;
   background: rgba(58, 63, 71, 0.8);
@@ -38,6 +66,7 @@
   height: 150px; /* Fixed height for textarea */
 }
 
+/* Styling the select element */
 select {
   background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
   color: white; /* White text color for contrast */
@@ -49,7 +78,6 @@ select {
   cursor: pointer; /* Change cursor on hover */
 }
 
-/* Adding a custom dropdown arrow */
 select::after {
   content: '▼'; /* Arrow symbol */
   position: absolute;
@@ -57,25 +85,21 @@ select::after {
   pointer-events: none; /* Prevent the arrow from interfering with clicks */
 }
 
-/* Optional: Adding a hover effect */
 select:hover {
   border-color: #007bff; /* Change border color on hover */
 }
 
-/* Optional: Adding a focus effect */
 select:focus {
   outline: none; /* Remove default outline */
   border-color: #0056b3; /* Change border color on focus */
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a glow effect */
 }
 
-/* Custom styles for options */
 option {
   background-color: #20232b; /* Background color for options */
   color: white; /* Text color for options */
 }
 
-/* Additional styles for custom select */
 .custom-select {
   position: relative;
   display: inline-block;
@@ -108,7 +132,6 @@ option {
   color: white; /* Text color for items */
 }
 
-/* Change background color on hover for items */
 .select-items div:hover {
   background-color: #333; /* Slightly lighter color on hover for visibility */
 }
@@ -144,14 +167,12 @@ input[type="number"] {
   box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
-/* Optional: Adding a focus effect */
 input[type="number"]:focus {
   outline: none; /* Remove default outline */
   border-color: #0056b3; /* Change border color on focus */
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a glow effect */
 }
 
-/* Optional: Adding a hover effect */
 input[type="number"]:hover {
   border-color: #007bff; /* Change border color on hover */
 }
