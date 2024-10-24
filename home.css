@@ -3,23 +3,35 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px; /* Fixed height */
-  padding: 0 40px; /* Adjusted padding to match fixed height */
-  background: linear-gradient(135deg, #2e3238, #1a1a1a); /* Dark gradient with contrast */
-  border-radius: 10px; /* Subtle rounded corners */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Deep shadow for modern depth */
-  position: sticky; 
-  top: 0; 
-  z-index: 1000; 
-  color: #f1f1f1;
-  transition: all 0.3s ease; /* Smooth transition */
+  height: 150px;
+  width: 90%; 
+  padding: 0 2%;
+  background: linear-gradient(135deg, #6e6e6e, #2e2e2e); /* Lighter grey to dark grey/black gradient */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Slightly lighter shadow */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  color: #f1f1f1; /* Keeping text color light for contrast */
+  margin: 0 auto;
+  transition: all 0.3s ease;
 }
 
 
 
+.logo {
+  max-width: 200px;  /* Kept the size exactly as provided */
+  height: auto;      /* No changes to height */
+  margin-left: 0;    /* Align logo to the furthest left */
+}
+
+.header-content {
+  margin-left: auto; /* Pushes the buttons or other content to the right */
+}
 
 footer {
-  padding: 10px 0;
+  width: 100%; /* Ensure the footer extends across the entire width */
+  padding: 30px 0; /* Increased padding for more space */
   background: linear-gradient(135deg, #292b2f, #1a1a1a); /* Sleek dark gradient */
   color: #e0e0e0;
   font-family: 'Roboto', sans-serif;
@@ -28,27 +40,31 @@ footer {
   border-top: 1px solid #444; /* Thin top border for separation */
   box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.3); /* Light shadow for depth */
   transition: all 0.3s ease;
-  margin-top: auto; /* Push the footer to the bottom */
-
+  margin-top: 40px; /* Add more space between footer and grid */
 }
 
 /* Universal text formatting */
 p {
-  font-size: 16pt;
+  max-width: 800px;
+  margin-bottom: 20px;
+  color: #dcdcdc;
+  line-height: 1.7;
   text-align: left;
-  margin-left: 2em;
-  margin-right: 2em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   color: #f1f1f1;
-    background-color: #1a1a1a;
+  background-color: #1a1a1a;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   margin: 0;
-  text-align: center;
+  text-align: left;
 }
 
 /* Custom cursor */
@@ -62,7 +78,6 @@ h1 {
   text-align: center;
   font-weight: bold;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Adds a shadow effect behind the text */
-
 }
 
 h2 {
@@ -70,7 +85,7 @@ h2 {
   margin-top: 30px;
   color: white; 
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Adds a shadow effect behind the text */
-
+  text-align: center;
 }
 
 /* Universal button design */
@@ -111,8 +126,6 @@ button:disabled {
   font-size: 24px; /* Adjust size of Font Awesome icons */
 }
 
-
-
 /* Styling the icon buttons */
 nav button {
   background-color: #e3b778; /* Lighter gold color */
@@ -134,8 +147,3 @@ nav button:hover {
 nav button i {
   font-size: 24px; /* Icon size */
 }
-
-
-
-
-
