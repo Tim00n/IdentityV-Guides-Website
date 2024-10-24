@@ -162,7 +162,7 @@ input[type="number"] {
   border: 2px solid rgba(255, 255, 255, 0.5); /* Light border color */
   border-radius: 8px; /* Rounded corners */
   background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
-  color: black; /* Text color set to black */
+  color: white; /* Text color set to black */
   font-size: 16px; /* Font size for readability */
   box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
