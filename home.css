@@ -74,37 +74,68 @@ h2 {
 }
 
 /* Universal button design */
-.button {
-  margin: 5px;
-  padding: 15px 30px; /* Increased padding for a larger button */
-  background-color: #007bff;
-  border: none;
-  border-radius: 50px; /* Pill-shaped */
-  cursor: pointer;
-  font-size: 16px; /* Increased font size for better visibility */
-  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Smooth transitions */
-}
-
-.button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: scale(1.05); /* Slightly grow on hover */
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5); /* Glow effect on hover */
-}
-
-.button:active {
-  transform: scale(0.95); /* Slightly shrink when clicked */
-}
-
-.button:disabled {
-  background-color: #007bff; /* Keep the same blue color when disabled */
-  opacity: 0.6; /* Slightly transparent for disabled state */
-  cursor: not-allowed; /* Change cursor for disabled state */
-}
-
+/* Button styling with Font Awesome arrows */
 .button-container {
   display: flex;
-  justify-content: center; /* Center the buttons */
-  margin-top: 20px; /* Space above the buttons */
+  justify-content: center;
+  margin-top: 20px;
 }
+
+.button {
+  background-color: #e3b778; /* Lighter gold color */
+  color: #121212; /* Black arrow icons */
+  padding: 15px 40px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 50px;
+  font-size: 24px; /* Font size for the icons */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Disable style for previous button */
+button:disabled {
+  background-color: #b0b0b0; /* Grey background when disabled */
+  color: #757575; /* Lighter grey for the icon */
+  cursor: not-allowed; /* Disable cursor */
+  transform: none; /* No hover animation when disabled */
+}
+
+/* Hover effects for enabled buttons */
+.button:hover:not(:disabled) {
+  background-color: #d0a764; /* Slightly darker gold on hover */
+  transform: translateY(-3px);
+}
+
+.button i {
+  font-size: 24px; /* Adjust size of Font Awesome icons */
+}
+
+
+
+/* Styling the icon buttons */
+nav button {
+  background-color: #e3b778; /* Lighter gold color */
+  color: #121212; /* Dark icon color */
+  padding: 15px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 50px;
+  font-size: 24px; /* Icon size */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+nav button:hover {
+  background-color: #d0a764; /* Darker gold on hover */
+  transform: translateY(-3px);
+}
+
+nav button i {
+  font-size: 24px; /* Icon size */
+}
+
+
+
 
 
