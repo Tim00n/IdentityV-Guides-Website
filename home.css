@@ -17,6 +17,49 @@ header {
   transition: all 0.3s ease;
 }
 
+/* Soft Blue Heading for Survivor Database with Hover Glow */
+h1.survivor-database {
+  font-family: 'Rubik Dirt', sans-serif; /* Rugged but readable font */
+  font-size: 48px;
+  text-align: center;
+  font-weight: normal; /* Reduce boldness */
+  color: #3a86ff; /* Blue base color */
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.4); /* Light shadow for subtle depth */
+  padding: 10px 20px;
+  border: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Soft Red Heading for Hunter Database with Hover Glow */
+h1.hunter-database {
+  font-family: 'Rubik Dirt', sans-serif; /* Rugged but readable font */
+  font-size: 48px;
+  text-align: center;
+  font-weight: normal; /* Reduce boldness */
+  color: #ff5252; /* Red base color */
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.4); /* Light shadow for subtle depth */
+  padding: 10px 20px;
+  border: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover effect with soft glow */
+h1.survivor-database:hover {
+  color: #7abfff; /* Slightly lighter blue */
+  text-shadow: 
+    0 0 5px rgba(58, 134, 255, 0.4), /* Soft outer blue glow */
+    0 0 10px rgba(58, 134, 255, 0.2); /* Fainter outer glow */
+}
+
+h1.hunter-database:hover {
+  color: #ff8080; /* Slightly lighter red */
+  text-shadow: 
+    0 0 5px rgba(255, 82, 82, 0.4), /* Soft outer red glow */
+    0 0 10px rgba(255, 82, 82, 0.2); /* Fainter outer glow */
+}
+
 
 
 .logo {
@@ -32,9 +75,9 @@ header {
 footer {
   width: 100%; /* Ensure the footer extends across the entire width */
   padding: 30px 0; /* Increased padding for more space */
-  background: linear-gradient(135deg, #292b2f, #1a1a1a); /* Sleek dark gradient */
-  color: #e0e0e0;
-  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #6e6e6e, #2e2e2e); /* Lighter grey to dark grey/black gradient */
+  color: #8ea3a2;
+  font-family: 'Rubik Dirt', sans-serif;
   font-size: 14px;
   text-align: center;
   border-top: 1px solid #444; /* Thin top border for separation */
@@ -45,9 +88,11 @@ footer {
 
 /* Universal text formatting */
 p {
+  font-family: 'Outfit', Arial, sans-serif; /* Outfit with Arial and sans-serif fallback */
+
   max-width: 800px;
   margin-bottom: 20px;
-  color: #dcdcdc;
+  color: white;
   line-height: 1.7;
   text-align: left;
   margin-left: auto;
@@ -88,43 +133,74 @@ h2 {
   text-align: center;
 }
 
-/* Universal button design */
-/* Button styling with Font Awesome arrows */
+/* Universal button container styling */
 .button-container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
-.button {
-  background-color: #e3b778; /* Lighter gold color */
-  color: #121212; /* Black arrow icons */
+/* Survivor Button Styling (Textured Blue, Gritty Look) */
+.button.survivor {
+  font-family: 'Rubik Dirt', sans-serif; /* Rugged font to match Survivor heading */
+  background: linear-gradient(135deg, #1e3a8a, #3a86ff); /* Deep blue to bright blue gradient */
+  color: #ffffff; /* White text for contrast */
   padding: 15px 40px;
   margin: 0 10px;
-  border: none;
-  border-radius: 50px;
-  font-size: 24px; /* Font size for the icons */
+  border: 1px solid rgba(58, 134, 255, 0.5); /* Soft textured blue border */
+  border-radius: 12px; /* Slightly less rounded for a rugged look */
+  font-size: 22px;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Textured shadow */
 }
 
-/* Disable style for previous button */
+/* Hunter Button Styling (Textured Red, Futuristic Look) */
+.button.hunter {
+  font-family: 'Sixtyfour Convergence', sans-serif; /* Futuristic font to match Hunter heading */
+  background: linear-gradient(135deg, #6e1e1e, #ff5252); /* Dark red to bright red gradient */
+  color: #ffffff; /* White text for contrast */
+  padding: 15px 40px;
+  margin: 0 10px;
+  border: 1px solid rgba(255, 82, 82, 0.5); /* Subtle textured red border */
+  border-radius: 8px; /* Slightly angular for a tech-inspired look */
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+}
+
+/* Disabled button styling */
 button:disabled {
-  background-color: #b0b0b0; /* Grey background when disabled */
-  color: #757575; /* Lighter grey for the icon */
+  background: linear-gradient(135deg, #b0b0b0, #8c8c8c); /* Gray gradient when disabled */
+  color: #757575; /* Light gray for the icon */
+  border: 1px solid rgba(0, 0, 0, 0.2); /* Light border */
   cursor: not-allowed; /* Disable cursor */
   transform: none; /* No hover animation when disabled */
 }
 
 /* Hover effects for enabled buttons */
-.button:hover:not(:disabled) {
-  background-color: #d0a764; /* Slightly darker gold on hover */
-  transform: translateY(-3px);
+.button.survivor:hover:not(:disabled) {
+  background: linear-gradient(135deg, #3a86ff, #1e3a8a); /* Reverse gradient for texture */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+}
+
+.button.hunter:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ff5252, #6e1e1e); /* Reverse gradient for texture */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
 }
 
 .button i {
-  font-size: 24px; /* Adjust size of Font Awesome icons */
+  font-size: 22px; /* Adjust size of Font Awesome icons */
+  transition: color 0.3s ease;
 }
+
+.button:hover i {
+  color: #f1f1f1; /* Slightly brighter icon on hover */
+}
+
 
 /* Styling the icon buttons */
 nav button {
