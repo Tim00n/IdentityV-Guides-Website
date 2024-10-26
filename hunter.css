@@ -1,13 +1,4 @@
-/* Body and General Text Styling */
-body {
-  font-family: 'Outfit', sans-serif;
-  background-color: #1a1a1a;
-  color: #e0e0e0;
-  margin: 0;
-  padding: 0;
-  line-height: 1.8;
-  font-size: 16px;
-}
+
 
 /* Wrapper for TOC and Content Area */
 .content-wrapper {
@@ -55,15 +46,8 @@ body {
   padding-left: 20px;
 }
 
-.toc li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: #ff5252;
-  font-size: 12px;
-}
 
-/* Link Styling for TOC */
+
 .toc a {
   color: #ffffff;
   font-size: 14px;
@@ -71,10 +55,13 @@ body {
   display: block;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  text-decoration: none; /* Removes underline */
+  border-bottom: 1px dashed #ff5252; /* Example of a subtle dashed underline */
 }
 
 .toc a:hover {
   background-color: rgba(229, 57, 53, 0.6);
+  border-bottom: 1px solid #ff5252; /* Solid underline on hover */
 }
 
 /* Main Content Area */
@@ -103,7 +90,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 36px; /* Adjust as needed */
   margin: 20px 0;
   text-align: center; /* Center align headings */
-  text-transform: uppercase; /* Consistent uppercase styling */
   letter-spacing: 1px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Subtle shadow */
 }
@@ -142,6 +128,14 @@ ul li {
   max-width: 90%;
   border-radius: 10px;
 }
+
+.image-container iframe {
+  max-width: 90%; /* Restricts width within container */
+  border-radius: 10px; /* Matches styling of videos and images */
+  margin: 0 auto; /* Centers iframe */
+  display: block;
+}
+
 
 /* Center video elements within their parent container */
 video {
