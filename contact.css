@@ -6,18 +6,19 @@ html, body {
   flex-direction: column; /* Flexbox layout to control the footer positioning */
 }
 
-/* The main content wrapper */
+/* Contact Form Container - Reduced Width and Height */
 .form-container {
-  border: 2px solid rgba(255, 255, 255, 0.2); /* Light border color */
-  border-radius: 12px; /* Match the theme's rounded corners */
-  padding: 20px; /* Add padding inside the border */
-  background: rgba(58, 63, 71, 0.8); /* Background similar to previous styles */
-  margin: 20px auto; /* Center the container with auto margins */
+  border: 1px solid #444; 
+  border-radius: 12px;
+  padding: 10px 15px; /* Reduced padding for compact height */
+  background: rgba(49, 51, 54, 0.9);
+  margin: 20px auto;
   width: 100%;
-  max-width: 600px; /* Set a max width for the form */
-  flex-grow: 1; /* Ensure it grows to take available space */
-  transition: height 0.3s ease; /* Smooth transition for dynamic height */
+  max-width: 450px;
+  flex-grow: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
+
 
 /* Ensure dynamic height based on content */
 form {
@@ -35,14 +36,12 @@ footer {
   margin-top: auto; /* Push the footer to the bottom */
 }
 
-/* Contact form styles */
+/* Contact Form Styling */
 .contact-form {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  margin: auto;
-  padding: 20px;
-  background: rgba(58, 63, 71, 0.8);
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px; /* Reduced padding inside form */
 }
 
 .contact-form label {
@@ -51,19 +50,21 @@ footer {
   color: black; /* Text color set to black */
 }
 
+/* Input and Textarea Styling */
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  padding: 10px;
+  padding: 8px; /* Smaller padding for compact fields */
   margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 1px solid #666;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.1);
-  color: white; /* Text color set to white */
+  color: white;
+  font-size: 1em;
 }
 
 .contact-form textarea {
-  height: 150px; /* Fixed height for textarea */
+  height: 120px; /* Reduced height of textarea */
+  resize: vertical; /* Allow resizing if needed */
 }
 
 /* Styling the select element */
@@ -115,6 +116,10 @@ option {
   padding: 10px; /* Padding for touch targets */
   cursor: pointer; /* Change cursor on hover */
   position: relative; /* For positioning arrow */
+}
+
+.hidden {
+  display: none;
 }
 
 .select-items {

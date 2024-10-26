@@ -47,7 +47,6 @@
 }
 
 
-
 .toc a {
   color: #ffffff;
   font-size: 14px;
@@ -57,6 +56,8 @@
   transition: background-color 0.3s ease;
   text-decoration: none; /* Removes underline */
   border-bottom: 1px dashed #ff5252; /* Example of a subtle dashed underline */
+  font-family: 'Catamaran', sans-serif;
+
 }
 
 .toc a:hover {
@@ -73,7 +74,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   max-width: 800px;
   color: #e0e0e0;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Catamaran', sans-serif;
   line-height: 1.8;
   text-align: justify;
   font-size: 16px;
@@ -98,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Paragraphs */
 p {
   margin-bottom: 16px;
-  color: #dcdcdc;
+  color: white;
 }
 
 /* Lists */
@@ -146,5 +147,10 @@ video {
 }
 
 
+/* Ensure images and videos are responsive */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
 
 
