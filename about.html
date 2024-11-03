@@ -3,40 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
     <link rel="stylesheet" href="home.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="contact.css">
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
     <link rel="icon" href="./assets/WebsiteIcon.png" type="image/x-icon">
     <link rel="shortcut icon" href="/assets/WebsiteIcon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
+
 </head>
 <body>
 
+    <!-- Header Section -->
     <header>
-        <h1>
-
-        </h1>
+        <h1>IdentityV Guides</h1>
         <nav>
-          <!-- Home icon -->
-          <button class="button" onclick="window.open('../../index.html', '_blank')">
-              <i class="fas fa-home"></i>
-          </button>
-      
-          <!-- About icon -->
-          <button class="button" onclick="window.open('../../about.html', '_blank')">
-              <i class="fas fa-info-circle"></i>
-          </button>
-      
-          <!-- Contact icon (Paper Plane for form submission) -->
-          <button class="button" onclick="window.open('../../contact.html', '_blank')">
-              <i class="fas fa-paper-plane"></i>
-          </button>
-      </nav>
-      </nav>
+            <!-- Home icon -->
+            <button class="button" onclick="window.location.href='index.html'">
+                <i class="fas fa-home"></i>
+            </button>
+            <!-- About icon -->
+            <button class="button" onclick="window.location.href='about.html'">
+                <i class="fas fa-info-circle"></i>
+            </button>
+        </nav>
     </header>
+<!-- Start of the Netlify form -->
+<form name="IDV-Application" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <!-- Honeypot Field for Spam Prevention -->
+    <input type="hidden" name="bot-field" />
+    <input type="hidden" name="form-name" value="IDV-Application" />
 
     <!-- Content Section -->
     <div class="content-wrapper">
@@ -44,11 +40,389 @@
         <p>Welcome to IdentityV Guides! We provide high-quality, up-to-date information about survivors and hunters in IdentityV, making it easy for you to start learning about them.</p>
         <p>As a two-person team, we noticed that many guides, especially for niche hunters like Undead and BonBon, are often outdated or lacking altogether. With one of us holding an S badge as Guard 26 and the other as Undead, we decided to create a resource that fills these gaps.</p>
         <p>Our website allows us to keep everything current, offering effective strategies and insights that help you understand each character and use them successfully in rank matches.</p>
-        <p>If you're an expert for a specific Hunter or Survivor, please reach out through our contact form. You can always reach out even if the relevant guide has already been published if you want to add to it. </p>
+        <p>If you're an expert for a specific Hunter or Survivor, please reach out through our contact form. You can always reach out even if the relevant guide has already been published if you want to add to it.</p>
     </div>
 
-    <!-- Footer -->
-    <footer>
-    </footer>
+    <!-- Contact Form Section -->
+    <div class="content-wrapper">
+        <div class="contact-form-wrapper">
+            <!-- Progress Bar -->
+            <div class="progress-bar-wrapper">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+
+            <form id="contact-form" class="slider-form">
+                <!-- Contact Heading -->
+                <h1 class="hunter-database">Contact</h1>
+                <form id="contact-form" class="slider-form">
+  
+                <!-- Slide 1: Faction Selection -->
+                <div class="form-slide active" id="faction-selection">
+                    <p class="info-text">
+                        Feel free to apply for Survivor, Hunter, or both at the same time. Even if a guide is already published, feel free to still apply if you are convinced it's missing something.
+                    </p>
+                    <h2>Which faction(s) are you applying for?</h2>
+                    <div class="checkbox-group">
+                        <label class="checkbox-container">
+                            Survivor
+                            <input type="checkbox" id="survivor" name="faction" value="Survivor">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-container">
+                            Hunter
+                            <input type="checkbox" id="hunter" name="faction" value="Hunter">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <button type="button" class="next-button" disabled>Next</button>
+                </div>
+
+                <!-- Slide 2: Character Selection -->
+                <!-- Survivor Selection Slide -->
+                <div class="form-slide" id="survivor-character-slide">
+                    <h2>What Survivor are you applying for?</h2>
+                    <select name="survivor" id="survivor-select" required>
+                        <option value="">Select Survivor</option>
+                        <option value="Acrobat">Acrobat</option>
+                        <option value="Aeroplanist">Aeroplanist</option>
+                        <option value="Antiquarian">Antiquarian</option>
+                        <option value="Barmaid">Barmaid</option>
+                        <option value="Batter">Batter</option>
+                        <option value="Cheerleader">Cheerleader</option>
+                        <option value="Composer">Composer</option>
+                        <option value="Coordinator">Coordinator</option>
+                        <option value="Cowboy">Cowboy</option>
+                        <option value="Doctor">Doctor</option>
+                        <option value="Embalmer">Embalmer</option>
+                        <option value="Enchantress">Enchantress</option>
+                        <option value="Entomologist">Entomologist</option>
+                        <option value="Explorer">Explorer</option>
+                        <option value="Faro Lady">Faro Lady</option>
+                        <option value="Female Dancer">Female Dancer</option>
+                        <option value="Fire Investigator">Fire Investigator</option>
+                        <option value="First Officer">First Officer</option>
+                        <option value="Forward">Forward</option>
+                        <option value="Gardener">Gardener</option>
+                        <option value="Gravekeeper">Gravekeeper</option>
+                        <option value="Journalist">Journalist</option>
+                        <option value="Knight">Knight</option>
+                        <option value="Lawyer">Lawyer</option>
+                        <option value="Little Girl">Little Girl</option>
+                        <option value="Lucky Guy">Lucky Guy</option>
+                        <option value="Magician">Magician</option>
+                        <option value="Mechanic">Mechanic</option>
+                        <option value="Mercenary">Mercenary</option>
+                        <option value="Novelist">Novelist</option>
+                        <option value="Painter">Painter</option>
+                        <option value="Patient">Patient</option>
+                        <option value="Perfumer">Perfumer</option>
+                        <option value="Postman">Postman</option>
+                        <option value="Priestess">Priestess</option>
+                        <option value="Prisoner">Prisoner</option>
+                        <option value="Professor">Professor</option>
+                        <option value="Prospector">Prospector</option>
+                        <option value="Psychologist">Psychologist</option>
+                        <option value="Puppeteer">Puppeteer</option>
+                        <option value="Seer">Seer</option>
+                        <option value="The Mind's Eye">The Mind's Eye</option>
+                        <option value="Thief">Thief</option>
+                        <option value="Toy Merchant">Toy Merchant</option>
+                        <option value="Weeping Clown">Weeping Clown</option>
+                        <option value="Wildling">Wildling</option>
+                    </select>
+                    <button type="button" class="next-button" disabled>Next</button>
+                </div>
+
+                <!-- Hunter Selection Slide -->
+                <div class="form-slide" id="hunter-character-slide">
+                    <h2>What Hunter are you applying for?</h2>
+                    <select name="hunter" id="hunter-select" required>
+                        <option value="">Select Hunter</option>
+                        <option value="Axe Boy">Axe Boy</option>
+                        <option value="Bloody Queen">Bloody Queen</option>
+                        <option value="Clerk">Clerk</option>
+                        <option value="Disciple">Disciple</option>
+                        <option value="Dream Witch">Dream Witch</option>
+                        <option value="Evil Reptilian">Evil Reptilian</option>
+                        <option value="Feaster">Feaster</option>
+                        <option value="Fool's Gold">Fool's Gold</option>
+                        <option value="Gamekeeper">Gamekeeper</option>
+                        <option value="Geisha">Geisha</option>
+                        <option value="Goatman">Goatman</option>
+                        <option value="Guard 26">Guard 26</option>
+                        <option value="Hell Ember">Hell Ember</option>
+                        <option value="Hermit">Hermit</option>
+                        <option value="Hullabaloo">Hullabaloo</option>
+                        <option value="Mad Eyes">Mad Eyes</option>
+                        <option value="Naiad">Naiad</option>
+                        <option value="Nightmare">Nightmare</option>
+                        <option value="Night Watch">Night Watch</option>
+                        <option value="Opera Singer">Opera Singer</option>
+                        <option value="Photographer">Photographer</option>
+                        <option value="Ripper">Ripper</option>
+                        <option value="Sculptor">Sculptor</option>
+                        <option value="Shadow">Shadow</option>
+                        <option value="Smiley Face">Smiley Face</option>
+                        <option value="Soul Weaver">Soul Weaver</option>
+                        <option value="The Breaking Wheel">The Breaking Wheel</option>
+                        <option value="Undead">Undead</option>
+                        <option value="Violinist">Violinist</option>
+                        <option value="Wax Artist">Wax Artist</option>
+                        <option value="Wu Chang">Wu Chang</option>
+                    </select>
+                    <button type="button" class="next-button" disabled>Next</button>
+                </div>
+
+                <!-- Both Factions Selection Slide -->
+                <div class="form-slide" id="both-character-slide">
+                    <h2>What Survivor are you applying for?</h2>
+                    <select name="survivor" id="both-survivor-select" required>
+                        <option value="">Select Survivor</option>
+                        <option value="Acrobat">Acrobat</option>
+                        <option value="Aeroplanist">Aeroplanist</option>
+                        <option value="Antiquarian">Antiquarian</option>
+                        <option value="Barmaid">Barmaid</option>
+                        <option value="Batter">Batter</option>
+                        <option value="Cheerleader">Cheerleader</option>
+                        <option value="Composer">Composer</option>
+                        <option value="Coordinator">Coordinator</option>
+                        <option value="Cowboy">Cowboy</option>
+                        <option value="Doctor">Doctor</option>
+                        <option value="Embalmer">Embalmer</option>
+                        <option value="Enchantress">Enchantress</option>
+                        <option value="Entomologist">Entomologist</option>
+                        <option value="Explorer">Explorer</option>
+                        <option value="Faro Lady">Faro Lady</option>
+                        <option value="Female Dancer">Female Dancer</option>
+                        <option value="Fire Investigator">Fire Investigator</option>
+                        <option value="First Officer">First Officer</option>
+                        <option value="Forward">Forward</option>
+                        <option value="Gardener">Gardener</option>
+                        <option value="Gravekeeper">Gravekeeper</option>
+                        <option value="Journalist">Journalist</option>
+                        <option value="Knight">Knight</option>
+                        <option value="Lawyer">Lawyer</option>
+                        <option value="Little Girl">Little Girl</option>
+                        <option value="Lucky Guy">Lucky Guy</option>
+                        <option value="Magician">Magician</option>
+                        <option value="Mechanic">Mechanic</option>
+                        <option value="Mercenary">Mercenary</option>
+                        <option value="Novelist">Novelist</option>
+                        <option value="Painter">Painter</option>
+                        <option value="Patient">Patient</option>
+                        <option value="Perfumer">Perfumer</option>
+                        <option value="Postman">Postman</option>
+                        <option value="Priestess">Priestess</option>
+                        <option value="Prisoner">Prisoner</option>
+                        <option value="Professor">Professor</option>
+                        <option value="Prospector">Prospector</option>
+                        <option value="Psychologist">Psychologist</option>
+                        <option value="Puppeteer">Puppeteer</option>
+                        <option value="Seer">Seer</option>
+                        <option value="The Mind's Eye">The Mind's Eye</option>
+                        <option value="Thief">Thief</option>
+                        <option value="Toy Merchant">Toy Merchant</option>
+                        <option value="Weeping Clown">Weeping Clown</option>
+                        <option value="Wildling">Wildling</option>                    </select>
+
+                    <h2>What Hunter are you applying for?</h2>
+                    <select name="hunter" id="both-hunter-select" required>
+                        <option value="">Select Hunter</option>
+                        <option value="Axe Boy">Axe Boy</option>
+                        <option value="Bloody Queen">Bloody Queen</option>
+                        <option value="Clerk">Clerk</option>
+                        <option value="Disciple">Disciple</option>
+                        <option value="Dream Witch">Dream Witch</option>
+                        <option value="Evil Reptilian">Evil Reptilian</option>
+                        <option value="Feaster">Feaster</option>
+                        <option value="Fool's Gold">Fool's Gold</option>
+                        <option value="Gamekeeper">Gamekeeper</option>
+                        <option value="Geisha">Geisha</option>
+                        <option value="Goatman">Goatman</option>
+                        <option value="Guard 26">Guard 26</option>
+                        <option value="Hell Ember">Hell Ember</option>
+                        <option value="Hermit">Hermit</option>
+                        <option value="Hullabaloo">Hullabaloo</option>
+                        <option value="Mad Eyes">Mad Eyes</option>
+                        <option value="Naiad">Naiad</option>
+                        <option value="Nightmare">Nightmare</option>
+                        <option value="Night Watch">Night Watch</option>
+                        <option value="Opera Singer">Opera Singer</option>
+                        <option value="Photographer">Photographer</option>
+                        <option value="Ripper">Ripper</option>
+                        <option value="Sculptor">Sculptor</option>
+                        <option value="Shadow">Shadow</option>
+                        <option value="Smiley Face">Smiley Face</option>
+                        <option value="Soul Weaver">Soul Weaver</option>
+                        <option value="The Breaking Wheel">The Breaking Wheel</option>
+                        <option value="Undead">Undead</option>
+                        <option value="Violinist">Violinist</option>
+                        <option value="Wax Artist">Wax Artist</option>
+                        <option value="Wu Chang">Wu Chang</option>                    </select>
+                    <button type="button" class="next-button" disabled>Next</button>
+                </div>
+
+                <!-- Slide 3: Badge Selection -->
+                <!-- Survivor Badge Slide -->
+                <div class="form-slide" id="survivor-badge-slide">
+                    <h2 id="survivor-badge-question">What's the highest badge you've obtained with [Survivor Name]?</h2>
+                    <div class="custom-dropdown" id="survivor-badge-dropdown">
+                        <div class="dropdown-selected">Select Badge</div>
+                        <div class="dropdown-options">
+                            <!-- A and S Badges with Images -->
+                            <div class="dropdown-option" data-value="C Badge"><img src="assets/Csurv.png" alt="C Badge"> C Badge</div>
+                            <div class="dropdown-option" data-value="B Badge"><img src="assets/Bsurv.png" alt="B Badge"> B Badge</div>
+                            <div class="dropdown-option" data-value="A Badge"><img src="assets/Asurv.png" alt="A Badge"> A Badge</div>
+                            <div class="dropdown-option" data-value="S Badge"><img src="assets/S_badge_surv.png" alt="S Badge"> S Badge</div>
+                        </div>
+                    </div>
+                    <p class="error-message" id="survivor-badge-error"></p>
+                    <button type="button" class="next-button" disabled>Next</button>
+                </div>
+
+                <!-- Hunter Badge Slide -->
+                <div class="form-slide" id="hunter-badge-slide">
+                    <h2 id="hunter-badge-question">What's the highest badge you've obtained with [Hunter Name]?</h2>
+                    <div class="custom-dropdown" id="hunter-badge-dropdown">
+                        <div class="dropdown-selected">Select Badge</div>
+                        <div class="dropdown-options">
+                            <!-- A and S Badges with Images -->
+                            <div class="dropdown-option" data-value="C Badge"><img src="assets/C_Badge.png" alt="C Badge"> C Badge</div>
+                            <div class="dropdown-option" data-value="B Badge"><img src="assets/B_Badge.png" alt="B Badge"> B Badge</div>
+                            <div class="dropdown-option" data-value="A Badge"><img src="assets/A_Badge.png" alt="A Badge"> A Badge</div>
+                            <div class="dropdown-option" data-value="S Badge"><img src="assets/S_Badge.png" alt="S Badge"> S Badge</div>
+                        </div>
+                    </div>
+                    <p class="error-message" id="hunter-badge-error"></p>
+                    <button type="button" class="next-button" disabled>Next</button>
+                </div>
+
+                <!-- Both Badge Slide -->
+                <div class="form-slide" id="both-badge-slide">
+                    <h2 id="both-survivor-badge-question">What's the highest badge you've obtained with [Survivor Name]?</h2>
+                    <div class="custom-dropdown" id="both-survivor-badge-dropdown">
+                        <div class="dropdown-selected">Select Badge</div>
+                        <div class="dropdown-options">
+                            <div class="dropdown-option" data-value="C Badge"><img src="assets/Csurv.png" alt="C Badge"> C Badge</div>
+                            <div class="dropdown-option" data-value="B Badge"><img src="assets/Bsurv.png" alt="B Badge"> B Badge</div>
+                            <div class="dropdown-option" data-value="A Badge"><img src="assets/Asurv.png" alt="A Badge"> A Badge</div>
+                            <div class="dropdown-option" data-value="S Badge"><img src="assets/S_badge_surv.png" alt="S Badge"> S Badge</div>
+                        </div>
+                    </div>
+                    <p class="error-message" id="both-survivor-badge-error"></p>
+
+                    <h2 id="both-hunter-badge-question">What's the highest badge you've obtained with [Hunter Name]?</h2>
+                    <div class="custom-dropdown" id="both-hunter-badge-dropdown">
+                        <div class="dropdown-selected">Select Badge</div>
+                        <div class="dropdown-options">
+                            <div class="dropdown-option" data-value="C Badge"><img src="assets/C_Badge.png" alt="C Badge"> C Badge</div>
+                            <div class="dropdown-option" data-value="B Badge"><img src="assets/B_Badge.png" alt="B Badge"> B Badge</div>
+                            <div class="dropdown-option" data-value="A Badge"><img src="assets/A_Badge.png" alt="A Badge"> A Badge</div>
+                            <div class="dropdown-option" data-value="S Badge"><img src="assets/S_Badge.png" alt="S Badge"> S Badge</div>
+                        </div>
+                    </div>
+                    <p class="error-message" id="both-hunter-badge-error"></p>
+                    <button type="button" class="next-button" disabled>Next</button>
+                </div>
+
+<!-- Slide 4: Tier Selection -->
+<!-- Survivor Tier Slide -->
+<div class="form-slide" id="survivor-tier-slide">
+    <h2>What's your highest Survivor rank?</h2>
+    <div class="custom-dropdown" id="survivor-tier-dropdown">
+        <div class="dropdown-selected">Select Tier</div>
+        <div class="dropdown-options">
+            <div class="dropdown-option" data-value="1"><img src="assets/workerbee.png" alt="Worker Bee"> Worker Bee</div>
+            <div class="dropdown-option" data-value="2"><img src="assets/fehkinghound.png" alt="Fehking Hound"> Hound</div>
+            <div class="dropdown-option" data-value="3"><img src="assets/elk.png" alt="Elk"> Elk</div>
+            <div class="dropdown-option" data-value="4"><img src="assets/mamm.png" alt="Mamm"> Mammoth</div>
+            <div class="dropdown-option" data-value="5"><img src="assets/griffin.png" alt="Griffin"> Griffin</div>
+            <div class="dropdown-option" data-value="6"><img src="assets/ali.png" alt="Ali"> Ali</div>
+            <div class="dropdown-option" data-value="7"><img src="assets/champ.png" alt="Champ"> Champion</div>
+            <div class="dropdown-option" data-value="8"><img src="assets/titan.png" alt="Titan"> Titan</div>
+        </div>
+    </div>
+    <p class="error-message" id="survivor-tier-error"></p> <!-- Error Message Element -->
+    <button type="button" class="next-button" disabled>Next</button>
+</div>
+
+<!-- Hunter Tier Slide -->
+<div class="form-slide" id="hunter-tier-slide">
+    <h2>What's your highest Hunter rank?</h2>
+    <div class="custom-dropdown" id="hunter-tier-dropdown">
+        <div class="dropdown-selected">Select Tier</div>
+        <div class="dropdown-options">
+            <div class="dropdown-option" data-value="1"><img src="assets/Tarantula.png" alt="Tarantula"> Tarantula</div>
+            <div class="dropdown-option" data-value="2"><img src="assets/Cobra.png" alt="Cobra"> Cobra</div>
+            <div class="dropdown-option" data-value="3"><img src="assets/Crocodile.png" alt="Crocodile"> Crocodile</div>
+            <div class="dropdown-option" data-value="4"><img src="assets/SaberToothedTiger.png" alt="Saber Toothed Tiger"> Saber</div>
+            <div class="dropdown-option" data-value="5"><img src="assets/Manticore.png" alt="Manticore"> Manticore</div>
+            <div class="dropdown-option" data-value="6"><img src="assets/OneEyedGiant.png" alt="One Eyed Giant"> Oger</div>
+            <div class="dropdown-option" data-value="7"><img src="assets/EvilDragon.png" alt="Evil Dragon"> Evil Dragon</div>
+            <div class="dropdown-option" data-value="8"><img src="assets/Hydra.png" alt="Hydra"> Hydra</div>
+        </div>
+    </div>
+    <p class="error-message" id="hunter-tier-error"></p> <!-- Error Message Element -->
+    <button type="button" class="next-button" disabled>Next</button>
+</div>
+
+<!-- Both Tier Slide -->
+<div class="form-slide" id="both-tier-slide">
+    <h2>What's your highest Survivor rank?</h2>
+    <div class="custom-dropdown" id="both-survivor-tier-dropdown">
+        <div class="dropdown-selected">Select Tier</div>
+        <div class="dropdown-options">
+            <div class="dropdown-option" data-value="1"><img src="assets/workerbee.png" alt="Worker Bee"> Worker Bee</div>
+            <div class="dropdown-option" data-value="2"><img src="assets/fehkinghound.png" alt="Fehking Hound"> Hound</div>
+            <div class="dropdown-option" data-value="3"><img src="assets/elk.png" alt="Elk"> Elk</div>
+            <div class="dropdown-option" data-value="4"><img src="assets/mamm.png" alt="Mamm"> Mammoth</div>
+            <div class="dropdown-option" data-value="5"><img src="assets/griffin.png" alt="Griffin"> Griffin</div>
+            <div class="dropdown-option" data-value="6"><img src="assets/ali.png" alt="Ali"> Alicorn</div>
+            <div class="dropdown-option" data-value="7"><img src="assets/champ.png" alt="Champ"> Champion</div>
+            <div class="dropdown-option" data-value="8"><img src="assets/titan.png" alt="Titan"> Titan</div>
+        </div>
+    </div>
+    <p class="error-message" id="both-survivor-tier-error"></p> <!-- Error Message Element -->
+
+    <h2>What's your highest Hunter rank?</h2>
+    <div class="custom-dropdown" id="both-hunter-tier-dropdown">
+        <div class="dropdown-selected">Select Tier</div>
+        <div class="dropdown-options">
+            <div class="dropdown-option" data-value="1"><img src="assets/Tarantula.png" alt="Tarantula"> Tarantula</div>
+            <div class="dropdown-option" data-value="2"><img src="assets/Cobra.png" alt="Cobra"> Cobra</div>
+            <div class="dropdown-option" data-value="3"><img src="assets/Crocodile.png" alt="Crocodile"> Crocodile</div>
+            <div class="dropdown-option" data-value="4"><img src="assets/SaberToothedTiger.png" alt="Saber"> Saber</div>
+            <div class="dropdown-option" data-value="5"><img src="assets/Manticore.png" alt="Manticore"> Manticore</div>
+            <div class="dropdown-option" data-value="6"><img src="assets/OneEyedGiant.png" alt="Oger"> One Eyed Giant</div>
+            <div class="dropdown-option" data-value="7"><img src="assets/EvilDragon.png" alt="Evil Dragon"> Evil Dragon</div>
+            <div class="dropdown-option" data-value="8"><img src="assets/Hydra.png" alt="Hydra"> Hydra</div>
+        </div>
+    </div>
+    <p class="error-message" id="both-hunter-tier-error"></p> <!-- Error Message Element -->
+    <button type="button" class="next-button" disabled>Next</button>
+</div>
+
+
+<!-- Slide 5: Wins Input -->
+<div class="form-slide" id="wins-slide">
+    <h2>Wins</h2>
+    <p>Please input the number of wins you have achieved:</p>
+    <input type="text" id="wins-input" placeholder="Enter your wins" maxlength="5" pattern="[0-9]*" inputmode="numeric">
+    <p class="error-message" id="wins-error"></p> <!-- Error Message Element -->
+    <button type="button" class="next-button" disabled>Next</button>
+</div>
+
+<!-- Slide 6: Game ID Input -->
+<div class="form-slide" id="game-id-slide">
+    <h2>Game ID</h2>
+    <p>Please enter your IdentityV User ID (8 digits):</p>
+    <input type="text" id="game-id-input" placeholder="Enter your IDV User ID" maxlength="8" pattern="[0-9]*" inputmode="numeric">
+    <p class="error-message" id="game-id-error"></p> <!-- Error Message Element -->
+    <button type="submit" class="submit-button" disabled>Submit</button>
+</div>
+</form>
+
+<script src="contact.js"></script>
+
 </body>
 </html>

@@ -1,156 +1,262 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const survivorSection = document.getElementById('survivor-section');
-    const hunterSection = document.getElementById('hunter-section');
-    const idvIDContainer = document.getElementById('idv-id-container');
-    const buttonContainer = document.querySelector('.button-container');
-    const roleSurvivor = document.getElementById('role-survivor');
-    const roleHunter = document.getElementById('role-hunter');
-    
-    // Inputs and selects for Survivor and Hunter sections
-    const survivorBadge = document.getElementById('highest-survivor-badge-hidden');
-    const hunterBadge = document.getElementById('highest-hunter-badge-hidden');
-    const survivorRank = document.getElementById('survivor-rank');
-    const hunterRank = document.getElementById('hunter-rank');
-    const survivorWins = document.getElementById('wins-survivor');
-    const hunterWins = document.getElementById('wins-hunter');
-    const gameID = document.getElementById('gameID-hunter');
+document.addEventListener("DOMContentLoaded", function() {
+    const formSlides = document.querySelectorAll(".form-slide");
+    const progressBar = document.getElementById("progress-bar");
+    let currentSlide = 0;
+    let selectedSurvivor = '';
+    let selectedHunter = '';
+    let selectedSurvivorBadge = '';
+    let selectedHunterBadge = '';
+    let selectedSurvivorTier = '';
+    let selectedHunterTier = '';
 
-    // Track the last checked faction
-    let lastCheckedFaction = null;
-
-    // Function to clear inputs
-    function clearInputs(inputs) {
-        inputs.forEach(input => {
-            if (input.tagName === 'SELECT') {
-                input.selectedIndex = 0;  // Reset dropdowns
-            } else {
-                input.value = '';  // Clear input fields
-            }
-        });
+    // Progress Bar Update Function
+    function updateProgressBar() {
+        const totalSlides = formSlides.length;
+        const progressPercentage = ((currentSlide + 1) / totalSlides) * 100;
+        progressBar.style.width = `${progressPercentage}%`;
     }
 
-    // Function to update form visibility and clear inputs based on checkboxes
-    function updateForm() {
-        survivorSection.classList.add('hidden');
-        hunterSection.classList.add('hidden');
-        idvIDContainer.classList.add('hidden');
-        buttonContainer.classList.add('hidden');
+    updateProgressBar(); // Initialize progress bar
 
-        // Show Survivor section if checked, clear inputs if unchecked
-        if (roleSurvivor.checked && lastCheckedFaction === 'Hunter') {
-            clearInputs(hunterSection.querySelectorAll('input, select'));
-        }
-
-        if (roleHunter.checked && lastCheckedFaction === 'Survivor') {
-            clearInputs(survivorSection.querySelectorAll('input, select'));
-        }
-
-        if (roleSurvivor.checked) {
-            survivorSection.classList.remove('hidden');
-            lastCheckedFaction = 'Survivor';
-        }
-
-        if (roleHunter.checked) {
-            hunterSection.classList.remove('hidden');
-            lastCheckedFaction = 'Hunter';
-        }
-
-        if (roleSurvivor.checked || roleHunter.checked) {
-            idvIDContainer.classList.remove('hidden');
-            buttonContainer.classList.remove('hidden');
-        }
+    // Slide Navigation Function
+    function goToSlide(slideIndex) {
+        formSlides[currentSlide].classList.remove("active");
+        currentSlide = slideIndex;
+        formSlides[currentSlide].classList.add("active");
+        updateProgressBar();
     }
 
-    // Attach event listeners to checkboxes
-    roleSurvivor.addEventListener('change', updateForm);
-    roleHunter.addEventListener('change', updateForm);
+    // Slide 1: Faction Selection
+    const checkboxes = document.querySelectorAll("input[name='faction']");
+    const factionNextButton = document.querySelector("#faction-selection .next-button");
 
-    // Initial form state on page load
-    updateForm();
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", () => {
+            factionNextButton.disabled = !Array.from(checkboxes).some(checkbox => checkbox.checked);
+        });
+    });
 
-    // Custom dropdown functionality
-    const customSelects = document.querySelectorAll('.custom-select');
-    customSelects.forEach(select => {
-        const selected = select.querySelector('.select-selected');
-        const items = select.querySelector('.select-items');
+    factionNextButton.addEventListener("click", () => {
+        const survivorChecked = document.getElementById("survivor").checked;
+        const hunterChecked = document.getElementById("hunter").checked;
 
-        // Handle dropdown selection toggle
-        selected.addEventListener('click', function() {
-            items.style.display = items.style.display === 'block' ? 'none' : 'block';
+        if (survivorChecked && !hunterChecked) {
+            goToSlide(1); // Survivor character selection
+            document.querySelector("#survivor-character-slide .next-button").disabled = true;
+        } else if (!survivorChecked && hunterChecked) {
+            goToSlide(2); // Hunter character selection
+            document.querySelector("#hunter-character-slide .next-button").disabled = true;
+        } else if (survivorChecked && hunterChecked) {
+            goToSlide(3); // Both character selection
+            document.querySelector("#both-character-slide .next-button").disabled = true;
+        }
+    });
+
+    // Slide 2: Character Selection
+    const survivorSelect = document.getElementById("survivor-select");
+    const survivorCharacterNextButton = document.querySelector("#survivor-character-slide .next-button");
+
+    survivorSelect.addEventListener("change", function() {
+        selectedSurvivor = this.value;
+        survivorCharacterNextButton.disabled = !selectedSurvivor;
+    });
+
+    survivorCharacterNextButton.addEventListener("click", () => {
+        document.getElementById("survivor-badge-question").textContent = `What's the highest badge you've obtained with ${selectedSurvivor}?`;
+        goToSlide(4); // Survivor badge selection
+        document.querySelector("#survivor-badge-slide .next-button").disabled = true;
+    });
+
+    const hunterSelect = document.getElementById("hunter-select");
+    const hunterCharacterNextButton = document.querySelector("#hunter-character-slide .next-button");
+
+    hunterSelect.addEventListener("change", function() {
+        selectedHunter = this.value;
+        hunterCharacterNextButton.disabled = !selectedHunter;
+    });
+
+    hunterCharacterNextButton.addEventListener("click", () => {
+        document.getElementById("hunter-badge-question").textContent = `What's the highest badge you've obtained with ${selectedHunter}?`;
+        goToSlide(5); // Hunter badge selection
+        document.querySelector("#hunter-badge-slide .next-button").disabled = true;
+    });
+
+    const bothSurvivorSelect = document.getElementById("both-survivor-select");
+    const bothHunterSelect = document.getElementById("both-hunter-select");
+    const bothCharacterNextButton = document.querySelector("#both-character-slide .next-button");
+
+    function updateBothCharacterNextButton() {
+        bothCharacterNextButton.disabled = !(bothSurvivorSelect.value && bothHunterSelect.value);
+    }
+
+    bothSurvivorSelect.addEventListener("change", function() {
+        selectedSurvivor = this.value;
+        updateBothCharacterNextButton();
+    });
+
+    bothHunterSelect.addEventListener("change", function() {
+        selectedHunter = this.value;
+        updateBothCharacterNextButton();
+    });
+
+    bothCharacterNextButton.addEventListener("click", () => {
+        document.getElementById("both-survivor-badge-question").textContent = `What's the highest badge you've obtained with ${selectedSurvivor}?`;
+        document.getElementById("both-hunter-badge-question").textContent = `What's the highest badge you've obtained with ${selectedHunter}?`;
+        goToSlide(6); // Both badge selection
+        document.querySelector("#both-badge-slide .next-button").disabled = true;
+    });
+
+    function setupBadgeDropdown(dropdownId, errorId, nextButtonSelector, isBoth = false) {
+        const dropdown = document.getElementById(dropdownId);
+        const selected = dropdown.querySelector(".dropdown-selected");
+        const options = dropdown.querySelectorAll(".dropdown-option");
+        const errorMessage = document.getElementById(errorId);
+        const nextButton = document.querySelector(nextButtonSelector);
+        let selectedValue = '';
+
+        selected.addEventListener("click", () => {
+            dropdown.classList.toggle("active");
         });
 
-        // Handle click on an option
-        const options = items.querySelectorAll('div');
         options.forEach(option => {
-            option.addEventListener('click', function() {
-                selected.textContent = this.textContent;
-                selected.dataset.value = this.dataset.value;
+            option.addEventListener("click", () => {
+                selected.innerHTML = option.innerHTML;
+                selectedValue = option.getAttribute("data-value");
+                dropdown.classList.remove("active");
 
-                // Update hidden input field
-                const hiddenInput = select.querySelector('input[type="hidden"]');
-                hiddenInput.value = this.dataset.value;
-                items.style.display = 'none';
+                if (dropdownId.includes("survivor")) {
+                    selectedSurvivorBadge = selectedValue;
+                } else {
+                    selectedHunterBadge = selectedValue;
+                }
+
+                const validBadge = (value) => ["A Badge", "S Badge"].includes(value);
+
+                if (isBoth) {
+                    const validBoth = validBadge(selectedSurvivorBadge) && validBadge(selectedHunterBadge);
+                    errorMessage.textContent = validBoth ? "" : "Please select at least an A or S badge for both.";
+                    nextButton.disabled = !validBoth;
+                } else {
+                    const isValid = validBadge(selectedValue);
+                    errorMessage.textContent = isValid ? "" : "Please select at least an A or S badge.";
+                    nextButton.disabled = !isValid;
+                }
             });
         });
+    }
+
+    setupBadgeDropdown("survivor-badge-dropdown", "survivor-badge-error", "#survivor-badge-slide .next-button");
+    setupBadgeDropdown("hunter-badge-dropdown", "hunter-badge-error", "#hunter-badge-slide .next-button");
+    setupBadgeDropdown("both-survivor-badge-dropdown", "both-survivor-badge-error", "#both-badge-slide .next-button", true);
+    setupBadgeDropdown("both-hunter-badge-dropdown", "both-hunter-badge-error", "#both-badge-slide .next-button", true);
+
+    document.querySelector("#survivor-badge-slide .next-button").addEventListener("click", () => {
+        goToSlide(7); // Survivor tier selection
     });
 
-    // Close dropdowns if clicked outside
-    document.addEventListener('click', function(e) {
-        customSelects.forEach(select => {
-            const items = select.querySelector('.select-items');
-            if (!select.contains(e.target)) {
-                items.style.display = 'none';
+    document.querySelector("#hunter-badge-slide .next-button").addEventListener("click", () => {
+        goToSlide(8); // Hunter tier selection
+    });
+
+    document.querySelector("#both-badge-slide .next-button").addEventListener("click", () => {
+        goToSlide(9); // Both tier selection
+    });
+
+// Rank (Tier) Dropdown Validation for Survivor, Hunter, and Both Factions
+function setupTierDropdown(dropdownId, errorId, nextButtonSelector, isBoth = false) {
+    const dropdown = document.getElementById(dropdownId);
+    const selected = dropdown.querySelector(".dropdown-selected");
+    const options = dropdown.querySelectorAll(".dropdown-option");
+    const errorMessage = document.getElementById(errorId);
+    const nextButton = document.querySelector(nextButtonSelector);
+    let selectedValue = '';
+
+    nextButton.disabled = true; // Disable button by default
+
+    selected.addEventListener("click", () => {
+        dropdown.classList.toggle("active");
+    });
+
+    options.forEach(option => {
+        option.addEventListener("click", () => {
+            selected.innerHTML = option.innerHTML;
+            selectedValue = option.getAttribute("data-value");
+            dropdown.classList.remove("active");
+
+            // Check if the selected value is a valid tier (6, 7, or 8)
+            const validTier = (value) => ["6", "7", "8"].includes(value);
+
+            if (dropdownId.includes("survivor")) {
+                selectedSurvivorTier = selectedValue;
+            } else {
+                selectedHunterTier = selectedValue;
+            }
+
+            if (isBoth) {
+                const validBoth = validTier(selectedSurvivorTier) && validTier(selectedHunterTier);
+                errorMessage.textContent = validBoth ? "" : "Please select Tier 6, 7, or 8 for both factions.";
+                nextButton.disabled = !validBoth;
+            } else {
+                const isValid = validTier(selectedValue);
+                errorMessage.textContent = isValid ? "" : "Please select Tier 6, 7, or 8.";
+                nextButton.disabled = !isValid;
             }
         });
     });
+}
 
-    // Validation function for form submission
-    function validateForm(e) {
-        let errors = [];
+// Setup calls for Survivor, Hunter, and Both Factions with Rank (Tier) Dropdowns
+setupTierDropdown("survivor-tier-dropdown", "survivor-tier-error", "#survivor-tier-slide .next-button");
+setupTierDropdown("hunter-tier-dropdown", "hunter-tier-error", "#hunter-tier-slide .next-button");
+setupTierDropdown("both-survivor-tier-dropdown", "both-survivor-tier-error", "#both-tier-slide .next-button", true);
+setupTierDropdown("both-hunter-tier-dropdown", "both-hunter-tier-error", "#both-tier-slide .next-button", true);
 
-        // Check if Survivor or Hunter badge and rank are selected (not default)
-        if (roleSurvivor.checked) {
-            if (survivorBadge.value === "" || survivorRank.value === "") {
-                errors.push("Please fill out all fields.");
-            } else if (
-                survivorBadge.value !== 'A' &&
-                survivorBadge.value !== 'S' ||
-                survivorRank.value < 6 ||
-                survivorRank.value > 8 ||
-                parseInt(survivorWins.value) < 100 ||
-                isNaN(survivorWins.value)
-            ) {
-                errors.push('Insufficient experience. Please come back later.');
-            }
+
+
+    document.querySelector("#survivor-tier-slide .next-button").addEventListener("click", () => {
+        goToSlide(10); // Wins slide for Survivor
+    });
+    
+    document.querySelector("#hunter-tier-slide .next-button").addEventListener("click", () => {
+        goToSlide(10); // Wins slide for Hunter
+    });
+    
+    document.querySelector("#both-tier-slide .next-button").addEventListener("click", () => {
+        goToSlide(10); // Wins slide for Both factions
+    });
+
+    // Wins Slide Validation
+    const winsInput = document.getElementById("wins-input");
+    const winsNextButton = document.querySelector("#wins-slide .next-button");
+    const winsError = document.getElementById("wins-error");
+
+    winsInput.addEventListener("input", function() {
+        const winsValue = parseInt(winsInput.value, 10);
+        if (winsValue >= 100) {
+            winsError.textContent = "";
+            winsNextButton.disabled = false;
+        } else {
+            winsError.textContent = "Wins must be 100 or more.";
+            winsNextButton.disabled = true;
         }
+    });
 
-        if (roleHunter.checked) {
-            if (hunterBadge.value === "" || hunterRank.value === "") {
-                errors.push("Please fill out all fields.");
-            } else if (
-                hunterBadge.value !== 'A' &&
-                hunterBadge.value !== 'S' ||
-                hunterRank.value < 6 ||
-                hunterRank.value > 8 ||
-                parseInt(hunterWins.value) < 100 ||
-                isNaN(hunterWins.value)
-            ) {
-                errors.push('Insufficient experience. Please come back later.');
-            }
+    winsNextButton.addEventListener("click", () => {
+        goToSlide(11); // Game ID Slide
+    });
+
+    // Game ID Slide Validation and Submit Button Activation
+    const gameIdInput = document.getElementById("game-id-input");
+    const submitButton = document.querySelector("#game-id-slide .submit-button");
+    const gameIdError = document.getElementById("game-id-error");
+
+    gameIdInput.addEventListener("input", function() {
+        if (/^\d{8}$/.test(gameIdInput.value)) {
+            gameIdError.textContent = "";
+            submitButton.disabled = false;
+        } else {
+            gameIdError.textContent = "Please enter exactly 8 digits for your ID.";
+            submitButton.disabled = true;
         }
-
-        // Validate IDV ID
-        if (!/^\d{8}$/.test(gameID.value)) {
-            errors.push('Game ID must be exactly 8 digits long.');
-        }
-
-        // Prevent form submission if there are errors
-        if (errors.length > 0) {
-            e.preventDefault(); // Prevent submission
-            alert(errors.join('\n')); // Show errors in an alert
-        }
-    }
-
-    // Attach the validation function to the form's submit event
-    document.querySelector('form').addEventListener('submit', validateForm);
+    });
 });

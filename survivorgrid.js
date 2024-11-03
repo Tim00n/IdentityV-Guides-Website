@@ -43,6 +43,7 @@ const survivors = [
     { name: "", url: "./survivors/Puppeteer/Puppeteer.html", img: "assets/Puppeteer.png" },
     { name: "", url: "./survivors/Fire Investigator/Fire Investigator.html", img: "assets/Fire Investigator.png" },
     { name: "", url: "./survivors/Faro Lady/Faro Lady.html", img: "assets/Faro Lady.png" },
+    { name: "", url: "./survivors/Knight/Knight.html", img: "assets/Knight.png" },
     { name: "", url: "./survivors/Lucky Guy/Lucky Guy.html", img: "assets/Lucky Guy.png" },
 
     

@@ -1,211 +1,247 @@
-/* Ensure the body and html stretch to full height */
-html, body {
-  height: 100%; /* Set full height for both html and body */
-  margin: 0; /* Remove default margin */
-  display: flex;
-  flex-direction: column; /* Flexbox layout to control the footer positioning */
+.contact-form-wrapper {
+    background: #313336;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    margin: 40px auto;
+    color: #ffffff;
+    text-align: center;
 }
 
-/* Contact Form Container - Reduced Width and Height */
-.form-container {
-  border: 1px solid #444; 
-  border-radius: 12px;
-  padding: 10px 15px; /* Reduced padding for compact height */
-  background: rgba(49, 51, 54, 0.9);
-  margin: 20px auto;
-  width: 100%;
-  max-width: 450px;
-  flex-grow: 1;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+.slider-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-
-/* Ensure dynamic height based on content */
-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+.form-slide {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
 }
 
-/* Footer styles */
-footer {
-  background-color: rgba(58, 63, 71, 0.8); /* Similar background to maintain the theme */
-  color: white; /* Text color */
-  text-align: center;
-  padding: 10px 0;
-  margin-top: auto; /* Push the footer to the bottom */
+.form-slide.active {
+    display: flex;
 }
 
-/* Contact Form Styling */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 10px; /* Reduced padding inside form */
+.info-text {
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: left;
+    max-width: 400px;
 }
 
-.contact-form label {
-  display: block;
-  margin-top: 10px;
-  color: black; /* Text color set to black */
+h2 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #ffffff;
+    text-align: center;
 }
 
-/* Input and Textarea Styling */
-.contact-form input,
-.contact-form textarea {
-  padding: 8px; /* Smaller padding for compact fields */
-  margin-top: 5px;
-  border: 1px solid #666;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  font-size: 1em;
+.checkbox-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
 }
 
-.contact-form textarea {
-  height: 120px; /* Reduced height of textarea */
-  resize: vertical; /* Allow resizing if needed */
+.checkbox-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+    user-select: none;
+    padding-left: 30px;
 }
 
-/* Styling the select element */
-select {
-  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
-  color: white; /* White text color for contrast */
-  border: 2px solid rgba(255, 255, 255, 0.5); /* Light border color */
-  border-radius: 8px; /* Rounded corners */
-  padding: 10px; /* Padding for better touch targets */
-  width: 100%; /* Full width for a better layout */
-  appearance: none; /* Remove default styling */
-  cursor: pointer; /* Change cursor on hover */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
 }
 
-select::after {
-  content: '▼'; /* Arrow symbol */
-  position: absolute;
-  right: 10px; /* Position from the right */
-  pointer-events: none; /* Prevent the arrow from interfering with clicks */
+.checkmark {
+    position: absolute;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #1a1a1a;
+    border: 2px solid #3a86ff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-select:hover {
-  border-color: #007bff; /* Change border color on hover */
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #3a86ff;
 }
 
-select:focus {
-  outline: none; /* Remove default outline */
-  border-color: #0056b3; /* Change border color on focus */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a glow effect */
+.checkbox-container input:checked ~ .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 }
 
-option {
-  background-color: #20232b; /* Background color for options */
-  color: white; /* Text color for options */
+label {
+    font-size: 16px;
+    color: #ffffff;
 }
 
-.custom-select {
-  position: relative;
-  display: inline-block;
-  width: 100%; /* Full width for better layout */
-  margin-top: 5px; /* Space above the custom select */
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #494b4d;
+    background-color: #1a1a1a;
+    color: #ffffff;
 }
 
-.select-selected {
-  background-color: rgba(0, 0, 0, 0.2);
-  color: white; /* Text color set to white */
-  border: 2px solid rgba(255, 255, 255, 0.5); /* Light border color */
-  border-radius: 8px; /* Rounded corners */
-  padding: 10px; /* Padding for touch targets */
-  cursor: pointer; /* Change cursor on hover */
-  position: relative; /* For positioning arrow */
+.next-button, .submit-button {
+    background-color: #313336;
+    color: #ffffff;
+    font-size: 1em;
+    padding: 0.8em 1.2em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
 }
 
-.hidden {
-  display: none;
+.next-button:hover, .submit-button:hover {
+    background-color: #494b4d;
+    transform: translateY(-3px);
 }
 
-.select-items {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
-  border-radius: 8px; /* Rounded corners */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width */
-  z-index: 99; /* Ensure dropdown is above other elements */
+.next-button:disabled, .submit-button:disabled {
+    background-color: #494b4d;
+    color: #9a9a9a;
+    cursor: not-allowed;
+    box-shadow: none;
 }
 
-.select-items div {
-  padding: 10px; /* Padding for each item */
-  background-color: #20232b; /* Background color for items */
-  color: white; /* Text color for items */
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
+    cursor: pointer;
 }
 
-.select-items div:hover {
-  background-color: #333; /* Slightly lighter color on hover for visibility */
+.dropdown-selected {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #494b4d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* Adjust for responsive design */
-@media (max-width: 600px) {
-  .custom-select {
-      width: 100%; /* Ensure full width on small screens */
-  }
+.dropdown-selected img {
+    width: 20px; /* Ensure consistent size */
+    height: 20px;
+    margin-right: 8px;
 }
 
-/* Hide the number input spinner */
-input[type="number"] {
-  -moz-appearance: textfield; /* Firefox */
+.dropdown-selected::after {
+    content: '\25BC'; /* Down arrow */
+    font-size: 12px;
+    color: #ffffff;
+    margin-left: 10px;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none; /* Chrome, Safari, Edge */
-  margin: 0; /* Remove margin */
+.dropdown-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    border: 1px solid #494b4d;
+    border-radius: 5px;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
-/* Number input styling */
-input[type="number"] {
-  width: 100%; /* Full width for consistency */
-  padding: 10px; /* Padding for better touch targets */
-  margin-top: 5px; /* Space above the input */
-  border: 2px solid rgba(255, 255, 255, 0.5); /* Light border color */
-  border-radius: 8px; /* Rounded corners */
-  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
-  color: white; /* Text color set to black */
-  font-size: 16px; /* Font size for readability */
-  box-sizing: border-box; /* Ensure padding and border are included in the width */
+.dropdown-option {
+    padding: 10px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-input[type="number"]:focus {
-  outline: none; /* Remove default outline */
-  border-color: #0056b3; /* Change border color on focus */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a glow effect */
+.dropdown-option img {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
 }
 
-input[type="number"]:hover {
-  border-color: #007bff; /* Change border color on hover */
+.dropdown-option:hover {
+    background-color: #494b4d;
 }
 
-/* Custom Select Styles for Badges */
-.custom-select .select-items div {
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center vertically */
+.custom-dropdown.active .dropdown-options {
+    display: block;
 }
 
-.custom-select .select-items div img {
-  width: 24px; /* Adjust size for badges */
-  height: 24px; /* Set height to maintain aspect ratio */
-  margin-right: 8px; /* Space between image and text */
+/* Styles for the 8-digit input field */
+#digit-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #494b4d;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
 }
 
-/* Custom Select Styles for Ranks */
-.rank-select .select-items div {
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center vertically */
+/* Error message styling */
+.error-message {
+    color: #ff5252; /* Error red color */
+    font-size: 0.9em;
+    margin-top: 5px;
 }
 
-.rank-select .select-items div img {
-  width: 24px; /* Adjust size for ranks */
-  height: 24px; /* Set height to maintain aspect ratio */
-  margin-right: 8px; /* Space between image and text */
+/* Progress bar styling (already added) */
+.progress-bar-wrapper {
+    width: 100%;
+    background-color: #494b4d;
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 20px 0;
 }
 
-.hidden {
-  display: none;
+.progress-bar {
+    height: 8px;
+    background-color: #3a86ff; /* Blueish color */
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Adjusted input fields for Wins and Game ID to match dropdown size */
+#wins-input, #game-id-input {
+    width: calc(100% - 20px); /* Adjust to fit inside container with padding */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #494b4d;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    max-width: 280px; /* Same width as dropdown */
+    margin: 0 auto; /* Center align */
 }
