@@ -16,7 +16,7 @@
 
     <!-- Header Section -->
     <header>
-        <h1>IdentityV Guides</h1>
+        <h1></h1>
         <nav>
             <!-- Home icon -->
             <button class="button" onclick="window.location.href='index.html'">
@@ -32,7 +32,6 @@
 <form name="IDV-Application" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <!-- Honeypot Field for Spam Prevention -->
     <input type="hidden" name="bot-field" />
-    <input type="hidden" name="form-name" value="IDV-Application" />
 
     <!-- Content Section -->
     <div class="content-wrapper">
@@ -337,7 +336,7 @@
             <div class="dropdown-option" data-value="3"><img src="assets/elk.png" alt="Elk"> Elk</div>
             <div class="dropdown-option" data-value="4"><img src="assets/mamm.png" alt="Mamm"> Mammoth</div>
             <div class="dropdown-option" data-value="5"><img src="assets/griffin.png" alt="Griffin"> Griffin</div>
-            <div class="dropdown-option" data-value="6"><img src="assets/ali.png" alt="Ali"> Ali</div>
+            <div class="dropdown-option" data-value="6"><img src="assets/ali.png" alt="Ali"> Alicorn</div>
             <div class="dropdown-option" data-value="7"><img src="assets/champ.png" alt="Champ"> Champion</div>
             <div class="dropdown-option" data-value="8"><img src="assets/titan.png" alt="Titan"> Titan</div>
         </div>
@@ -393,7 +392,7 @@
             <div class="dropdown-option" data-value="3"><img src="assets/Crocodile.png" alt="Crocodile"> Crocodile</div>
             <div class="dropdown-option" data-value="4"><img src="assets/SaberToothedTiger.png" alt="Saber"> Saber</div>
             <div class="dropdown-option" data-value="5"><img src="assets/Manticore.png" alt="Manticore"> Manticore</div>
-            <div class="dropdown-option" data-value="6"><img src="assets/OneEyedGiant.png" alt="Oger"> One Eyed Giant</div>
+            <div class="dropdown-option" data-value="6"><img src="assets/OneEyedGiant.png" alt="Oger"> Oger</div>
             <div class="dropdown-option" data-value="7"><img src="assets/EvilDragon.png" alt="Evil Dragon"> Evil Dragon</div>
             <div class="dropdown-option" data-value="8"><img src="assets/Hydra.png" alt="Hydra"> Hydra</div>
         </div>
@@ -403,20 +402,44 @@
 </div>
 
 
-<!-- Slide 5: Wins Input -->
-<div class="form-slide" id="wins-slide">
-    <h2>Wins</h2>
-    <p>Please input the number of wins you have achieved:</p>
-    <input type="text" id="wins-input" placeholder="Enter your wins" maxlength="5" pattern="[0-9]*" inputmode="numeric">
-    <p class="error-message" id="wins-error"></p> <!-- Error Message Element -->
+<!-- Slide 10: Survivor Wins -->
+<div class="form-slide" id="survivor-wins-slide">
+    <h2>Survivor Wins</h2>
+    <p id="survivor-wins-question">How many times have you won with [Survivor Character]?</p>
+    <input type="text" id="survivor-wins-input" class="numerical-input" placeholder="Enter Wins" inputmode="numeric">
+    <p class="error-message" id="survivor-wins-error"></p>
     <button type="button" class="next-button" disabled>Next</button>
 </div>
+
+<!-- Slide 11: Hunter Wins -->
+<div class="form-slide" id="hunter-wins-slide">
+    <h2>Hunter Wins</h2>
+    <p id="hunter-wins-question">How many times have you won with [Hunter Character]?</p>
+    <input type="text" id="hunter-wins-input" class="numerical-input" placeholder="Enter Wins" inputmode="numeric">
+    <p class="error-message" id="hunter-wins-error"></p>
+    <button type="button" class="next-button" disabled>Next</button>
+</div>
+
+<!-- Slide 12: Both Wins -->
+<div class="form-slide" id="both-wins-slide">
+    <h2>Wins for Both Factions</h2>
+    <p id="both-survivor-wins-question">How many times have you won with [Survivor Character]?</p>
+    <input type="text" id="both-survivor-wins-input" class="numerical-input" placeholder="Enter Wins" inputmode="numeric">
+    <p class="error-message" id="both-survivor-wins-error"></p>
+
+    <p id="both-hunter-wins-question">How many times have you won with [Hunter Character]?</p>
+    <input type="text" id="both-hunter-wins-input" class="numerical-input" placeholder="Enter Wins" inputmode="numeric">
+    <p class="error-message" id="both-hunter-wins-error"></p>
+
+    <button type="button" class="next-button" disabled>Next</button>
+</div>
+
 
 <!-- Slide 6: Game ID Input -->
 <div class="form-slide" id="game-id-slide">
     <h2>Game ID</h2>
     <p>Please enter your IdentityV User ID (8 digits):</p>
-    <input type="text" id="game-id-input" placeholder="Enter your IDV User ID" maxlength="8" pattern="[0-9]*" inputmode="numeric">
+    <input type="text" id="game-id-input" class="numerical-input" placeholder="Enter your IDV User ID" maxlength="8" inputmode="numeric">
     <p class="error-message" id="game-id-error"></p> <!-- Error Message Element -->
     <button type="submit" class="submit-button" disabled>Submit</button>
 </div>
@@ -424,5 +447,10 @@
 
 <script src="contact.js"></script>
 
+
+<footer>
+
+</footer>
 </body>
+
 </html>

@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function() {
     let selectedHunterBadge = '';
     let selectedSurvivorTier = '';
     let selectedHunterTier = '';
+    const gameIdInput = document.getElementById("game-id-input");
+    const submitButton = document.querySelector("#game-id-slide .submit-button");
+    const gameIdError = document.getElementById("game-id-error");
 
     // Progress Bar Update Function
     function updateProgressBar() {
@@ -213,50 +216,120 @@ setupTierDropdown("both-hunter-tier-dropdown", "both-hunter-tier-error", "#both-
 
 
 
-    document.querySelector("#survivor-tier-slide .next-button").addEventListener("click", () => {
-        goToSlide(10); // Wins slide for Survivor
-    });
-    
-    document.querySelector("#hunter-tier-slide .next-button").addEventListener("click", () => {
-        goToSlide(10); // Wins slide for Hunter
-    });
-    
-    document.querySelector("#both-tier-slide .next-button").addEventListener("click", () => {
-        goToSlide(10); // Wins slide for Both factions
-    });
-
-    // Wins Slide Validation
-    const winsInput = document.getElementById("wins-input");
-    const winsNextButton = document.querySelector("#wins-slide .next-button");
-    const winsError = document.getElementById("wins-error");
-
-    winsInput.addEventListener("input", function() {
-        const winsValue = parseInt(winsInput.value, 10);
-        if (winsValue >= 100) {
-            winsError.textContent = "";
-            winsNextButton.disabled = false;
-        } else {
-            winsError.textContent = "Wins must be 100 or more.";
-            winsNextButton.disabled = true;
-        }
-    });
-
-    winsNextButton.addEventListener("click", () => {
-        goToSlide(11); // Game ID Slide
-    });
-
-    // Game ID Slide Validation and Submit Button Activation
-    const gameIdInput = document.getElementById("game-id-input");
-    const submitButton = document.querySelector("#game-id-slide .submit-button");
-    const gameIdError = document.getElementById("game-id-error");
-
-    gameIdInput.addEventListener("input", function() {
-        if (/^\d{8}$/.test(gameIdInput.value)) {
-            gameIdError.textContent = "";
-            submitButton.disabled = false;
-        } else {
-            gameIdError.textContent = "Please enter exactly 8 digits for your ID.";
-            submitButton.disabled = true;
-        }
-    });
+// Add event listeners for the rank (tier) slide "Next" buttons to direct to separate wins slides.
+document.querySelector("#survivor-tier-slide .next-button").addEventListener("click", () => {
+    goToSlide(10); // Go to the Survivor Wins slide
+    document.getElementById("survivor-wins-question").textContent = `How many times have you won with ${selectedSurvivor}?`;
 });
+
+document.querySelector("#hunter-tier-slide .next-button").addEventListener("click", () => {
+    goToSlide(11); // Go to the Hunter Wins slide
+    document.getElementById("hunter-wins-question").textContent = `How many times have you won with ${selectedHunter}?`;
+});
+
+document.querySelector("#both-tier-slide .next-button").addEventListener("click", () => {
+    goToSlide(12); // Go to the Both Wins slide
+    document.getElementById("both-survivor-wins-question").textContent = `How many times have you won with ${selectedSurvivor}?`;
+    document.getElementById("both-hunter-wins-question").textContent = `How many times have you won with ${selectedHunter}?`;
+});
+
+
+// Wins Slide Validation for Survivor, Hunter, and Both Factions
+function setupWinsValidation(inputId, errorId, nextButtonSelector, isBoth = false) {
+    const input = document.getElementById(inputId);
+    const errorMessage = document.getElementById(errorId);
+    const nextButton = document.querySelector(nextButtonSelector);
+    let winsValue = 0;
+
+    nextButton.disabled = true; // Disable button by default
+
+    input.addEventListener("input", () => {
+        winsValue = parseInt(input.value, 10) || 0; // Set to 0 if input is invalid
+
+        // Check if the wins value is valid (100 or more)
+        const isValidWins = (value) => value >= 100;
+
+        if (isBoth) {
+            // For Both factions: Check both Survivor and Hunter wins inputs
+            const otherInputId = inputId.includes("survivor") ? "both-hunter-wins-input" : "both-survivor-wins-input";
+            const otherInput = document.getElementById(otherInputId);
+            const otherWinsValue = parseInt(otherInput.value, 10) || 0; // Set to 0 if input is invalid
+            const otherValid = isValidWins(otherWinsValue);
+
+            // Enable button only if both selections are valid
+            const validBoth = isValidWins(winsValue) && otherValid;
+            errorMessage.textContent = validBoth ? "" : "Please ensure both wins are 100 or more for both factions.";
+            nextButton.disabled = !validBoth;
+        } else {
+            // Single faction validation (Survivor or Hunter)
+            const isValid = isValidWins(winsValue);
+            errorMessage.textContent = isValid ? "" : "Wins must be 100 or more.";
+            nextButton.disabled = !isValid;
+        }
+    });
+}
+
+// Set up validation for each wins slide
+setupWinsValidation("survivor-wins-input", "survivor-wins-error", "#survivor-wins-slide .next-button");
+setupWinsValidation("hunter-wins-input", "hunter-wins-error", "#hunter-wins-slide .next-button");
+setupWinsValidation("both-survivor-wins-input", "both-survivor-wins-error", "#both-wins-slide .next-button", true);
+setupWinsValidation("both-hunter-wins-input", "both-hunter-wins-error", "#both-wins-slide .next-button", true);
+
+// Add event listeners for the Wins slide "Next" buttons to direct to the Game ID slide.
+document.querySelector("#survivor-wins-slide .next-button").addEventListener("click", () => goToSlide(13)); // Go to Game ID slide
+document.querySelector("#hunter-wins-slide .next-button").addEventListener("click", () => goToSlide(13)); // Go to Game ID slide
+document.querySelector("#both-wins-slide .next-button").addEventListener("click", () => goToSlide(13)); // Go to Game ID slide
+
+
+
+// Function to enable the submit button if the Game ID is valid
+gameIdInput.addEventListener("input", function() {
+    if (/^\d{8}$/.test(gameIdInput.value)) {
+        gameIdError.textContent = "";
+        submitButton.disabled = false; // Enable submit button
+    } else {
+        gameIdError.textContent = "Please enter exactly 8 digits for your ID.";
+        submitButton.disabled = true; // Disable submit button if input is invalid
+    }
+});
+
+// Prevent form submission if submit button is still disabled
+submitButton.addEventListener("click", function(event) {
+    if (submitButton.disabled) {
+        event.preventDefault(); // Stop form submission if submit button is disabled
+    }
+});
+
+// Ensure form includes necessary Netlify attributes (optional but recommended for redundancy)
+const formElement = document.querySelector("form");
+formElement.setAttribute("method", "POST");
+formElement.setAttribute("data-netlify", "true");
+});
+
+function toggleRequiredFields(slideIndex) {
+    // Remove required attribute from all fields
+    document.querySelectorAll("input, select").forEach(field => {
+        field.removeAttribute("required");
+    });
+
+    // Add required attribute to fields in the current slide
+    formSlides[slideIndex].querySelectorAll("input, select").forEach(field => {
+        field.setAttribute("required", "required");
+    });
+}
+
+// Call toggleRequiredFields() whenever you change slides
+function goToSlide(slideIndex) {
+    formSlides[currentSlide].classList.remove("active");
+    currentSlide = slideIndex;
+    formSlides[currentSlide].classList.add("active");
+
+    // Toggle required attributes based on the active slide
+    toggleRequiredFields(slideIndex);
+
+    // Update progress bar if needed
+    updateProgressBar();
+}
+
+// Initial setup for the first slide
+toggleRequiredFields(0);
