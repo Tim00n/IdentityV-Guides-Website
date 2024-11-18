@@ -1,0 +1,249 @@
+.contact-form-wrapper {
+    background: #313336;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    margin: 40px auto;
+    color: #ffffff;
+    text-align: center;
+}
+
+.slider-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-slide {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-slide.active {
+    display: flex;
+}
+
+.info-text {
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: left;
+    max-width: 400px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.checkbox-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+    user-select: none;
+    padding-left: 30px;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #1a1a1a;
+    border: 2px solid #3a86ff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #3a86ff;
+}
+
+.checkbox-container input:checked ~ .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+label {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #494b4d;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.next-button, .submit-button {
+    background-color: #313336;
+    color: #ffffff;
+    font-size: 1em;
+    padding: 0.8em 1.2em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+}
+
+.next-button:hover, .submit-button:hover {
+    background-color: #494b4d;
+    transform: translateY(-3px);
+}
+
+.next-button:disabled, .submit-button:disabled {
+    background-color: #494b4d;
+    color: #9a9a9a;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.dropdown-selected {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #494b4d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown-selected img {
+    width: 20px; /* Ensure consistent size */
+    height: 20px;
+    margin-right: 8px;
+}
+
+.dropdown-selected::after {
+    content: '\25BC'; /* Down arrow */
+    font-size: 12px;
+    color: #ffffff;
+    margin-left: 10px;
+}
+
+.dropdown-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    border: 1px solid #494b4d;
+    border-radius: 5px;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.dropdown-option {
+    padding: 10px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdown-option img {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.dropdown-option:hover {
+    background-color: #494b4d;
+}
+
+.custom-dropdown.active .dropdown-options {
+    display: block;
+}
+
+/* Styles for the 8-digit input field */
+#digit-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #494b4d;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Error message styling */
+.error-message {
+    color: #ff5252; /* Error red color */
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Progress bar styling (already added) */
+.progress-bar-wrapper {
+    width: 100%;
+    background-color: #494b4d;
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: #3a86ff; /* Blueish color */
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Adjusted input fields for all numerical inputs (Wins, Game ID, etc.) to match dropdown size */
+.numerical-input {
+    width: calc(100% - 20px); /* Adjust to fit inside container with padding */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #494b4d;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    max-width: 280px; /* Same width as dropdown */
+    margin: 0 auto; /* Center align */
+}
+
+

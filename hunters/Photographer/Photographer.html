@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../home.css">
+    <link rel="stylesheet" href="../../hunter.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=Rubik+80s+Fade&family=Rubik+Dirt&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">    <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/assets/WebsiteIcon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <title>Photographer</title>
+
+<body>
+
+<header>
+    <h1>
+
+    </h1>
+    <nav>
+      <!-- Home icon -->
+      <button class="button" onclick="window.open('../../index.html', '_blank')">
+          <i class="fas fa-home"></i>
+      </button>
+  
+      <!-- About icon -->
+      <button class="button" onclick="window.open('../../about.html', '_blank')">
+          <i class="fas fa-info-circle"></i>
+      </button>
+
+  </nav>
+  </nav>
+</header>
+
+<div class="content-wrapper">
+  <div class="toc">  
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#classification">Classification and Type</a></li>
+      <li><a href="#traits">External Traits and Abilities</a></li>
+      <li><a href="#persona-web">Persona Webs and Traits</a></li>
+      <li><a href="#map-viability">Map Viability</a></li>
+       <li><a href="#gameplay">Gameplay</a></li>
+      <li><a href="#bans-counters">Bans and Counters</a></li>
+      <li><a href="#additional-resources">Additional Resources</a></li>
+    </ul>
+  </div>
+
+  <div class="content-area">
+
+    <h2>Photographer Rank Guide</h2>
+              <!-- Centered Image Link -->
+              <div class="image-container">
+                <img src="./assets/Photographer.png" alt="Undead Chart">
+            </a>
+        </div>
+
+        <h2 id="classification">Classification and Type</h2>
+
+        <p>With a difficulty of 2.5/3, Photographer, or Joseph, is one of the 30 available hunters. He has a heavy control aspect and leans more on the complex side due to his strict kit of slowing decoding down and keeping survivors constantly injured. 
+          </p>
+
+    <div class="image-container">
+        <img src="./assets/Jojo Classification.png" alt="Jojo Classification">
+    </div>
+
+    <p>  His chase is incredibly weak and is slower than the average hunter. As for his chair camping, he does not have much (especially early game) to heavily prevent a rescue. Due to this, he is not beginner friendly and requires moderate to advanced hunter tactics. However, he does have a quicker attack recovery that nearly covers a full 180° in front.</p>
+
+    <h2 id="traits">External Traits and Abilities</h2>
+
+    <p>Joseph’s main trait is the camera world, which he can set up through cameras placed across the map. 
+        Once a picture has been taken and the world is set up, everything is considered frozen in place except for him and the survivors who enter. 
+       </p>
+
+    <div class="image-container">
+        <img src="./assets/Camera World.png" alt="Camera World">
+    </div>
+
+    <p> Joseph can deal damage through the camera world and when the camera world ends, half the damage will be inflicted in the real world. 
+        As for the decoding, the cipher progress between the real and camera world average out, usually cutting back and slowing down decoding.
+         Considering his extremely poor chase, Camera World can be seen as a substitute, since clones can't kite him.</p>
+    <div class="image-container">
+        <img src="./assets/Spacetime.png" alt="Spacetime">
+    </div>
+    <p>Joseph is one of two hunters who deal more damage with their hits. Instead of the Survivor being at half health after one hit, the survivor will be at 3/4.</p>
+    <div class="image-container">
+        <img src="./assets/Recorded Moment.png" alt="Recorded Moment">
+    </div>
+    <p>Joseph’s first presence allows him to switch between the camera world and real world without needing to walk through a camera. The camera world must be up for this ability to be active.</p>
+    <div class="image-container">
+        <img src="./assets/Time Jump.png" alt="Time Jump">
+    </div>
+    <p>Joseph’s second presence gives him a better chance during a chase. Upon unlocking it, Joseph’s last 15 seconds worth of steps are recorded and by holding his card trick ability, he can go back to one of the marked moments. It's crucial Joseph gets this unlocked as soon as possible because it gives him a better chance in a chase while also being able to pressure.</p>
+
+    <h2 id="persona-web">Persona Webs and Traits</h2>
+
+    <p>Most Josephs typically run an up-right build like this to give him a better performance in game
+        overall. Typically, I always invest in Berserker while the comp and map decide the rest. For when
+        there’s a doctor on the team, I take one Impact and for harassers typically Rage, Desperate Fight
+        and Addiction. If there’s more than one decoder, I’ll usually invest in max Berserker. For Traits, usually start off on Blink and typically switch
+        to Teleport later in the game.</p>
+
+    <div class="persona-wrapper">
+        <div class="circle-container">
+            <!-- Center circle -->
+            <div id="c0a" class="sphere empty"></div>
+    
+            <!-- North Branch -->
+            <div id="n1a" class="sphere talent-deteriorate active">
+                <span class="tooltip-text">Deteriorate</span>
+                <div class="large-tooltip">
+                    <p><strong>Deteriorate</strong></p>
+                    <p>Reduces wounded survivors' decoding, healing, and destroying speed by 5%.</p>
+                </div>
+            </div>
+            <div id="n2a" class="sphere talent-panic active">
+                <span class="tooltip-text">Panic</span>
+                <div class="large-tooltip">
+                    <p><strong>Panic</strong></p>
+                    <p>When a survivor is wounded, decoding, healing, and destroying speed for all survivors is reduced by 3%.</p>
+                </div>
+            </div>
+            <div id="n3a" class="sphere talent-rage deactivated">
+                <span class="tooltip-text">Rage</span>
+                <div class="large-tooltip">
+                    <p><strong>Rage</strong></p>
+                    <p>This "Iron-blood" trait increases the Hunter's recovery speed by 10%/15%/20% after being stunned, when a Survivor struggles free, or after being affected by a powerful control effect.</p>
+                </div>
+            </div>
+            <div id="n4a" class="sphere talent-berserker active">
+                <span class="tooltip-text">Berserker</span>
+                <div class="large-tooltip">
+                    <p><strong>Berserker</strong></p>
+                    <p>Attack recovery speed is increased by 15%/20%/25% when a Survivor is placed on a rocket chair.</p>
+                </div>
+            </div>
+            <div id="n5a" class="sphere talent-nostalgic active">
+                <span class="tooltip-text">Nostalgic</span>
+                <div class="large-tooltip">
+                    <p><strong>Nostalgic</strong></p>
+                    <p>Reveals a Survivor's location after they are rescued from a Rocket Chair within 24 meters of you. Increases your Movement Speed moving towards the Survivor's direction based on the distance to the Survivor by up to 10% for 12 seconds when the Survivor is more than 12 meters away.</p>
+                    <p>If the Survivor takes damage equal to a knockdown during this period, the effect will end in advance. The Talent loses effect once a Survivor is eliminated.</p>
+                </div>
+            </div>
+            <div id="n6a" class="sphere talent-mischievous active">
+                <span class="tooltip-text">Mischievous</span>
+                <div class="large-tooltip">
+                    <p><strong>Mischievous</strong></p>
+                    <p>Increases Ballooning Speed by 20%.</p>
+                </div>
+            </div>
+            <div id="n7a" class="sphere talent-wither active">
+                <span class="tooltip-text">Wither</span>
+                <div class="large-tooltip">
+                    <p><strong>Wither</strong></p>
+                    <p>When a Survivor is placed on a Rocket Chair and the Hunter is 10 meters away, the Hunter's normal attacks will reduce Survivor's acceleration effect by 15%/25%/35%.</p>
+                </div>
+            </div>
+            <div id="n8a" class="sphere talent-destructiveness active">
+                <span class="tooltip-text">Destructiveness</span>
+                <div class="large-tooltip">
+                    <p><strong>Destructiveness</strong></p>
+                    <p>Pallet destroying speed is increased by 20%/30%/40%.</p>
+                </div>
+            </div>
+            <div id="n9a" class="sphere talent-confinedspace deactivated">
+                <span class="tooltip-text">Confined Space</span>
+                <div class="large-tooltip">
+                    <p><strong>Confined Space</strong></p>
+                    <p>When vaulting over windows, the Hunter can block the window for 20 seconds, preventing Survivors from vaulting over the window. The Hunter can vault over the window again to unblock the window.</p>
+                </div>
+            </div>
+    
+            <!-- East Branch -->
+            <div id="e1a" class="sphere talent-constrain active">
+                <span class="tooltip-text">Constrain</span>
+                <div class="large-tooltip">
+                    <p><strong>Constrain</strong></p>
+                    <p>The Cipher Machine farthest away from you at the start of the game cannot be decoded for 40 seconds.</p>
+                </div>
+            </div>
+            <div id="e2a" class="sphere talent-announcement deactivated">
+                <span class="tooltip-text">Announcement</span>
+                <div class="large-tooltip">
+                    <p><strong>Announcement</strong></p>
+                    <p>Survivors are highlighted for 5 seconds when the exit gate is activated.</p>
+                </div>
+            </div>
+            <div id="e3a" class="sphere talent-wantedorder deactivated">
+                <span class="tooltip-text">Wanted Order</span>
+                <div class="large-tooltip">
+                    <p><strong>Wanted Order</strong></p>
+                    <p>When a Survivor is placed on a Rocket Chair and the remaining 3 Survivors are healthy or injured, the outline of a random Survivor will be shown and the Movement Speed is reduced by 4%/2%/0%. The debuff will disappear when the Survivor on the Rocket Chair has been rescued, but the outline will last for another 20 seconds.</p>
+                </div>
+            </div>
+            <div id="e4a" class="sphere talent-impact deactivated">
+                <span class="tooltip-text">Impact</span>
+                <div class="large-tooltip">
+                    <p><strong>Impact</strong></p>
+                    <p>Self-healing time for injured Survivors after being hit by a Normal Attack (not including being knocked down) has been increased by 15%/20%/25%.</p>
+                </div>
+            </div>
+            <div id="e5a" class="sphere talent-desperatefight deactivated">
+                <span class="tooltip-text">Desperate Fight</span>
+                <div class="large-tooltip">
+                    <p><strong>Desperate Fight</strong></p>
+                    <p>Being stunned or affected by a powerful control effect twice in 15 seconds increases recovery speed from the effect by 20% for up to 60%.</p>
+                </div>
+            </div>
+            <div id="e6a" class="sphere talent-addiction deactivated">
+                <span class="tooltip-text">Addiction</span>
+                <div class="large-tooltip">
+                    <p><strong>Addiction</strong></p>
+                    <p>When 2/3/4 free-moving Survivors are within 24 meters of you, your Recovery Speed from Stuns and other powerful control effects is increased by 15%/20%/25%. Reduces the slowdown effect by 10%/15%/20%.</p>
+                </div>
+            </div>
+            <div id="e7a" class="sphere talent-hunterinstinct active">
+                <span class="tooltip-text">Hunter's Instinct</span>
+                <div class="large-tooltip">
+                    <p><strong>Hunter's Instinct</strong></p>
+                    <p>Each uninjured survivor will increase the Hunter's Movement Speed when not in pursuit by 1%/1.5%/2%. Once Tier I Skill is unlocked, it will no longer increase the Hunter's Movement Speed.</p>
+                </div>
+            </div>
+            <div id="e8a" class="sphere talent-hospitable active">
+                <span class="tooltip-text">Hospitable</span>
+                <div class="large-tooltip">
+                    <p><strong>Hospitable</strong></p>
+                    <p>Movement Speed is increased by 4%/6%/8% when balloons are tied to Survivors.</p>
+                </div>
+            </div>
+            <div id="e9a" class="sphere talent-trumpcard active">
+                <span class="tooltip-text">Trump Card</span>
+                <div class="large-tooltip">
+                    <p><strong>Trump Card</strong></p>
+                    <p>Players can change their secondary skills after the battle has started for 120 seconds. The cooldown is refreshed in proportion and can only be changed once.</p>
+                </div>
+            </div>
+    
+            <!-- South Branch -->
+            <div id="s1a" class="sphere talent-inertia active">
+                <span class="tooltip-text">Inertia</span>
+                <div class="large-tooltip">
+                    <p><strong>Inertia</strong></p>
+                    <p>Increases attack recovery speed by 10%.</p>
+                </div>
+            </div>
+            <div id="s2a" class="sphere talent-quenchingeffect deactivated">
+                <span class="tooltip-text">Quenching Effect</span>
+                <div class="large-tooltip">
+                    <p><strong>Quenching Effect</strong></p>
+                    <p>Within the first 50s of a match, if the Hunter's presence is not obtained through means other than Insolence, all of the Survivors' outlines will be shown for 5s.</p>
+                </div>
+            </div>
+            <div id="s3a" class="sphere talent-sadist deactivated">
+                <span class="tooltip-text">Sadist</span>
+                <div class="large-tooltip">
+                    <p><strong>Sadist</strong></p>
+                    <p>Speeds up the rocket chair's countdown by 3%/6%/9%.</p>
+                </div>
+            </div>
+            <div id="s4a" class="sphere talent-giantclaw deactivated">
+                <span class="tooltip-text">Giant Claw</span>
+                <div class="large-tooltip">
+                    <p><strong>Giant Claw</strong></p>
+                    <p>The struggling effect by survivors tied to balloons is reduced by 25%/50%/75% and struggling speed by 5%/10%/15%.</p>
+                </div>
+            </div>
+            <div id="s5a" class="sphere talent-nosurvivors active">
+                <span class="tooltip-text">No Survivors</span>
+                <div class="large-tooltip">
+                    <p><strong>No Survivors</strong></p>
+                    <p>While within 25 meters of a knocked down Survivor, each free-moving Survivor will increase the Hunter's attack recovery speed by 8%, stacking up to 3 times.</p>
+                </div>
+            </div>
+            <div id="s6a" class="sphere talent-impulsive deactivated">
+                <span class="tooltip-text">Impulsive</span>
+                <div class="large-tooltip">
+                    <p><strong>Impulsive</strong></p>
+                    <p>Increases Movement Speed by 8% when using Charged Attack. Cooldown: 5 seconds.</p>
+                </div>
+            </div>
+            <div id="s7a" class="sphere talent-mock deactivated">
+                <span class="tooltip-text">Mock</span>
+                <div class="large-tooltip">
+                    <p><strong>Mock</strong></p>
+                    <p>Movement speed is increased by 3%/4%/5% when a survivor is placed on a rocket chair.</p>
+                </div>
+            </div>
+            <div id="s8a" class="sphere talent-carnival deactivated">
+                <span class="tooltip-text">Carnival</span>
+                <div class="large-tooltip">
+                    <p><strong>Carnival</strong></p>
+                    <p>Gains 5%/7%/10% Attack Recovery Speed and 3%/4%/5% Movement Speed when the Exit Gate is activated. The effect lasts for 120 seconds.</p>
+                </div>
+            </div>
+            <div id="s9a" class="sphere talent-detention deactivated">
+                <span class="tooltip-text">Detention</span>
+                <div class="large-tooltip">
+                    <p><strong>Detention</strong></p>
+                    <p>Increases Strength upon activating the Exit Gate. Normal attacks deal an additional instance of normal attack damage against Survivors for the next 120 seconds.</p>
+                </div>
+            </div>
+    
+            <!-- West Branch -->
+            <div id="w1a" class="sphere talent-deerhunt active">
+                <span class="tooltip-text">Deer Hunt</span>
+                <div class="large-tooltip">
+                    <p><strong>Deer Hunt</strong></p>
+                    <p>Displays incapacitated survivors within 18 meters.</p>
+                </div>
+            </div>
+            <div id="w2a" class="sphere talent-exhibitionist deactivated">
+                <span class="tooltip-text">Exhibitionist</span>
+                <div class="large-tooltip">
+                    <p><strong>Exhibitionist</strong></p>
+                    <p>Increases Attack Recovery Speed by 10% after missing an attack. The effect is increased by an additional 15% (up to 40%) for every 1 free-moving survivor within 24 meters of you. This effect ends when a Survivor is tied to a Rocket Chair.</p>
+                </div>
+            </div>
+            <div id="w3a" class="sphere talent-hunt deactivated">
+                <span class="tooltip-text">Hunt</span>
+                <div class="large-tooltip">
+                    <p><strong>Hunt</strong></p>
+                    <p>Receives 10% Movement Speed after pursuing a Survivor for 12/10/8 seconds. The speed boost ends when the pursuit fails, interacting, attacking, using abilities, or affected by a control ability.</p>
+                </div>
+            </div>
+            <div id="w4a" class="sphere talent-streetsweeper deactivated">
+                <span class="tooltip-text">Street Sweeper</span>
+                <div class="large-tooltip">
+                    <p><strong>Street Sweeper</strong></p>
+                    <p>Displays survivors who are healing or being healed within 20/26/32 meters of your location.</p>
+                </div>
+            </div>
+            <div id="w5a" class="sphere talent-controlfreak deactivated">
+                <span class="tooltip-text">Control Freak</span>
+                <div class="large-tooltip">
+                    <p><strong>Control Freak</strong></p>
+                    <p>Movement speed is increased by 10% for 3 seconds after a natural vertical descent from a height. Cooldown: 16 seconds.</p>
+                </div>
+            </div>
+            <div id="w6a" class="sphere talent-claustrophobia deactivated">
+                <span class="tooltip-text">Claustrophobia</span>
+                <div class="large-tooltip">
+                    <p><strong>Claustrophobia</strong></p>
+                    <p>If there are four active Survivors (Survivors that are tied to Rocket Chair/balloons or knocked down are considered non-active) within 20 seconds after the Exit Gate has been activated, it opens 70% slower.</p>
+                </div>
+            </div>
+            <div id="w7a" class="sphere talent-tolerance deactivated">
+                <span class="tooltip-text">Tolerance</span>
+                <div class="large-tooltip">
+                    <p><strong>Tolerance</strong></p>
+                    <p>Impressive tolerance reduces the knockback effect inflicted on the Hunter by 8%/16%/24% and slowdown effect by 12%/18%/24%.</p>
+                </div>
+            </div>
+            <div id="w8a" class="sphere talent-aftereffects deactivated">
+                <span class="tooltip-text">After Effects</span>
+                <div class="large-tooltip">
+                    <p><strong>After Effects</strong></p>
+                    <p>Reduces the self-healing limit of incapacitated survivors by 10%/20%/30%.</p>
+                </div>
+            </div>
+            <div id="w9a" class="sphere talent-insolence deactivated">
+                <span class="tooltip-text">Insolence</span>
+                <div class="large-tooltip">
+                    <p><strong>Insolence</strong></p>
+                    <p>Hunters will receive up to 1000 Presence at the start of the match, and the rate of increase will gradually slow down after Tier I abilities are unlocked.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+      <script src="../../personadynamic.js" defer></script> 
+
+    <p>If you’re new to Joseph and want to understand how his kit works in a match, taking Detention
+        can secure a Tie or possibly make a Tie a Win depending on how well it’s played. I wouldn’t get
+        too used to Joseph with Detention, because he’s extremely weak and it’s better off if
+        you learn how to play him with an up-right build from the start. Sometimes on bigger maps with
+        really good teams, I take Detention just to secure a Tie. Again, start with Blink then switch to
+        Teleport late game.
+    Up-down builds with Teleport are okay for extra map control
+        but truthfully, Joseph relies on Blink a lot since his chase is non existent.</p>
+        <div class="persona-wrapper">
+          <div class="circle-container">
+              <!-- Center circle -->
+              <div id="c0b" class="sphere empty"></div>
+      
+              <!-- North Branch -->
+              <div id="n1b" class="sphere talent-deteriorate active">
+                  <span class="tooltip-text">Deteriorate</span>
+                  <div class="large-tooltip">
+                      <p><strong>Deteriorate</strong></p>
+                      <p>Reduces wounded survivors' decoding, healing, and destroying speed by 5%.</p>
+                  </div>
+              </div>
+              <div id="n2b" class="sphere talent-panic active">
+                  <span class="tooltip-text">Panic</span>
+                  <div class="large-tooltip">
+                      <p><strong>Panic</strong></p>
+                      <p>When a survivor is wounded, decoding, healing, and destroying speed for all survivors is reduced by 3%.</p>
+                  </div>
+              </div>
+              <div id="n3b" class="sphere talent-rage deactivated">
+                  <span class="tooltip-text">Rage</span>
+                  <div class="large-tooltip">
+                      <p><strong>Rage</strong></p>
+                      <p>This "Iron-blood" trait increases the Hunter's recovery speed by 10%/15%/20% after being stunned, when a Survivor struggles free, or after being affected by a powerful control effect.</p>
+                  </div>
+              </div>
+              <div id="n4b" class="sphere talent-berserker active">
+                  <span class="tooltip-text">Berserker</span>
+                  <div class="large-tooltip">
+                      <p><strong>Berserker</strong></p>
+                      <p>Attack recovery speed is increased by 15%/20%/25% when a Survivor is placed on a rocket chair.</p>
+                  </div>
+              </div>
+              <div id="n5b" class="sphere talent-nostalgic deactivated">
+                  <span class="tooltip-text">Nostalgic</span>
+                  <div class="large-tooltip">
+                      <p><strong>Nostalgic</strong></p>
+                      <p>Reveals a Survivor's location after they are rescued from a Rocket Chair within 24 meters of you. Increases your Movement Speed moving towards the Survivor's direction based on the distance to the Survivor by up to 10% for 12 seconds when the Survivor is more than 12 meters away.</p>
+                      <p>If the Survivor takes damage equal to a knockdown during this period, the effect will end in advance. The Talent loses effect once a Survivor is eliminated.</p>
+                  </div>
+              </div>
+              <div id="n6b" class="sphere talent-mischievous deactivated">
+                  <span class="tooltip-text">Mischievous</span>
+                  <div class="large-tooltip">
+                      <p><strong>Mischievous</strong></p>
+                      <p>Increases Ballooning Speed by 20%.</p>
+                  </div>
+              </div>
+              <div id="n7b" class="sphere talent-wither deactivated">
+                  <span class="tooltip-text">Wither</span>
+                  <div class="large-tooltip">
+                      <p><strong>Wither</strong></p>
+                      <p>When a Survivor is placed on a Rocket Chair and the Hunter is 10 meters away, the Hunter's normal attacks will reduce Survivor's acceleration effect by 15%/25%/35%.</p>
+                  </div>
+              </div>
+              <div id="n8b" class="sphere talent-destructiveness deactivated">
+                  <span class="tooltip-text">Destructiveness</span>
+                  <div class="large-tooltip">
+                      <p><strong>Destructiveness</strong></p>
+                      <p>Pallet destroying speed is increased by 20%/30%/40%.</p>
+                  </div>
+              </div>
+              <div id="n9b" class="sphere talent-confinedspace deactivated">
+                  <span class="tooltip-text">Confined Space</span>
+                  <div class="large-tooltip">
+                      <p><strong>Confined Space</strong></p>
+                      <p>When vaulting over windows, the Hunter can block the window for 20 seconds, preventing Survivors from vaulting over the window. The Hunter can vault over the window again to unblock the window.</p>
+                  </div>
+              </div>
+      
+              <!-- East Branch -->
+              <div id="e1b" class="sphere talent-constrain active">
+                  <span class="tooltip-text">Constrain</span>
+                  <div class="large-tooltip">
+                      <p><strong>Constrain</strong></p>
+                      <p>The Cipher Machine farthest away from you at the start of the game cannot be decoded for 40 seconds.</p>
+                  </div>
+              </div>
+              <div id="e2b" class="sphere talent-announcement active">
+                  <span class="tooltip-text">Announcement</span>
+                  <div class="large-tooltip">
+                      <p><strong>Announcement</strong></p>
+                      <p>Survivors are highlighted for 5 seconds when the exit gate is activated.</p>
+                  </div>
+              </div>
+              <div id="e3b" class="sphere talent-wantedorder deactivated">
+                  <span class="tooltip-text">Wanted Order</span>
+                  <div class="large-tooltip">
+                      <p><strong>Wanted Order</strong></p>
+                      <p>When a Survivor is placed on a Rocket Chair and the remaining 3 Survivors are healthy or injured, the outline of a random Survivor will be shown and the Movement Speed is reduced by 4%/2%/0%. The debuff will disappear when the Survivor on the Rocket Chair has been rescued, but the outline will last for another 20 seconds.</p>
+                  </div>
+              </div>
+              <div id="e4b" class="sphere talent-impact deactivated">
+                  <span class="tooltip-text">Impact</span>
+                  <div class="large-tooltip">
+                      <p><strong>Impact</strong></p>
+                      <p>Self-healing time for injured Survivors after being hit by a Normal Attack (not including being knocked down) has been increased by 15%/20%/25%.</p>
+                  </div>
+              </div>
+              <div id="e5b" class="sphere talent-desperatefight deactivated">
+                  <span class="tooltip-text">Desperate Fight</span>
+                  <div class="large-tooltip">
+                      <p><strong>Desperate Fight</strong></p>
+                      <p>Being stunned or affected by a powerful control effect twice in 15 seconds increases recovery speed from the effect by 20% for up to 60%.</p>
+                  </div>
+              </div>
+              <div id="e6b" class="sphere talent-addiction deactivated">
+                  <span class="tooltip-text">Addiction</span>
+                  <div class="large-tooltip">
+                      <p><strong>Addiction</strong></p>
+                      <p>When 2/3/4 free-moving Survivors are within 24 meters of you, your Recovery Speed from Stuns and other powerful control effects is increased by 15%/20%/25%. Reduces the slowdown effect by 10%/15%/20%.</p>
+                  </div>
+              </div>
+              <div id="e7b" class="sphere talent-hunterinstinct active">
+                  <span class="tooltip-text">Hunter's Instinct</span>
+                  <div class="large-tooltip">
+                      <p><strong>Hunter's Instinct</strong></p>
+                      <p>Each uninjured survivor will increase the Hunter's Movement Speed when not in pursuit by 1%/1.5%/2%. Once Tier I Skill is unlocked, it will no longer increase the Hunter's Movement Speed.</p>
+                  </div>
+              </div>
+              <div id="e8b" class="sphere talent-hospitable active">
+                  <span class="tooltip-text">Hospitable</span>
+                  <div class="large-tooltip">
+                      <p><strong>Hospitable</strong></p>
+                      <p>Movement Speed is increased by 4%/6%/8% when balloons are tied to Survivors.</p>
+                  </div>
+              </div>
+              <div id="e9b" class="sphere talent-trumpcard active">
+                  <span class="tooltip-text">Trump Card</span>
+                  <div class="large-tooltip">
+                      <p><strong>Trump Card</strong></p>
+                      <p>Players can change their secondary skills after the battle has started for 120 seconds. The cooldown is refreshed in proportion and can only be changed once.</p>
+                  </div>
+              </div>
+      
+              <!-- South Branch -->
+              <div id="s1b" class="sphere talent-inertia active">
+                  <span class="tooltip-text">Inertia</span>
+                  <div class="large-tooltip">
+                      <p><strong>Inertia</strong></p>
+                      <p>Increases attack recovery speed by 10%.</p>
+                  </div>
+              </div>
+              <div id="s2b" class="sphere talent-quenchingeffect deactivated">
+                  <span class="tooltip-text">Quenching Effect</span>
+                  <div class="large-tooltip">
+                      <p><strong>Quenching Effect</strong></p>
+                      <p>Within the first 50s of a match, if the Hunter's presence is not obtained through means other than Insolence, all of the Survivors' outlines will be shown for 5s.</p>
+                  </div>
+              </div>
+              <div id="s3b" class="sphere talent-sadist deactivated">
+                  <span class="tooltip-text">Sadist</span>
+                  <div class="large-tooltip">
+                      <p><strong>Sadist</strong></p>
+                      <p>Speeds up the rocket chair's countdown by 3%/6%/9%.</p>
+                  </div>
+              </div>
+              <div id="s4b" class="sphere talent-giantclaw deactivated">
+                  <span class="tooltip-text">Giant Claw</span>
+                  <div class="large-tooltip">
+                      <p><strong>Giant Claw</strong></p>
+                      <p>The struggling effect by survivors tied to balloons is reduced by 25%/50%/75% and struggling speed by 5%/10%/15%.</p>
+                  </div>
+              </div>
+              <div id="s5b" class="sphere talent-nosurvivors active">
+                  <span class="tooltip-text">No Survivors</span>
+                  <div class="large-tooltip">
+                      <p><strong>No Survivors</strong></p>
+                      <p>While within 25 meters of a knocked down Survivor, each free-moving Survivor will increase the Hunter's attack recovery speed by 8%, stacking up to 3 times.</p>
+                  </div>
+              </div>
+              <div id="s6b" class="sphere talent-impulsive deactivated">
+                  <span class="tooltip-text">Impulsive</span>
+                  <div class="large-tooltip">
+                      <p><strong>Impulsive</strong></p>
+                      <p>Increases Movement Speed by 8% when using Charged Attack. Cooldown: 5 seconds.</p>
+                  </div>
+              </div>
+              <div id="s7b" class="sphere talent-mock active">
+                  <span class="tooltip-text">Mock</span>
+                  <div class="large-tooltip">
+                      <p><strong>Mock</strong></p>
+                      <p>Movement speed is increased by 3%/4%/5% when a survivor is placed on a rocket chair.</p>
+                  </div>
+              </div>
+              <div id="s8b" class="sphere talent-carnival active">
+                  <span class="tooltip-text">Carnival</span>
+                  <div class="large-tooltip">
+                      <p><strong>Carnival</strong></p>
+                      <p>Gains 5%/7%/10% Attack Recovery Speed and 3%/4%/5% Movement Speed when the Exit Gate is activated. The effect lasts for 120 seconds.</p>
+                  </div>
+              </div>
+              <div id="s9b" class="sphere talent-detention active">
+                  <span class="tooltip-text">Detention</span>
+                  <div class="large-tooltip">
+                      <p><strong>Detention</strong></p>
+                      <p>Increases Strength upon activating the Exit Gate. Normal attacks deal an additional instance of normal attack damage against Survivors for the next 120 seconds.</p>
+                  </div>
+              </div>
+      
+              <!-- West Branch -->
+              <div id="w1b" class="sphere talent-deerhunt active">
+                  <span class="tooltip-text">Deer Hunt</span>
+                  <div class="large-tooltip">
+                      <p><strong>Deer Hunt</strong></p>
+                      <p>Displays incapacitated survivors within 18 meters.</p>
+                  </div>
+              </div>
+              <div id="w2b" class="sphere talent-exhibitionist deactivated">
+                  <span class="tooltip-text">Exhibitionist</span>
+                  <div class="large-tooltip">
+                      <p><strong>Exhibitionist</strong></p>
+                      <p>Increases Attack Recovery Speed by 10% after missing an attack. The effect is increased by an additional 15% (up to 40%) for every 1 free-moving survivor within 24 meters of you. This effect ends when a Survivor is tied to a Rocket Chair.</p>
+                  </div>
+              </div>
+              <div id="w3b" class="sphere talent-hunt deactivated">
+                  <span class="tooltip-text">Hunt</span>
+                  <div class="large-tooltip">
+                      <p><strong>Hunt</strong></p>
+                      <p>Receives 10% Movement Speed after pursuing a Survivor for 12/10/8 seconds. The speed boost ends when the pursuit fails, interacting, attacking, using abilities, or affected by a control ability.</p>
+                  </div>
+              </div>
+              <div id="w4b" class="sphere talent-streetsweeper deactivated">
+                  <span class="tooltip-text">Street Sweeper</span>
+                  <div class="large-tooltip">
+                      <p><strong>Street Sweeper</strong></p>
+                      <p>Displays survivors who are healing or being healed within 20/26/32 meters of your location.</p>
+                  </div>
+              </div>
+              <div id="w5b" class="sphere talent-controlfreak deactivated">
+                  <span class="tooltip-text">Control Freak</span>
+                  <div class="large-tooltip">
+                      <p><strong>Control Freak</strong></p>
+                      <p>Movement speed is increased by 10% for 3 seconds after a natural vertical descent from a height. Cooldown: 16 seconds.</p>
+                  </div>
+              </div>
+              <div id="w6b" class="sphere talent-claustrophobia deactivated">
+                  <span class="tooltip-text">Claustrophobia</span>
+                  <div class="large-tooltip">
+                      <p><strong>Claustrophobia</strong></p>
+                      <p>If there are four active Survivors (Survivors that are tied to Rocket Chair/balloons or knocked down are considered non-active) within 20 seconds after the Exit Gate has been activated, it opens 70% slower.</p>
+                  </div>
+              </div>
+              <div id="w7b" class="sphere talent-tolerance deactivated">
+                  <span class="tooltip-text">Tolerance</span>
+                  <div class="large-tooltip">
+                      <p><strong>Tolerance</strong></p>
+                      <p>Impressive tolerance reduces the knockback effect inflicted on the Hunter by 8%/16%/24% and slowdown effect by 12%/18%/24%.</p>
+                  </div>
+              </div>
+              <div id="w8b" class="sphere talent-aftereffects deactivated">
+                  <span class="tooltip-text">After Effects</span>
+                  <div class="large-tooltip">
+                      <p><strong>After Effects</strong></p>
+                      <p>Reduces the self-healing limit of incapacitated survivors by 10%/20%/30%.</p>
+                  </div>
+              </div>
+              <div id="w9b" class="sphere talent-insolence deactivated">
+                  <span class="tooltip-text">Insolence</span>
+                  <div class="large-tooltip">
+                      <p><strong>Insolence</strong></p>
+                      <p>Hunters will receive up to 1000 Presence at the start of the match, and the rate of increase will gradually slow down after Tier I abilities are unlocked.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      
+
+    <p>Traits Joseph shouldn't use:</p>
+
+    <ul>
+        <li>Listen</li>
+        <li>Abnormal</li>
+        <li>Peepers</li>
+        <li>Patroller</li>
+        <li>Warp</li>
+
+    </ul>
+
+    <h2 id="map-viability">Map Viability</h2>
+    <p>Strong maps:</p>
+    <ul>
+        <li>Red Church</li>
+        <li>Arms Factory</li>
+        <li>Eversleeping Town</li>
+        <li>Sacred Hospital</li>
+    </ul>
+    <p>Weak maps:</p>
+    <ul>
+        <li>Moonlit Park</li>
+        <li>Leo’s Memory</li>
+        <li>Chinatown</li>
+        <li>Lakeside Village</li>
+    </ul>
+
+    <p>For the sake of Joseph’s slow movements and nonexistent chase, smaller maps give him an
+        advantage in terms of mobility. Personally, I find Sacred Heart Hospital and Ever Sleeping Town tolerable, but that’s just my opinion. It’s important to know spawns and some camera locations. Keep in mind the nearest one gets highlighted so you don’t waste time finding survivors or cameras.</p>
+
+
+    <p>Joseph’s weak areas are two settings such as Big Boat, Hospital or Factory. It’s
+        really hard to get a quick down in these areas especially if the Survivor is full health and Joseph
+        doesn’t have full presence. If you find yourself in this case, camera ASAP or pressure and change
+        targets.</p>
+
+        <p>Fun fact: On Sacred Heart Hospital, the head of the statue turns to the nearest player. If you’re daring
+            enough, you can use it to try and figure out if a survivor is nearby in the real world from the
+            camera world.</p>
+
+    <h2>Red Church</h2>
+    <div class="image-container">
+        <img src="./assets/Red Church Route.png" alt="Red Church Route">
+    </div>
+
+<p>For this example, we see our team comp consisting of  Mercenary, Prisoner, Perfumer and Little Girl.
+    There’s a good chance the Decoder will always take a building spawn. In this case, I’d assume Shack since there’s a Mercenary and Perfumer
+    who have a chance of taking middle. Perfumer could’ve also chosen a kiting area like Wedding
+    or Graveyard but she took middle in this example. Little Girl is probably the random “doesn’t
+    make sense” spawn, because she’ll just teleport away. So as Joseph, spawn on the right in the
+    middle. Keep in mind that routes are never the same and have to be adapted to your current situation on the fly.</p>
+
+    <p>We see that the top right corner ended up being LG so she’ll probably TP away to Mercenary,
+        because of his slow decoding and distance. Use a camera and head over to Shack to
+        down the prisoner and carry his clone. From there, go into Church to find the Perfumer’s clone. It
+        depends on how confident you are and how smart the Perfumer is. You can either farm
+        presence or take the gamble of leaving her at instant knockdown. If the
+        Perfumer is smart, she might perfume before the camera ends so that way when the camera
+        damage is inflicted, she’ll perfume back to full hp. If you have enough time, definitely try getting
+        to Wedding since LG and Mercenary are probably there.</p>
+
+        <p>You might not get the hits in time and
+            prioritize Prisoner’s clone. When the camera ends, you can chose to go after the Perfumer (if
+            she wasn’t smart), the Prisoner (but he might be hiding and it’ll waste time) or if you got a hit on
+            LG and Merc, you can try going after them too.</p>
+
+    <h2>Arms Factory</h2>
+    <div class="image-container">
+        <img src="./assets/Arms Factory Route.png" alt="Arms Factory Route">
+    </div>
+<p>I don’t know why this one didn’t have the cameras illuminated but it’s really not an issue since
+    they’re highlighted in game regardless. This is more or less pick your poison, try and get the
+    bigger threats injured or downed.</p>
+    <h2>Eversleeping Town</h2>
+    <div class="image-container">
+        <img src="./assets/Eversleeping Town Route.png" alt="Eversleeping Town Route">
+    </div>
+<p>Again, more or less pick your poison or whoever is most convient to get clone damage. If there’s
+    a doctor or puppeteer, I’d knock the clones fully down that way you get to full presence quicker.</p>
+    
+    
+    <h2>Sacred Heart Hospital</h2>
+    <div class="image-container">
+        <img src="./assets/Sacred Hospital Route.png" alt="Eversleeping Town Route">
+    </div>
+<p>Go for the biggest threats first. This is just my guessing of a route solely based on spawns
+    really.</p>
+
+    <h2>Moonlit River Park</h2>
+    <div class="image-container">
+        <img src="./assets/Moonlit Park Route.png" alt="Eversleeping Town Route">
+    </div>
+<p>One of the bigger maps with really spread out spawns so this one is gonna be a rough camera
+    honestly. I’d go either direction but target the threats more for the first clone.</p>
+
+    <h2>Leo's Memory</h2>
+    <div class="image-container">
+        <img src="./assets/Leos Memory Route.png" alt="Eversleeping Town Route">
+    </div>
+<p>Just follow the arrows. Personally I never take Joseph on Leo’s just because it’s so bad.</p>
+
+<h2>Chinatown</h2>
+<div class="image-container">
+    <img src="./assets/Chinatown Route.png" alt="Eversleeping Town Route">
+</div>
+
+<p>Chinatown is also a pretty painful map for Joseph. Pick your poison and just take out threats or
+    at that point, whoever is most convenient</p>
+
+<h2>Lakeside Village</h2>
+<div class="image-container">
+    <img src="./assets/Lakeside Village Route.png" alt="Eversleeping Town Route">
+</div>
+<p>I wouldn’t go into boat especially without presence...</p>
+    
+    <h2 id="gameplay">Gameplay</h2>
+<p>For Joseph, you’ll always want to start off with a camera. Most the times, survivors hide upon
+    the realization of Photographer being played so it’s good to know common spots they tend to
+    hide in such as corners, pallets, tall grass, and behind or right next to objects. Check back on
+    replays and look where survivors are hiding. For players under Tier V, it’s heavily advised to
+    memorize spawns and plan out routes for him to farm clones. Joseph is heavily dependent on
+    his first camera because of his weak chase. If the first camera doesn’t go so well, don’t
+    panic.</p>
+
+    <p>Going back to the route, knock down the
+        first clone, pick them up and without chairing, continue to find other clones. If it is a small map or
+        a crowded area, you can potentially get two clones on chair. If things are spread out or it took a
+        while for the first clone, only hit the other clones once. Worst case, immediately chair the only
+        clone damaged than risk running out of camera time trying to find other clones. Unless there is a
+        doctor or puppeteer, this causes them to be at un-healable states, putting them at an instant
+        knockdown. If there is a Doctor or Puppeteer, personally I knock the clones down just for
+        Presence.</p>
+
+        <p>If a survivor’s clone is on chair and does not get rescued, the real world Survivor will be downed
+            and in most cases, the survivors will rotate heavily and hide in order for Joseph not to chair
+            them. If you can’t predict or figure out where the survivor has died off, you might have to start up
+            a chase. Hopefully, the survivors have some damage on them after the first camera, that way
+            when a chase opens, the Survivor is at an instant knockdown. If the first camera was really bad,
+            getting into a chase with a full health survivor will significantly kill
+            and waste time, allowing survivors to heal and decode.</p>
+
+        <p>When you unlock Joseph’s second presence, it's a much better advantage for him because he
+            can counter looping, pressure even better and if you’re running TP you can technically card trick
+            back.</p>
+
+    <video width="600" controls>
+        <source src="./assets/Joseph Card Trick TP clip.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <p>For a majority of the match, always take a picture whenever camera is up and don’t prioritize
+        chases in the real world. Try to pressure ciphers on chairs and mind game A LOT with survivors
+        because Joseph is pure manipulation and control. Try and always keep survivors damaged to
+        prevent rescues and slow decoding. It’s good to lock in on a target towards the end but for the
+        beginning, it’s more or less whoever is closest or whoever you won’t have a problem getting
+        down. On chair try and force rescues too to not kill time.</p>
+
+        <p>The more you practice Joseph, the more you’ll understand how survivors act when they
+            encounter him and you’ll eventually get an intuition just through experience and knowledge.</p>
+
+    <h2 id="bans-counters">Bans and Counters</h2>
+    <p>Popular bans include:</p>
+    <p>Popular bans include:</p>
+    <ul>
+        <li>Priestess</li>
+        <li>Seer</li>
+        <li>Cheerleader</li>
+    </ul>
+
+
+    <p>Photographer counters:</p>
+    <p>Photographer counters:</p>
+    <ul>
+        <li>Mercenary</li>
+        <li>Psychologist</li>
+        <li>Barmaid</li>
+    </ul>
+
+    <h2 id="additional-resources">Additional Resources</h2>
+    
+      <p>
+        <!-- Button for mistersashimi YouTube Channel -->
+        <button class="button" onclick="window.open('https://www.youtube.com/@devastery', '_blank')">
+            <i class="fab fa-youtube"></i> Devastry
+        </button>
+    </p>
+
+  </div> <!-- End content-area -->
+</div> <!-- End content-wrapper -->
+
+<footer>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,494 @@
+
+
+/* Wrapper for TOC and Content Area */
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 2%;
+}
+
+/* Table of Contents Styling */
+.toc {
+  width: 220px;
+  padding: 15px;
+  background-color: hsl(220, 7%, 17%);
+  border: 1px solid #444;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  position: sticky;
+  top: 120px;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+  margin-right: 20px;
+}
+
+/* TOC Header */
+.toc h2 {
+  color: #ff5252;
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Rubik Dirt', sans-serif;
+}
+
+/* TOC List */
+.toc ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin: 8px 0;
+  position: relative;
+  padding-left: 20px;
+}
+
+
+.toc a {
+  color: #ffffff;
+  font-size: 14px;
+  padding: 6px 10px;
+  display: block;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Removes underline */
+  border-bottom: 1px dashed #ff5252; /* Example of a subtle dashed underline */
+  font-family: 'Catamaran', sans-serif;
+
+}
+
+.toc a:hover {
+  background-color: rgba(229, 57, 53, 0.6);
+  border-bottom: 1px solid #ff5252; /* Solid underline on hover */
+}
+
+/* Main Content Area */
+.content-area {
+  flex: 1;
+  padding: 20px;
+  background-color: hsl(220, 7%, 17%);
+  border: 1px solid #444;  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  max-width: 800px;
+  color: #e0e0e0;
+  font-family: 'Catamaran', sans-serif;
+  line-height: 1.8;
+  text-align: justify;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  text-indent: 1em; /* First-line indentation */
+  line-height: 1.8; /* Optimal line spacing */
+  font-size: 17px; /* Slightly larger for readability */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rubik Dirt', sans-serif; /* Updated font */
+  font-weight: normal;
+  color: #ff5252; /* Primary color */
+  font-size: 36px; /* Adjust as needed */
+  margin: 20px 0;
+  text-align: center; /* Center align headings */
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+}
+
+
+/* Paragraphs */
+p {
+  margin-bottom: 16px;
+  color: white;
+}
+
+/* Lists */
+ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  list-style: none;
+}
+
+ul li {
+  padding-left: 30px;
+  background-image: url('/assets/WebsiteIcon.png');
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+
+/* Images */
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  text-align: center; /* Ensures content centers even in nested containers */
+}
+
+.image-container img {
+  max-width: 90%;
+  border-radius: 10px;
+}
+
+.image-container iframe {
+  max-width: 90%; /* Restricts width within container */
+  border-radius: 10px; /* Matches styling of videos and images */
+  margin: 0 auto; /* Centers iframe */
+  display: block;
+}
+
+
+/* Center video elements within their parent container */
+video {
+  display: block; /* Allows margin auto centering */
+  margin: 20px auto; /* Centers the video with vertical spacing */
+  max-width: 90%; /* Restricts video width to fit within content */
+  border-radius: 10px; /* Matches styling of images */
+}
+
+
+/* Ensure images and videos are responsive */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.persona-wrapper {
+  border-radius: 75vh;
+  display: flex;
+  align-items: center; /* Centers vertically */
+  justify-content: center; /* Centers horizontally */
+  min-height: 75vh; /* Full viewport height */
+  /*background-color: #14224b; */
+  border-style:none;
+  border-color: #414141;
+  /* background-image: radial-gradient(rgb(41, 41, 56), rgb(37, 40, 54) , rgb(81, 82, 90)10% , rgb(37, 40, 54) 20%  ,rgb(81, 82, 90), rgb(37, 40, 54),rgb(37, 40, 54),rgb(37, 40, 54));  */
+  
+
+  background-image: radial-gradient(
+    circle,
+    rgb(37, 47, 55),
+    rgb(43, 56, 66)10%,
+    rgb(37, 47, 55), /* Dark center */
+    rgb(37, 47, 55) 36%, /* Dark center expanding slightly */
+    /*rgba(255, 255, 255, 0.01) 37%, /* Very faint white ring start */
+    /*rgba(255, 255, 255, 0.01) 38%, /* Very faint white ring end */
+    rgb(33, 42, 53) 39%, /* Almost imperceptible outer ring start */
+    rgb(41, 47, 54) 40%, /* Almost imperceptible outer ring end */
+    rgb(37, 47, 55) 41% /* Dark background beyond the rings */
+);
+  
+}
+
+.circle-container {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 1vw; /* Responsive gap based on viewport width */
+  width: 80vw; /* Responsive width based on viewport */
+  max-width: 90vh; /* Constrain width if viewport is tall */
+  aspect-ratio: 1 / 1; /* Ensures the container stays square */
+  align-items: center;
+  justify-items: center;
+  position:relative;
+  /* margin-bottom: 5vh; /* Responsive space below the grid */ 
+  /* background-color:  lightgray; */
+}
+
+/* Sphere styling */
+.sphere {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 0.75rem crimson);
+}
+
+.sphere.deactivated{
+  opacity: 20%;
+  filter: drop-shadow(0 0 0rem black);
+}
+
+
+
+
+
+/* Tooltip styling for hover text */
+.tooltip-text {
+  display: none;
+  position: absolute;
+  bottom: 60px; /* Position above the sphere */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 12px;
+  z-index: 9999; /* Highest z-index to always overlay other elements */
+}
+
+/* Show tooltip on hover only for active spheres */
+.sphere.active:hover .tooltip-text {
+  display: block;
+}
+
+.sphere.active:hover {
+  filter: drop-shadow(0 0 1rem white);
+}
+
+/* Default large tooltip styling (hidden initially) */
+.large-tooltip {
+  display: none;
+  position: absolute;
+  top: 60px; /* Position above the sphere */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  width: 200px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  z-index: 9999; /* Maximum z-index to ensure it overlays all other content */
+}
+
+/* Show large tooltip only for active spheres when clicked */
+.sphere.active.show-large-tooltip .large-tooltip {
+  display: block;
+  filter: drop-shadow(0 0 0.75rem white);
+}
+
+/* Increase z-index of sphere itself when tooltip is active */
+.sphere.active.show-large-tooltip {
+  position: relative; /* Ensure z-index applies to the sphere */
+  z-index: 9998; /* Just below tooltip to ensure tooltip displays above */
+}
+
+/* Disable hover and tooltip effects for deactivated spheres */
+.sphere.deactivated:hover .tooltip-text,
+.sphere.deactivated.show-large-tooltip .large-tooltip {
+  display: none !important;
+}
+
+/* Optional: styling to visually indicate a deactivated sphere */
+.sphere.deactivated {
+  opacity: 20%;
+  cursor: default; /* Prevents pointer cursor for inactive spheres */
+}
+
+
+/* Line logic :  */
+.line {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 6px; /* Thin line in the middle */
+  background-color: #FFAF48; /* Mhunter web color*/
+  transform-origin: left;
+  z-index: 1;
+}
+
+
+/* for all talents */
+/*central sphere */
+.sphere.empty {
+  background-image: url('assets/HunterPersonaCenter.png');
+  grid-column: 5; 
+  grid-row: 5; 
+}
+  /* Northern branches */
+.sphere.talent-deteriorate {
+  background-image: url('assets/hunterTalent_deteriorate.png');
+  grid-column: 5; 
+  grid-row: 4; 
+}
+.sphere.talent-panic {
+  background-image: url('assets/hunterTalent_panic.png');
+  grid-column: 4; 
+  grid-row: 3; 
+}
+.sphere.talent-rage {
+  background-image: url('assets/hunterTalent_rage.png');
+  grid-column: 3; 
+  grid-row: 2; 
+}
+.sphere.talent-berserker {
+  background-image: url('assets/hunterTalent_berserker.png'); 
+  grid-column: 4; 
+  grid-row: 2; 
+}
+.sphere.talent-nostalgic {
+  background-image: url('assets/hunterTalent_nostalgic.png'); 
+  grid-column: 6; 
+  grid-row: 3; 
+}
+.sphere.talent-mischievous {
+  background-image: url('assets/hunterTalent_mischievous.png'); 
+  grid-column: 6; 
+  grid-row: 2; 
+}
+.sphere.talent-wither {
+  background-image: url('assets/hunterTalent_wither.png');
+  grid-column: 5; 
+  grid-row: 3; 
+}
+.sphere.talent-destructiveness {
+  background-image: url('assets/hunterTalent_destructiveness.png');
+  grid-column: 5; 
+  grid-row: 2; 
+}
+.sphere.talent-confinedspace {
+  background-image: url('assets/hunterTalent_confinedSpace.png');
+  grid-column: 5; 
+  grid-row: 1; 
+}
+
+/* Eastern branches */ 
+.sphere.talent-constrain {
+  background-image: url('assets/hunterTalent_constrain.png');
+  grid-column: 6; 
+  grid-row: 5; 
+}
+.sphere.talent-announcement {
+  background-image: url('assets/hunterTalent_announcement.png');
+  grid-column: 7; 
+  grid-row: 4; 
+}
+.sphere.talent-wantedorder {
+  background-image: url('assets/hunterTalent_wantedOrder.png');
+  grid-column: 8; 
+  grid-row: 3; 
+}
+.sphere.talent-impact {
+  background-image: url('assets/hunterTalent_impact.png');
+  grid-column: 8; 
+  grid-row: 4; 
+}
+.sphere.talent-desperatefight {
+  background-image: url('assets/hunterTalent_desperateFight.png');
+  grid-column: 7; 
+  grid-row: 6; 
+}
+.sphere.talent-addiction {
+  background-image: url('assets/hunterTalent_addiction.png');
+  grid-column: 8; 
+  grid-row: 6; 
+}
+.sphere.talent-hunterinstinct {
+  background-image: url('assets/hunterTalent_hunterInstinct.png');
+  grid-column: 7; 
+  grid-row: 5; 
+}
+.sphere.talent-hospitable {
+  background-image: url('assets/hunterTalent_hospitable.png');
+  grid-column: 8; 
+  grid-row: 5; 
+}
+.sphere.talent-trumpcard {
+  background-image: url('assets/hunterTalent_trumpCard.png');
+  grid-column: 9; 
+  grid-row: 5; 
+}
+
+/* Southern Branches */
+.sphere.talent-inertia {
+  background-image: url('assets/hunterTalent_inertia.png');
+  grid-column: 5; 
+  grid-row: 6; 
+}
+.sphere.talent-quenchingeffect {
+  background-image: url('assets/hunterTalent_quenchingEffect.png');
+  grid-column: 6; 
+  grid-row: 7; 
+}
+.sphere.talent-giantclaw {
+  background-image: url('assets/hunterTalent_giantClaw.png');
+  grid-column: 6; 
+  grid-row: 8; 
+}
+.sphere.talent-sadist {
+  background-image: url('assets/hunterTalent_sadist.png');
+  grid-column: 7; 
+  grid-row: 8; 
+}
+.sphere.talent-nosurvivors {
+  background-image: url('assets/hunterTalent_noSurvivors.png');
+  grid-column: 4; 
+  grid-row: 7; 
+}
+.sphere.talent-impulsive {
+  background-image: url('assets/hunterTalent_impulsive.png'); 
+  grid-column: 4; 
+  grid-row: 8; 
+}
+.sphere.talent-mock {
+  background-image: url('assets/hunterTalent_mock.png');
+  grid-column: 5; 
+  grid-row: 7; 
+}
+.sphere.talent-carnival {
+  background-image: url('assets/hunterTalent_carnival.png');
+  grid-column: 5; 
+  grid-row: 8; 
+}
+.sphere.talent-detention {
+  background-image: url('assets/hunterTalent_detention.png');
+  grid-column: 5; 
+  grid-row: 9; 
+}
+
+/* Western branches */
+.sphere.talent-deerhunt {
+  background-image: url('assets/hunterTalent_deerHunt.png');
+  grid-column: 4; 
+  grid-row: 5; 
+}
+.sphere.talent-exhibitionist {
+  background-image: url('assets/hunterTalent_exhibitionist.png'); 
+  grid-column: 3; 
+  grid-row: 6; 
+}
+.sphere.talent-hunt {
+  background-image: url('assets/hunterTalent_hunt.png');
+  grid-column: 2; 
+  grid-row: 7; 
+}
+.sphere.talent-streetsweeper {
+  background-image: url('assets/hunterTalent_streetSweeper.png');
+  grid-column: 2; 
+  grid-row: 6; 
+}
+.sphere.talent-controlfreak {
+  background-image: url('assets/hunterTalent_controlfreak.png');
+  grid-column: 3; 
+  grid-row: 4; 
+}
+.sphere.talent-claustrophobia {
+  background-image: url('assets/hunterTalent_claustrophobia.png'); 
+  grid-column: 2; 
+  grid-row: 4; 
+}
+.sphere.talent-tolerance {
+  background-image: url('assets/hunterTalent_tolerance.png'); 
+  grid-column: 3; 
+  grid-row: 5; 
+}
+.sphere.talent-aftereffects {
+  background-image: url('assets/hunterTalent_afterEffects.png');
+  grid-column: 2; 
+  grid-row: 5; 
+}
+.sphere.talent-insolence {
+  background-image: url('assets/hunterTalent_insolence.png');
+  grid-column: 1; 
+  grid-row: 5; 
+}

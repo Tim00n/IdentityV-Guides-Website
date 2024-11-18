@@ -1,0 +1,206 @@
+/* Optimized Header for Logo Fit */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px; /* Reduced header height */
+  width: 100%;
+  padding: 0 2%;
+  background: linear-gradient(135deg, #313336, #1c1c1e);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Fixed Footer Design */
+footer {
+  width: 100%; /* Full width for fixed positioning */
+  height: 40px; /* Define footer height */
+  background: linear-gradient(135deg, #313336, #1c1c1e);
+  font-family: 'Rubik Dirt', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  border-top: 1px solid #444;
+  box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.3);
+  position: fixed; /* Fixes footer at the bottom */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 2%; /* Adjusted padding for footer */
+  margin-top: 0; /* Remove top margin for fixed footer */
+}
+
+/* Updated Logo Sizing */
+.logo {
+  max-width: 240px;  /* Increased size for better visibility */
+  height: auto;      /* Maintain aspect ratio */
+  margin-left: 0;
+}
+
+/* Soft Blue Heading for Survivor Database with Hover Glow */
+h1.survivor-database {
+  font-family: 'Rubik Dirt', sans-serif; /* Rugged but readable font */
+  font-size: 48px;
+  text-align: center;
+  font-weight: normal; /* Reduce boldness */
+  color: #3a86ff; /* Blue base color */
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.4); /* Light shadow for subtle depth */
+  padding: 10px 20px;
+  border: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Soft Red Heading for Hunter Database with Hover Glow */
+h1.hunter-database {
+  font-family: 'Rubik Dirt', sans-serif; /* Rugged but readable font */
+  font-size: 48px;
+  text-align: center;
+  font-weight: normal; /* Reduce boldness */
+  color: #ff5252; /* Red base color */
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.4); /* Light shadow for subtle depth */
+  padding: 10px 20px;
+  border: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover effect with soft glow */
+h1.survivor-database:hover {
+  color: #7abfff; /* Slightly lighter blue */
+  text-shadow: 
+    0 0 5px rgba(58, 134, 255, 0.4), /* Soft outer blue glow */
+    0 0 10px rgba(58, 134, 255, 0.2); /* Fainter outer glow */
+}
+
+h1.hunter-database:hover {
+  color: #ff8080; /* Slightly lighter red */
+  text-shadow: 
+    0 0 5px rgba(255, 82, 82, 0.4), /* Soft outer red glow */
+    0 0 10px rgba(255, 82, 82, 0.2); /* Fainter outer glow */
+}
+
+
+
+
+.header-content {
+  margin-left: auto; /* Pushes the buttons or other content to the right */
+}
+
+
+/* Universal text formatting */
+p {
+  font-family: 'Catamaran', Arial, sans-serif; /* Outfit with Arial and sans-serif fallback */
+  max-width: 800px;
+  margin-bottom: 20px;
+  color: white;
+  line-height: 1.7;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  font-family: 'Catamaran', sans-serif;
+  color: white;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 50px; /* Adjusted for smaller header */
+  padding-bottom: 50px; /* Extra space for footer */
+  text-align: left;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+
+
+/* Custom cursor */
+html {
+  cursor: url('assets/Cursor.png') 10 10, auto; /* Adjust hotspot position */
+}
+
+/* Universal heading design */
+h1 {
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Adds a shadow effect behind the text */
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 30px;
+  color: white; 
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Adds a shadow effect behind the text */
+  text-align: center;
+}
+
+/* Universal Button Styling */
+.button, .button.hunter, .button.survivor {
+  background-color: #313336;
+  color: #ffffff;
+  font-size: 1em; /* Use relative font size */
+  padding: 0.8em 1.2em; /* Adjust padding for consistency */
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Hover effect for enabled buttons */
+.button:hover, .button.hunter:hover, .button.survivor:hover {
+  background-color: #494b4d; /* Slightly lighter shade on hover */
+  transform: translateY(-3px);
+}
+
+/* Disabled Button Styling */
+.button:disabled, .button.hunter:disabled, .button.survivor:disabled {
+  background-color: #494b4d; /* Grayed out for disabled state */
+  color: #9a9a9a; /* Lighter text color for disabled */
+  cursor: not-allowed;
+  box-shadow: none; /* Remove shadow for a flat, inactive look */
+}
+
+/* Icon Size Consistency */
+.button i, .button.hunter i, .button.survivor i {
+  font-size: 24px;
+}
+
+
+/* Responsive padding adjustments */
+@media (max-width: 768px) {
+  body {
+      padding-top: 160px; /* Extra padding for smaller screens */
+      padding-bottom: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+      padding-top: 180px; /* Even more space for very small screens */
+      padding-bottom: 120px;
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px; /* Adjust the header height for a very large logo */
+}
+
+.logo {
+  max-height: 300px; /* Make the logo much larger */
+  width: auto; /* Maintain aspect ratio */
+}
+
+
