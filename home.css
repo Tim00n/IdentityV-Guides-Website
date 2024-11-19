@@ -191,16 +191,6 @@ h2 {
   }
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 300px; /* Adjust the header height for a very large logo */
-}
 
-.logo {
-  max-height: 300px; /* Make the logo much larger */
-  width: auto; /* Maintain aspect ratio */
-}
 
 
