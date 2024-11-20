@@ -207,7 +207,7 @@ img, video {
   cursor: pointer;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 0 0.75rem crimson);
+  /* filter: drop-shadow(0 0 0.75rem crimson);*/
 }
 
 .sphere.deactivated{
@@ -240,10 +240,11 @@ img, video {
   display: block;
 }
 
-
+/*
 .sphere.active:hover {
   filter: drop-shadow(0 0 1rem crimson);
 }
+*/
 
 /* Default large tooltip styling (hidden initially) */
 .large-tooltip {
@@ -263,9 +264,9 @@ img, video {
 }
 
 /* Show large tooltip only for active spheres when clicked */
-.sphere.active.show-large-tooltip .large-tooltip {
+.sphere.active.show-large-tooltip .large-tooltip{
   display: block;
-  /* filter: drop-shadow(0 0 0.75rem white); */
+  filter: drop-shadow(0 0 0.75rem rgb(110, 5, 5)); 
 }
 
 /* Increase z-index of sphere itself when tooltip is active */
