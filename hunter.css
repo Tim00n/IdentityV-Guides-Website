@@ -240,8 +240,9 @@ img, video {
   display: block;
 }
 
+
 .sphere.active:hover {
-  filter: drop-shadow(0 0 1rem white);
+  filter: drop-shadow(0 0 1rem crimson);
 }
 
 /* Default large tooltip styling (hidden initially) */
@@ -264,7 +265,7 @@ img, video {
 /* Show large tooltip only for active spheres when clicked */
 .sphere.active.show-large-tooltip .large-tooltip {
   display: block;
-  filter: drop-shadow(0 0 0.75rem white);
+  /* filter: drop-shadow(0 0 0.75rem white); */
 }
 
 /* Increase z-index of sphere itself when tooltip is active */
