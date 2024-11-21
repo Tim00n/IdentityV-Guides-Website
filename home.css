@@ -176,21 +176,18 @@ h2 {
 }
 
 
-/* Responsive padding adjustments */
-@media (max-width: 768px) {
-  body {
-      padding-top: 160px; /* Extra padding for smaller screens */
-      padding-bottom: 100px;
-  }
-}
 
-@media (max-width: 480px) {
-  body {
-      padding-top: 180px; /* Even more space for very small screens */
-      padding-bottom: 120px;
-  }
+.logo {
+  width: 30em; /* Make the logo large */
+  height: auto; /* Maintain aspect ratio */
+  max-width: none; /* Ignore constraints from the parent container */
+  position: relative; /* Ensure it respects the normal flow */
+  overflow: visible; /* Prevent clipping */
 }
 
 
-
-
+.logo-container {
+  width: auto;
+  max-width: none; /* Remove size limitations */
+  position: relative
+}
