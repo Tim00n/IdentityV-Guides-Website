@@ -1,5 +1,3 @@
-
-
 /* Wrapper for TOC and Content Area */
 .content-wrapper {
   display: flex;
@@ -111,7 +109,7 @@ ul {
 
 ul li {
   padding-left: 30px;
-  background-image: url('/assets/WebsiteIcon.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063331/WebsiteIcon_usyual.png');
   background-size: 18px;
   background-repeat: no-repeat;
   background-position: 0 50%;
@@ -303,194 +301,194 @@ img, video {
 /* for all talents */
 /*central sphere */
 .sphere.empty {
-  background-image: url('assets/HunterPersonaCenter.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063354/HunterPersonaCenter_hvlynn.png');
   grid-column: 5; 
   grid-row: 5; 
 }
   /* Northern branches */
 .sphere.talent-deteriorate {
-  background-image: url('assets/hunterTalent_deteriorate.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063360/hunterTalent_deteriorate_dxfjmt.png');
   grid-column: 5; 
   grid-row: 4; 
 }
 .sphere.talent-panic {
-  background-image: url('assets/hunterTalent_panic.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063358/hunterTalent_panic_aetfsc.png');
   grid-column: 4; 
   grid-row: 3; 
 }
 .sphere.talent-rage {
-  background-image: url('assets/hunterTalent_rage.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063364/hunterTalent_rage_qrzqsq.png');
   grid-column: 3; 
   grid-row: 2; 
 }
 .sphere.talent-berserker {
-  background-image: url('assets/hunterTalent_berserker.png'); 
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063365/hunterTalent_berserker_xv21ss.png'); 
   grid-column: 4; 
   grid-row: 2; 
 }
 .sphere.talent-nostalgic {
-  background-image: url('assets/hunterTalent_nostalgic.png'); 
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063367/hunterTalent_nostalgic_prsx2r.png'); 
   grid-column: 6; 
   grid-row: 3; 
 }
 .sphere.talent-mischievous {
-  background-image: url('assets/hunterTalent_mischievous.png'); 
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063369/hunterTalent_mischievous_p9usya.png'); 
   grid-column: 6; 
   grid-row: 2; 
 }
 .sphere.talent-wither {
-  background-image: url('assets/hunterTalent_wither.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063361/hunterTalent_wither_dnxiat.png');
   grid-column: 5; 
   grid-row: 3; 
 }
 .sphere.talent-destructiveness {
-  background-image: url('assets/hunterTalent_destructiveness.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063360/hunterTalent_destructiveness_vtkc5u.png');
   grid-column: 5; 
   grid-row: 2; 
 }
 .sphere.talent-confinedspace {
-  background-image: url('assets/hunterTalent_confinedSpace.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063366/hunterTalent_confinedSpace_ynlfyu.png');
   grid-column: 5; 
   grid-row: 1; 
 }
 
 /* Eastern branches */ 
 .sphere.talent-constrain {
-  background-image: url('assets/hunterTalent_constrain.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063366/hunterTalent_constrain_izgt0p.png');
   grid-column: 6; 
   grid-row: 5; 
 }
 .sphere.talent-announcement {
-  background-image: url('assets/hunterTalent_announcement.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063363/hunterTalent_announcement_ncvngt.png');
   grid-column: 7; 
   grid-row: 4; 
 }
 .sphere.talent-wantedorder {
-  background-image: url('assets/hunterTalent_wantedOrder.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063365/hunterTalent_wantedOrder_fosx1m.png');
   grid-column: 8; 
   grid-row: 3; 
 }
 .sphere.talent-impact {
-  background-image: url('assets/hunterTalent_impact.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063354/hunterTalent_impact_dbkkwe.png');
   grid-column: 8; 
   grid-row: 4; 
 }
 .sphere.talent-desperatefight {
-  background-image: url('assets/hunterTalent_desperateFight.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063355/hunterTalent_desperateFight_n4dghe.png');
   grid-column: 7; 
   grid-row: 6; 
 }
 .sphere.talent-addiction {
-  background-image: url('assets/hunterTalent_addiction.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063360/hunterTalent_addiction_gznet8.png');
   grid-column: 8; 
   grid-row: 6; 
 }
 .sphere.talent-hunterinstinct {
-  background-image: url('assets/hunterTalent_hunterInstinct.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063362/hunterTalent_hunterInstinct_q6a0xa.png');
   grid-column: 7; 
   grid-row: 5; 
 }
 .sphere.talent-hospitable {
-  background-image: url('assets/hunterTalent_hospitable.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063357/hunterTalent_hospitable_gh0mye.png');
   grid-column: 8; 
   grid-row: 5; 
 }
 .sphere.talent-trumpcard {
-  background-image: url('assets/hunterTalent_trumpCard.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063365/hunterTalent_trumpCard_lan447.png');
   grid-column: 9; 
   grid-row: 5; 
 }
 
 /* Southern Branches */
 .sphere.talent-inertia {
-  background-image: url('assets/hunterTalent_inertia.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063359/hunterTalent_inertia_ce4254.png');
   grid-column: 5; 
   grid-row: 6; 
 }
 .sphere.talent-quenchingeffect {
-  background-image: url('assets/hunterTalent_quenchingEffect.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063355/hunterTalent_quenchingEffect_x5guok.png');
   grid-column: 6; 
   grid-row: 7; 
 }
 .sphere.talent-giantclaw {
-  background-image: url('assets/hunterTalent_giantClaw.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063356/hunterTalent_giantClaw_a00eeb.png');
   grid-column: 6; 
   grid-row: 8; 
 }
 .sphere.talent-sadist {
-  background-image: url('assets/hunterTalent_sadist.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063368/hunterTalent_sadist_lrf4cy.png');
   grid-column: 7; 
   grid-row: 8; 
 }
 .sphere.talent-nosurvivors {
-  background-image: url('assets/hunterTalent_noSurvivors.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063362/hunterTalent_noSurvivors_o2a5nw.png');
   grid-column: 4; 
   grid-row: 7; 
 }
 .sphere.talent-impulsive {
-  background-image: url('assets/hunterTalent_impulsive.png'); 
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063354/hunterTalent_impulsive_p3havg.png'); 
   grid-column: 4; 
   grid-row: 8; 
 }
 .sphere.talent-mock {
-  background-image: url('assets/hunterTalent_mock.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063363/hunterTalent_mock_nlv55v.png');
   grid-column: 5; 
   grid-row: 7; 
 }
 .sphere.talent-carnival {
-  background-image: url('assets/hunterTalent_carnival.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063367/hunterTalent_carnival_ggoqxs.png');
   grid-column: 5; 
   grid-row: 8; 
 }
 .sphere.talent-detention {
-  background-image: url('assets/hunterTalent_detention.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063358/hunterTalent_detention_kszcet.png');
   grid-column: 5; 
   grid-row: 9; 
 }
 
 /* Western branches */
 .sphere.talent-deerhunt {
-  background-image: url('assets/hunterTalent_deerHunt.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063365/hunterTalent_deerHunt_dbzz4z.png');
   grid-column: 4; 
   grid-row: 5; 
 }
 .sphere.talent-exhibitionist {
-  background-image: url('assets/hunterTalent_exhibitionist.png'); 
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063358/hunterTalent_exhibitionist_mldltj.png'); 
   grid-column: 3; 
   grid-row: 6; 
 }
 .sphere.talent-hunt {
-  background-image: url('assets/hunterTalent_hunt.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063369/hunterTalent_hunt_sitocp.png');
   grid-column: 2; 
   grid-row: 7; 
 }
 .sphere.talent-streetsweeper {
-  background-image: url('assets/hunterTalent_streetSweeper.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063368/hunterTalent_streetSweeper_rgsbqx.png');
   grid-column: 2; 
   grid-row: 6; 
 }
 .sphere.talent-controlfreak {
-  background-image: url('assets/hunterTalent_controlfreak.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063362/hunterTalent_controlfreak_avwl3c.png');
   grid-column: 3; 
   grid-row: 4; 
 }
 .sphere.talent-claustrophobia {
-  background-image: url('assets/hunterTalent_claustrophobia.png'); 
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063356/hunterTalent_claustrophobia_uz0svp.png'); 
   grid-column: 2; 
   grid-row: 4; 
 }
 .sphere.talent-tolerance {
-  background-image: url('assets/hunterTalent_tolerance.png'); 
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063359/hunterTalent_tolerance_znwkov.png'); 
   grid-column: 3; 
   grid-row: 5; 
 }
 .sphere.talent-aftereffects {
-  background-image: url('assets/hunterTalent_afterEffects.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063361/hunterTalent_afterEffects_ne6j4n.png');
   grid-column: 2; 
   grid-row: 5; 
 }
 .sphere.talent-insolence {
-  background-image: url('assets/hunterTalent_insolence.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063357/hunterTalent_insolence_aw3nfw.png');
   grid-column: 1; 
   grid-row: 5; 
 }
