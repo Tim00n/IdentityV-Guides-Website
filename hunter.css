@@ -71,7 +71,7 @@
   border: 1px solid #444;  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   max-width: 800px;
-  color: #e0e0e0;
+  color: white;
   font-family: 'Catamaran', sans-serif;
   line-height: 1.8;
   text-align: justify;
@@ -105,33 +105,41 @@ ul {
   padding-left: 20px;
   margin-bottom: 20px;
   list-style: none;
+  text-indent: 0;
 }
 
 ul li {
   padding-left: 30px;
   background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063331/WebsiteIcon_usyual.png');
-  background-size: 18px;
+  background-size: 25px;
   background-repeat: no-repeat;
   background-position: 0 50%;
+  text-indent: 0;
 }
 
-/* Images */
 .image-container {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
-  text-align: center; /* Ensures content centers even in nested containers */
+  align-items: center; /* Center content vertically within the container */
+  margin: 20px auto; /* Auto margin centers the container horizontally */
+  text-align: center;
+  width: 500px;
+  height: 300px;
 }
 
+
 .image-container img {
-  max-width: 90%;
+  max-width: 100%; /* Ensures images scale within the container */
+  max-height: 100%; /* Prevents overflow while maintaining aspect ratio */
   border-radius: 10px;
+  display: block; /* Ensures the image behaves as a block element */
+  margin: 0 auto; /* Centers the image within its container if necessary */
 }
 
 .image-container iframe {
-  max-width: 90%; /* Restricts width within container */
-  border-radius: 10px; /* Matches styling of videos and images */
-  margin: 0 auto; /* Centers iframe */
+  max-width: 100%; /* Matches container size */
+  max-height: 100%;
+  border-radius: 10px; /* Keeps consistent styling */
   display: block;
 }
 
@@ -327,7 +335,7 @@ img, video {
   grid-row: 2; 
 }
 .sphere.talent-nostalgic {
-  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063367/hunterTalent_nostalgic_prsx2r.png'); 
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733246571/nostalgic_muqzv3.png'); 
   grid-column: 6; 
   grid-row: 3; 
 }
