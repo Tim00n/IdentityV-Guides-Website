@@ -5,6 +5,7 @@
     gap: 10px;
     margin: 20px; 
     width: 400px; 
+    
   }
   
   .survivor {
@@ -16,15 +17,18 @@
     width: 100%;
     height: auto;
     border-radius: 4px;
+
   }
   
   .survivor-container {
     display: flex; 
     justify-content: center;
+    
   }
   
   .survivor:hover img {
     transform: translateY(-10px); /* Moves the image up */
+    
   }
   
   
