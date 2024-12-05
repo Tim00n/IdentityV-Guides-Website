@@ -62,6 +62,15 @@
 }
 
 
+
+#survivorGrid1 .survivor img {
+  transform: scaleX(-1); /* Reverse the image back to normal */
+}
+
+#survivorGrid1 .survivor:hover img {
+  transform: scaleX(-1) translateY(-10px); /* Apply hover effect with flipped orientation */
+}
+
 .page:nth-child(2){
   transition-duration: 2s;
 }
