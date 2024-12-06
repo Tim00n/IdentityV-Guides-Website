@@ -3,7 +3,6 @@
   display:flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .book {
@@ -11,7 +10,14 @@
   align-items: center;
   cursor: pointer;
   perspective:1000px;
-  
+  animation: float 3s ease-in-out infinite;
+}
+
+.book:hover,
+.book:hover .page,
+.left-page,
+.right-page {
+  box-shadow: 1px 5px 5px #ada981; /* Shadow grows on hover */
 }
 
 .book:hover .cover {
@@ -35,15 +41,15 @@
 }
 
 .cover {
-  z-index: 1;
+  z-index: 2;
   transition: all 1s;
 }
 
 .back-cover{
-  z-index: -2;
+  z-index: -4;
 }
 
-.page, .open-page{
+.page, .left-page, .right-page{
   height: 600px;
   width: 490px;
   background:#e9e6c4;
@@ -52,13 +58,20 @@
   border-radius: 1px 10px 10px 2px;
   transform: rotateX(10deg);
   transform-origin: center left;
-  z-index:-1;
 }
 
-.open-page {
+.right-page {
   left:0;
   overflow: visible;
 
+}
+
+.page {
+  z-index:-1;
+}
+
+.left-page{
+  z-index:0;
 }
 
 
@@ -72,31 +85,48 @@
 }
 
 .page:nth-child(2){
-  transition-duration: 2s;
-}
-
-.page:nth-child(3){
   transition-duration: 1.6s;
 }
 
-.page:nth-child(4){
+.page:nth-child(3){
   transition-duration: 1.3s;
 }
 
+.page:nth-child(4){
+  transition-duration: 1.2s;
+}
+
 .page:nth-child(5){
-  transition-duration: 1s;
+  transition-duration: 0.9s;
 }
 
 .book:hover .page:nth-child(2){
-  transition-duration:3s;
+  transition-duration:1.5s;
 }
 .book:hover .page:nth-child(3){
-  transition-duration: 2.5s;
+  transition-duration: 1.2s;
 }
 .book:hover .page:nth-child(4){
-  transition-duration:1.8s;
+  transition-duration:1s;
 }
 .book:hover .page:nth-child(6){
-  transition-duration: 1s;
+  transition-duration: 0.8s;
 } 
 
+.button-container {
+  z-index: 1;
+}
+
+@keyframes float {
+  0% {
+      transform: translateY(0);
+  }
+
+  50% {
+      transform: translateY(-20px);
+  }
+
+  100% {
+      transform: translateY(0);
+  }
+}
