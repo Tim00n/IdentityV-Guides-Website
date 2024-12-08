@@ -8,20 +8,7 @@
   padding: 0 2%;
 }
 
-/* Table of Contents Styling */
-.toc {
-  width: 220px;
-  padding: 15px;
-  background-color: hsl(220, 7%, 17%);
-  border: 1px solid #444;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  border-radius: 8px;
-  position: sticky;
-  top: 120px;
-  max-height: calc(100vh - 150px);
-  overflow-y: auto;
-  margin-right: 20px;
-}
+
 
 /* TOC Header */
 .toc h2 {
@@ -63,6 +50,21 @@
   border-bottom: 1px solid #ff5252; /* Solid underline on hover */
 }
 
+/* Table of Contents Styling */
+.toc {
+  width: 220px;
+  padding: 20px;
+  background-color: hsl(220, 7%, 17%);
+  border: 1px solid #444;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  position: sticky;
+  top: 120px;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+  margin-right: 20px;
+}
+
 /* Main Content Area */
 .content-area {
   flex: 1;
@@ -81,6 +83,8 @@
   line-height: 1.8; /* Optimal line spacing */
   font-size: 17px; /* Slightly larger for readability */
 }
+
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Rubik Dirt', sans-serif; /* Updated font */

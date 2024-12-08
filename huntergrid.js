@@ -1,5 +1,5 @@
 const hunters = [
-    { name: "", url: "./hunters/Hell_Ember.html", img: "https://res.cloudinary.com/dsim8rimy/image/upload/v1733063343/Hell_Ember_Card_uyezls.png"  },
+    { name: "", url: "./hunters/identity-v-hell-ember-guide.html", img: "https://res.cloudinary.com/dsim8rimy/image/upload/v1733063343/Hell_Ember_Card_uyezls.png"  },
     { name: "", url: "./hunters/Smiley_Face.html", img: "https://res.cloudinary.com/dsim8rimy/image/upload/v1733063348/Smiley_Card_frii66.png" },
     { name: "", url: "./hunters/Smiley_Face.html", img: "https://res.cloudinary.com/dsim8rimy/image/upload/v1733063352/Gamekeeper_Card_roh9kp.png" },
     { name: "", url: "./hunters/Hell_Ember.html", img: "https://res.cloudinary.com/dsim8rimy/image/upload/v1733063348/Ripper_Card_qufit7.png"  },

@@ -35,11 +35,18 @@
     max-width: 400px;
 }
 
+h1 {
+    color: white;
+    font-family: 'Rubik Dirt', sans-serif;
+}
+
 h2 {
     font-size: 18px;
     margin-top: 10px;
-    color: #ffffff;
+    color: white;
     text-align: center;
+    font-family: 'Rubik Dirt', sans-serif;
+
 }
 
 .checkbox-group {

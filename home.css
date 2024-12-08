@@ -15,10 +15,43 @@ header {
 }
 
 
-.donate-form {
+.custom-donate-button {
   display: flex;
+  align-items: center;
   justify-content: center;
-} 
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: #0070ba; /* PayPal blue */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.custom-donate-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.custom-donate-button:hover {
+  background-color: #005ea6; /* Darker PayPal blue on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.custom-donate-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
 
 /* Fixed Footer Design */
 footer {
