@@ -18,8 +18,14 @@
     filter: none;
   }
 
-.hunter.grayscale img {
+.grayscale img {
   filter: grayscale(100%);
+  cursor: not-allowed;
+}
+
+.grayscale:hover img {
+  filter: grayscale(100%);
+  cursor: not-allowed;
 }
   
 .hunter-container {
@@ -30,3 +36,4 @@
   .hunter:hover img {
     transform: translateY(-10px); /* Moves the image up */
   }
+
