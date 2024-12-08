@@ -25,6 +25,3 @@
   .hunter:hover img {
     transform: translateY(-10px); /* Moves the image up */
   }
-  html {
-    cursor: url('assets/Cursor.png') 10 10, auto; /* Adjust hotspot position */
-  }
