@@ -32,7 +32,7 @@ const hunters = [
     { name: "", url: "./hunters/Hullabaloo.html", img: "https://res.cloudinary.com/dsim8rimy/image/upload/v1733063343/Hullaballo_Card_mymbhx.png", type:"chase"},
 ];
 
-let currentFilter = "none";
+let currentFilter = null;
 let currentPage = 0;
 const huntersPerPage = 18; // 18 hunters per page (two boxes)
 
@@ -56,9 +56,9 @@ async function loadHunters() {
     grid1.innerHTML = '';
     grid2.innerHTML = '';
 
-    const filteredHunters = currentFilter === "none" 
-    ? hunters 
-    : hunters.filter(hunter => hunter.type === currentFilter);
+    const filteredHunters = currentFilter
+        ? hunters.filter(hunter => hunter.type === currentFilter)
+        : hunters;
 
     const start = currentPage * huntersPerPage;
     const end = start + huntersPerPage;
@@ -111,7 +111,8 @@ function updateButtons() {
         : hunters;
 
     document.getElementById('prevBtn').disabled = currentPage === 0;
-    document.getElementById('nextBtn').disabled = (currentPage + 1) * huntersPerPage >= filteredHunters.length;
+    const listLength = currentFilter ? filteredHunters.length : hunters.length; 
+    document.getElementById('nextBtn').disabled = (currentPage + 1) * huntersPerPage >= listLength;
 }
 
 loadHunters(); // Initial load
