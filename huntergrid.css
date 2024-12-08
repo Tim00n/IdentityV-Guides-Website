@@ -21,6 +21,7 @@
 .grayscale img {
   filter: grayscale(100%);
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .grayscale:hover img {
