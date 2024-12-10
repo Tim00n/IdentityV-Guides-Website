@@ -72,7 +72,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   max-width: 800px;
-  color: #e0e0e0;
+  color: white;
   font-family: 'Catamaran', sans-serif;
   line-height: 1.8;
   text-align: justify;
@@ -104,35 +104,44 @@ ul {
   padding-left: 20px;
   margin-bottom: 20px;
   list-style: none;
+  text-indent: 0;
 }
 
 ul li {
-  padding-left: 30px;
-  background-image: url('/assets/WebsiteIcon.png');
-  background-size: 18px;
+  padding-left: 40px; /* Increased padding for better readability */
+  margin-bottom: 10px; /* Added margin between list items */
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063331/WebsiteIcon_usyual.png');
+  background-size: 25px;
   background-repeat: no-repeat;
   background-position: 0 50%;
+  text-indent: 0;
 }
-
-/* Images */
 .image-container {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
-  text-align: center; /* Ensures content centers even in nested containers */
+  align-items: center; /* Center content vertically within the container */
+  margin: 20px auto; /* Auto margin centers the container horizontally */
+  text-align: center;
+  width: 500px;
+  height: 300px;
 }
 
+
 .image-container img {
-  max-width: 90%;
+  max-width: 100%; /* Ensures images scale within the container */
+  max-height: 100%; /* Prevents overflow while maintaining aspect ratio */
   border-radius: 10px;
+  display: block; /* Ensures the image behaves as a block element */
+  margin: 0 auto; /* Centers the image within its container if necessary */
 }
 
 .image-container iframe {
-  max-width: 90%; /* Restricts width within container */
-  border-radius: 10px; /* Matches styling of videos and images */
-  margin: 0 auto; /* Centers iframe */
+  max-width: 100%; /* Matches container size */
+  max-height: 100%;
+  border-radius: 10px; /* Keeps consistent styling */
   display: block;
 }
+
 
 video {
   display: block;
@@ -285,7 +294,7 @@ img, video {
 /* for all talents */
 /*central sphere */
 .sphere.empty {
-  background-image: url('assets/SurvivorPersonaCenter.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063370/SurvivorPersonaCenter_gejzgy.png');
   grid-column: 5; 
   grid-row: 5; 
 }
@@ -293,188 +302,188 @@ img, video {
 
 /* North branches */
 .sphere.talent-herd-behavior {
-  background-image: url('assets/Talent_Herd_Behavior.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063372/Talent_Herd_Behavior_fgdbjg.webp');
   grid-column: 5; 
   grid-row: 4; 
 }
 .sphere.talent-survivors-instinct {
-  background-image: url('assets/Talent_Survivors_Instinct.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063384/Talent_Survivors_Instinct_wogl8p.webp');
   grid-column: 4; 
   grid-row: 3; 
 }
 .sphere.talent-healing {
-  background-image: url('assets/Talent_Healing.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063384/Talent_Healing_aovdjk.webp');
   grid-column: 3; 
   grid-row: 2; 
 }
 .sphere.talent-air-walk {
-  background-image: url('assets/Talent_Air_Walk.png'); 
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063384/Talent_Air_Walk_nxxli5.webp'); 
   grid-column: 4; 
   grid-row: 2; 
 }
 .sphere.mutualsupporttrait {
-  background-image: url('assets/Talent_Mutual_Support.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063372/Talent_Mutual_Support_sa4zvx.webp');
   grid-column: 6; 
   grid-row: 3; 
 }
 .sphere.talent-symbiotic-effect {
-  background-image: url('assets/Talent_Symbiotic_Effect.png'); 
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063383/Talent_Symbiotic_Effect_xy0s18.webp'); 
   grid-column: 6; 
   grid-row: 2; 
 }
 .sphere.talent-sticker {
-  background-image: url('assets/Talent_Sticker.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063383/Talent_Sticker_odkm0q.webp');
   grid-column: 5; 
   grid-row: 3; 
 }
 .sphere.talent-webers-law {
-  background-image: url('assets/Talent_Webers_Law.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063370/Talent_Webers_Law_n1i7oj.webp');
   grid-column: 5; 
   grid-row: 2; 
 }
 .sphere.talent-flywheel-effect {
-  background-image: url('assets/Talent_Flywheel_Effect.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063374/Talent_Flywheel_Effect_vjiw20.webp');
   grid-column: 5; 
   grid-row: 1; 
 }
 
 /* East branches */ 
 .sphere.talent-curiosity {
-  background-image: url('assets/Talent_Curiosity.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063386/Talent_Curiosity_kdfswc.webp');
   grid-column: 6; 
   grid-row: 5; 
 }
 .sphere.talent-distraction {
-  background-image: url('assets/Talent_Distraction.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063382/Talent_Distraction_lickrp.webp');
   grid-column: 7; 
   grid-row: 4; 
 }
 .sphere.talent-snooze {
-  background-image: url('assets/Talent_Snooze.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063382/Talent_Snooze_jfracd.webp');
   grid-column: 8; 
   grid-row: 3; 
 }
 .sphere.talent-self-deception {
-  background-image: url('assets/Talent_Self_Deception.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063381/Talent_Self_Deception_kv0web.webp');
   grid-column: 8; 
   grid-row: 4; 
 }
 .sphere.talent-telepathy {
-  background-image: url('assets/Talent_Telepathy.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063373/Talent_Telepathy_myaytx.webp');
   grid-column: 7; 
   grid-row: 6; 
 }
 .sphere.talent-companion-effect {
-  background-image: url('assets/Talent_Companion_Effect.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063373/Talent_Companion_Effect_gpcotx.webp');
   grid-column: 8; 
   grid-row: 6; 
 }
 .sphere.talent-escape {
-  background-image: url('assets/Talent_Escape.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063381/Talent_Escape_ketw2k.webp');
   grid-column: 7; 
   grid-row: 5; 
 }
 .sphere.talent-compensate {
-  background-image: url('assets/Talent_Compensate.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063381/Talent_Compensate_xakgks.webp');
   grid-column: 8; 
   grid-row: 5; 
 }
 .sphere.talent-borrowed-time {
-  background-image: url('assets/Talent_Borrowed_Time.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063380/Talent_Borrowed_Time_vyysou.webp');
   grid-column: 9; 
   grid-row: 5; 
 }
 
 /* South branches */
 .sphere.talent-drawbridge-effect {
-  background-image: url('assets/Talent_Drawbridge_Effect.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063379/Talent_Drawbridge_Effect_vvtsso.webp');
   grid-column: 5; 
   grid-row: 6; 
 }
 .sphere.talent-sneak {
-  background-image: url('assets/Talent_Sneak.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063379/Talent_Sneak_fgdckt.webp');
   grid-column: 6; 
   grid-row: 7; 
 }
 .sphere.talent-shelter {
-  background-image: url('assets/Talent_Shelter.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063378/Talent_Shelter_wmccj6.webp');
   grid-column: 6; 
   grid-row: 8; 
 }
 .sphere.talent-doctor {
-  background-image: url('assets/Talent_Doctor.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063378/Talent_Doctor_fbekyz.webp');
   grid-column: 7; 
   grid-row: 8; 
 }
 .sphere.talent-cold {
-  background-image: url('assets/Talent_Cold.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063380/Talent_Cold_qj7drl.webp');
   grid-column: 4; 
   grid-row: 7; 
 }
 .sphere.talent-mech-elite {
-  background-image: url('assets/Talent_Mech_Elite.png'); 
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063376/Talent_Mech_Elite_womku8.webp'); 
   grid-column: 4; 
   grid-row: 8; 
 }
 .sphere.talent-savior-complex {
-  background-image: url('assets/Talent_Savior_Complex.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063377/Talent_Savior_Complex_qb92m4.webp');
   grid-column: 5; 
   grid-row: 7; 
 }
 .sphere.talent-herd-mentality {
-  background-image: url('assets/Talent_Herd_Mentality.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063379/Talent_Herd_Mentality_cf9gpd.webp');
   grid-column: 5; 
   grid-row: 8; 
 }
 .sphere.talent-tide-turner {
-  background-image: url('assets/Talent_Tide_Turner.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063377/Talent_Tide_Turner_odzpdy.webp');
   grid-column: 5; 
   grid-row: 9; 
 }
 
 /* Western branches */
 .sphere.talent-risky-move {
-  background-image: url('assets/Talent_Risky_Move.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063376/Talent_Risky_Move_d0v11v.webp');
   grid-column: 4; 
   grid-row: 5; 
 }
 .sphere.talent-prisoners-dilemma {
-  background-image: url('assets/Talent_Prisoners_Dilemma.png'); 
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063376/Talent_Prisoners_Dilemma_slcdhg.webp'); 
   grid-column: 3; 
   grid-row: 6; 
 }
 .sphere.talent-great-power {
-  background-image: url('assets/Talent_Great_Power.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063375/Talent_Great_Power_a3dsc9.webp');
   grid-column: 2; 
   grid-row: 7; 
 }
 .sphere.talent-will-to-survive {
-  background-image: url('assets/Talent_Will_to_Survive.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063375/Talent_Will_to_Survive_oy0isw.webp');
   grid-column: 2; 
   grid-row: 6; 
 }
 .sphere.talent-exit-path {
-  background-image: url('assets/Talent_Exit_Path.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063385/survivorTalent_exitPath_s4zeqx.png');
   grid-column: 3; 
   grid-row: 4; 
 }
 .sphere.talent-brewing-effect {
-  background-image: url('assets/Talent_Brewing_Effect.png'); 
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063371/Talent_Brewing_Effect_cvqrwv.png'); 
   grid-column: 2; 
   grid-row: 4; 
 }
 .sphere.talent-horsefly-effect {
-  background-image: url('assets/Talent_Horsefly_Effect.png'); 
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063374/Talent_Horsefly_Effect_cncyht.webp'); 
   grid-column: 3; 
   grid-row: 5; 
 }
 .sphere.talent-muscle-memory {
-  background-image: url('assets/Talent_Muscle_Memory.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063369/Talent_Muscle_Memory_u2grfx.webp');
   grid-column: 2; 
   grid-row: 5; 
 }
 .sphere.talent-knee-jerk-reflex {
-  background-image: url('assets/Talent_Knee_Jerk_Reflex.png');
+  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063370/Talent_Knee_Jerk_Reflex_zdhhpu.webp');
   grid-column: 1; 
   grid-row: 5; 
 }
