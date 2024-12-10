@@ -15,7 +15,21 @@
     width: 100%;
     height: auto;
     border-radius: 4px;
+    filter: none;
   }
+
+
+.grayscale {
+  filter: grayscale(100%);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.grayscale:hover img {
+  filter: grayscale(100%);
+  cursor: not-allowed;
+  transform:none;
+}
   
 .hunter-container {
     display: flex; 
@@ -24,4 +38,6 @@
 
   .hunter:hover img {
     transform: translateY(-10px); /* Moves the image up */
+    transition: transform 0.3s ease; /* Add smooth transition */
   }
+

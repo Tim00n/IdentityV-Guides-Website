@@ -113,7 +113,8 @@ ul {
 }
 
 ul li {
-  padding-left: 30px;
+  padding-left: 40px; /* Increased padding for better readability */
+  margin-bottom: 10px; /* Added margin between list items */
   background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063331/WebsiteIcon_usyual.png');
   background-size: 25px;
   background-repeat: no-repeat;
@@ -313,7 +314,7 @@ img, video {
 /* for all talents */
 /*central sphere */
 .sphere.empty {
-  background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063354/HunterPersonaCenter_hvlynn.png');
+  background-image: url('Blink.webp');
   grid-column: 5; 
   grid-row: 5; 
 }
@@ -504,3 +505,7 @@ img, video {
   grid-column: 1; 
   grid-row: 5; 
 }
+
+
+
+/* Filter */

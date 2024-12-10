@@ -108,14 +108,14 @@ ul {
 }
 
 ul li {
-  padding-left: 30px;
+  padding-left: 40px; /* Increased padding for better readability */
+  margin-bottom: 10px; /* Added margin between list items */
   background-image: url('https://res.cloudinary.com/dsim8rimy/image/upload/v1733063331/WebsiteIcon_usyual.png');
   background-size: 25px;
   background-repeat: no-repeat;
   background-position: 0 50%;
   text-indent: 0;
 }
-
 .image-container {
   display: flex;
   justify-content: center;
