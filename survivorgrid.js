@@ -49,7 +49,7 @@ const survivors = [
     
 ];
 
-let currentFilter = null;
+let survivorCurrentFilter = null;
 let currentSurvivorPage = 0;
 const survivorsPerPage = 18;
 
@@ -69,32 +69,46 @@ async function loadSurvivors() {
     grid1.innerHTML = '';
     grid2.innerHTML = '';
 
-    const filteredSurvivors = currentFilter
-        ? survivors.filter(survivor => survivor.type === currentFilter)
+    const filteredSurvivors = survivorCurrentFilter
+        ? survivors.filter(survivor => survivor.type === survivorCurrentFilter)
         : survivors;
 
     const start = currentSurvivorPage * survivorsPerPage;
     const end = start + survivorsPerPage;
-    const paginatedSurvivors = survivors.slice(start, end);
+    const paginatedSurvivors = filteredSurvivors.slice(start, end);
 
-    paginatedSurvivors.forEach((survivor, index) => {
+    for (const [index, survivor] of paginatedSurvivors.entries()) {
+
+        const fileExists = await checkFileExists(survivor.url);
+
         const survivorDiv = document.createElement('div');
-        survivorDiv.className = 'survivor';
+        survivorDiv.className = `survivor ${fileExists ? '' : 'grayscale'}`;
         survivorDiv.innerHTML = `
             <a href="${survivor.url}" target="_blank">
                 <img src="${survivor.img}" alt="${survivor.name}">
                 <p>${survivor.name}</p>
             </a>
-        `;
+            `;
 
-        if (index < 9) {
-            grid1.appendChild(survivorDiv);
-        } else {
-            grid2.appendChild(survivorDiv);
-        }
-    });
+            if (index < 9) {
+                grid1.appendChild(survivorDiv);
+            } else {
+                grid2.appendChild(survivorDiv);
+            }
+        
+    }
 
     updateSurvivorButtons();
+}
+
+function survivorSortBy(option){
+    if (option === 'reset') {
+        survivorCurrentFilter = null;
+    } else {
+        survivorCurrentFilter = option;
+    }
+    currentPage = 0;
+    loadSurvivors();
 }
 
 function changeSurvivorPage(direction) {
@@ -103,8 +117,13 @@ function changeSurvivorPage(direction) {
 }
 
 function updateSurvivorButtons() {
+    const filteredSurvivors = survivorCurrentFilter
+        ? survivors.filter(survivor => survivor.type === survivorCurrentFilter)
+        : survivors;
+
     document.getElementById('prevSurvivorBtn').disabled = currentSurvivorPage === 0;
-    document.getElementById('nextSurvivorBtn').disabled = (currentSurvivorPage + 1) * survivorsPerPage >= survivors.length;
+    const survivorListLength = survivorCurrentFilter ? filteredSurvivors.length : survivors.length;
+    document.getElementById('nextSurvivorBtn').disabled = (currentSurvivorPage + 1) * survivorsPerPage >= survivorListLength;
 }
 
 loadSurvivors(); // Initial load

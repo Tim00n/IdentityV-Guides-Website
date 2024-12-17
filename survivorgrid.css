@@ -20,10 +20,6 @@
       filter: none;
     }
   
-  .grayscale img {
-    
-  }
-  
   .grayscale {
     filter: grayscale(100%);
     cursor: not-allowed;
